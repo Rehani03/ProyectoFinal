@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProyectoFinalAp1.Entidades
+{
+    public class Usuarios
+    {
+        [Key]
+        public int UsuarioID { get; set; }
+        public string Nombres { get; set; }
+        public string NombresUsuario { get; set; }
+        public string PassWord { get; set; }
+        public DateTime FechaIngreso { get; set; }
+
+        public Usuarios()
+        {
+            UsuarioID = 0;
+            Nombres = string.Empty;
+            NombresUsuario = string.Empty;
+            PassWord = string.Empty;
+            FechaIngreso = DateTime.Now;
+        }
+    }
+}
