@@ -78,6 +78,48 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Consultas\cCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cCategoria.Designer.cs">
+      <DependentUpon>cCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cCliente.Designer.cs">
+      <DependentUpon>cCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cEntradaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cEntradaProducto.Designer.cs">
+      <DependentUpon>cEntradaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cFactura.Designer.cs">
+      <DependentUpon>cFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cProducto.Designer.cs">
+      <DependentUpon>cProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cReciboIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cReciboIngreso.Designer.cs">
+      <DependentUpon>cReciboIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cUsuario.Designer.cs">
+      <DependentUpon>cUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,7 +131,29 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Consultas\cCategoria.resx">
+      <DependentUpon>cCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cCliente.resx">
+      <DependentUpon>cCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cEntradaProducto.resx">
+      <DependentUpon>cEntradaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cFactura.resx">
+      <DependentUpon>cFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cProducto.resx">
+      <DependentUpon>cProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cReciboIngreso.resx">
+      <DependentUpon>cReciboIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cUsuario.resx">
+      <DependentUpon>cUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,10 +170,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\Scripts\" />
-    <Folder Include="Resources\" />
-    <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Registros\" />
     <Folder Include="UI\Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarIcono_opt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
