@@ -10,12 +10,14 @@ namespace ProyectoFinalAp1.Entidades
     public class Categorias
     {
         [Key]
-        public int CategoriaID { get; set; }
+        public int CategoriaId { get; set; }
+        public int UsuarioId { get; set; }
         public string Descripcion { get; set; }
 
         public Categorias()
         {
-            CategoriaID = 0;
+            CategoriaId = 0;
+            UsuarioId = 0;
             Descripcion = string.Empty;
         }
     }

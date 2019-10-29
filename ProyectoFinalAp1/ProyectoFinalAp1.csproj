@@ -64,11 +64,11 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\Clientes.cs" />
+    <Compile Include="Entidades\DetalleEntradaProductos.cs" />
     <Compile Include="Entidades\DetalleFactura.cs" />
     <Compile Include="Entidades\EntradaProducto.cs" />
     <Compile Include="Entidades\Facturas.cs" />
     <Compile Include="Entidades\Productos.cs" />
-    <Compile Include="Entidades\ReciboIngresos.cs" />
     <Compile Include="Entidades\Usuarios.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

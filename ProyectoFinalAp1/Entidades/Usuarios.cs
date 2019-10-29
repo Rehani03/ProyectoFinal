@@ -10,7 +10,7 @@ namespace ProyectoFinalAp1.Entidades
     public class Usuarios
     {
         [Key]
-        public int UsuarioID { get; set; }
+        public int UsuarioId { get; set; }
         public string Nombres { get; set; }
         public string NombresUsuario { get; set; }
         public string PassWord { get; set; }
@@ -18,7 +18,7 @@ namespace ProyectoFinalAp1.Entidades
 
         public Usuarios()
         {
-            UsuarioID = 0;
+            UsuarioId = 0;
             Nombres = string.Empty;
             NombresUsuario = string.Empty;
             PassWord = string.Empty;

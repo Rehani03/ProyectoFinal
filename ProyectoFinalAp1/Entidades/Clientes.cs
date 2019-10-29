@@ -10,7 +10,8 @@ namespace ProyectoFinalAp1.Entidades
     public class Clientes
     {
         [Key]
-        public int ClienteID { get; set; }
+        public int ClienteId { get; set; }
+        public int UsuarioId { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Cedula { get; set; }
@@ -23,7 +24,8 @@ namespace ProyectoFinalAp1.Entidades
 
         public Clientes()
         {
-            ClienteID = 0;
+            ClienteId = 0;
+            UsuarioId = 0;
             Nombres = string.Empty;
             Apellidos = string.Empty;
             Cedula = string.Empty;

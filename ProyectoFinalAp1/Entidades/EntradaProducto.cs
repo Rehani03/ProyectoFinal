@@ -10,17 +10,21 @@ namespace ProyectoFinalAp1.Entidades
     public class EntradaProducto
     {
         [Key]
-        public int EntradaProductoID { get; set; }
-        public int ProductoID { get; set; }
+        public int EntradaProductoId { get; set; }
+        public int ProductoId { get; set; }
+        public int UsuarioId { get; set; }
         public int Cantidad { get; set; }
         public DateTime Fecha { get; set; }
+        public virtual List<DetalleEntradaProductos> DetalleEntrada { get; set; }
 
         public EntradaProducto()
         {
-            EntradaProductoID = 0;
-            ProductoID = 0;
+            EntradaProductoId = 0;
+            ProductoId = 0;
+            UsuarioId = 0;
             Cantidad = 0;
             Fecha = DateTime.Now;
+            DetalleEntrada = new List<DetalleEntradaProductos>();
         }
     }
 }

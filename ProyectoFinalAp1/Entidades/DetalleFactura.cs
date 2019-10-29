@@ -10,34 +10,34 @@ namespace ProyectoFinalAp1.Entidades
     public class DetalleFactura
     {
         [Key]
-        public int DetalleFacturaID { get; set; }
-        public int FacturaID { get; set; }
-        public int ProductoID { get; set; }
+        public int DetalleFacturaId { get; set; }
+        public int FacturaId { get; set; }
+        public int ProductoId { get; set; }
         public int Cantidad { get; set; }
         public string Descripcion { get; set; }
         public decimal Precio { get; set;}
-        public decimal Importe { get; set; }
+        
 
         public DetalleFactura()
         {
-            DetalleFacturaID = 0;
-            FacturaID = 0;
-            ProductoID = 0;
+            DetalleFacturaId = 0;
+            FacturaId = 0;
+            ProductoId = 0;
             Cantidad = 0;
             Descripcion = string.Empty;
             Precio = 0;
-            Importe = 0;
+
         }
 
-        public DetalleFactura(int detalleFacturaID, int facturaID, int productoID, int cantidad, string descripcion, decimal precio, decimal importe)
+        public DetalleFactura(int detalleFacturaID, int facturaID, int productoID, int cantidad, string descripcion, decimal precio)
         {
-            this.DetalleFacturaID = detalleFacturaID;
-            this.FacturaID = facturaID;
-            this.ProductoID = productoID;
+            this.DetalleFacturaId = detalleFacturaID;
+            this.FacturaId = facturaID;
+            this.ProductoId = productoID;
             this.Cantidad = cantidad;
             this.Descripcion = descripcion;
             this.Precio = precio;
-            this.Importe = importe;
+
         }
     }
 }

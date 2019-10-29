@@ -10,25 +10,27 @@ namespace ProyectoFinalAp1.Entidades
     public class Productos
     {
         [Key]
-        public int ProductoID { get; set; }
-        public int CategoriaID { get; set; }
+        public int ProductoId { get; set; }
+        public int CategoriaId { get; set; }
+        public int UsuarioId { get; set; }
         public string Descripcion { get; set; }
         public decimal Costo { get; set; }
         public decimal Precio { get; set; }
         public decimal Ganancia { get; set; }
         public DateTime Fecha { get; set; }
-        public int Inventario { get; set; }
+        public int Cantidad { get; set; }
 
         public Productos()
         {
-            ProductoID = 0;
-            CategoriaID = 0;
+            ProductoId = 0;
+            CategoriaId = 0;
+            UsuarioId = 0;
             Descripcion = string.Empty;
             Costo = 0;
             Precio = 0;
             Ganancia = 0;
             Fecha = DateTime.Now;
-            Inventario = 0;
+            Cantidad = 0;
         }
 
     }
