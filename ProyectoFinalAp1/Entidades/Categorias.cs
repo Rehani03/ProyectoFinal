@@ -14,6 +14,7 @@ namespace ProyectoFinalAp1.Entidades
         public int UsuarioId { get; set; }
         public string Descripcion { get; set; }
 
+
         public Categorias()
         {
             CategoriaId = 0;
