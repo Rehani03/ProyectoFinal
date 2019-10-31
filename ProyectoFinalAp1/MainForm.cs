@@ -76,5 +76,11 @@ namespace ProyectoFinalAp1
             usuario.Show();
         }
 
+        private void CategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rCategoria categoria = new rCategoria();
+            categoria.MdiParent = this;
+            categoria.Show();
+        }
     }
 }

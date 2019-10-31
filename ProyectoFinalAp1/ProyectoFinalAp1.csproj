@@ -126,6 +126,12 @@
     <Compile Include="UI\Login\LoginFormulario.Designer.cs">
       <DependentUpon>LoginFormulario.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCategoria.Designer.cs">
+      <DependentUpon>rCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login\LoginFormulario.resx">
       <DependentUpon>LoginFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCategoria.resx">
+      <DependentUpon>rCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rUsuario.resx">
       <DependentUpon>rUsuario.cs</DependentUpon>
@@ -243,6 +252,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\facturaIcono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarIcono36Px.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

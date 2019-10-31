@@ -83,6 +83,16 @@ namespace ProyectoFinalAp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BuscarIcono36Px {
+            get {
+                object obj = ResourceManager.GetObject("BuscarIcono36Px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CategoriaIcono {
             get {
                 object obj = ResourceManager.GetObject("CategoriaIcono", resourceCulture);

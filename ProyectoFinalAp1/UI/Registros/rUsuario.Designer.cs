@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Usuariolabel = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -48,9 +49,12 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Creadolabel = new System.Windows.Forms.Label();
             this.CreadoPortextBox = new System.Windows.Forms.TextBox();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Campospanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.Botonespanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Usuariolabel
@@ -85,6 +89,7 @@
             // Campospanel
             // 
             this.Campospanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Campospanel.Controls.Add(this.Buscarbutton);
             this.Campospanel.Controls.Add(this.dateTimePicker1);
             this.Campospanel.Controls.Add(this.textBox3);
             this.Campospanel.Controls.Add(this.textBox2);
@@ -245,6 +250,22 @@
             this.CreadoPortextBox.Size = new System.Drawing.Size(116, 22);
             this.CreadoPortextBox.TabIndex = 4;
             // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono36Px;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(274, 3);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(91, 34);
+            this.Buscarbutton.TabIndex = 6;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
             // rUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -266,6 +287,7 @@
             this.Campospanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.Botonespanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +315,7 @@
         private System.Windows.Forms.TextBox CreadoPortextBox;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.ErrorProvider MyerrorProvider;
     }
 }
