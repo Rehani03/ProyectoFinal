@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoFinalAp1.UI.Consultas;
+using ProyectoFinalAp1.UI.Registros;
+using ProyectoFinalAp1.UI.Login;
 
 namespace ProyectoFinalAp1
 {
@@ -15,6 +17,8 @@ namespace ProyectoFinalAp1
     {
         public MainForm()
         {
+            //LoginFormulario lo = new LoginFormulario();
+            //lo.ShowDialog();
             InitializeComponent();
         }
 
@@ -65,11 +69,12 @@ namespace ProyectoFinalAp1
             factura.Show();
         }
 
-        private void ReciboDeIngresosToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cReciboIngreso reciboIngreso = new cReciboIngreso();
-            reciboIngreso.MdiParent = this;
-            reciboIngreso.Show();
+            rUsuario usuario = new rUsuario();
+            usuario.MdiParent = this;
+            usuario.Show();
         }
+
     }
 }

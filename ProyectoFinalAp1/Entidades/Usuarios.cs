@@ -12,7 +12,7 @@ namespace ProyectoFinalAp1.Entidades
         [Key]
         public int UsuarioId { get; set; }
         public string Nombres { get; set; }
-        public string NombresUsuario { get; set; }
+        public string NombreUsuario { get; set; }
         public string PassWord { get; set; }
         public DateTime FechaIngreso { get; set; }
 
@@ -20,7 +20,7 @@ namespace ProyectoFinalAp1.Entidades
         {
             UsuarioId = 0;
             Nombres = string.Empty;
-            NombresUsuario = string.Empty;
+            NombreUsuario = string.Empty;
             PassWord = string.Empty;
             FechaIngreso = DateTime.Now;
         }
