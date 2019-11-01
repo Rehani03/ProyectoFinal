@@ -120,17 +120,35 @@
     <Compile Include="UI\Consultas\cUsuario.Designer.cs">
       <DependentUpon>cUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Login\LoginFormulario.cs">
+    <Compile Include="UI\Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Login\LoginFormulario.Designer.cs">
-      <DependentUpon>LoginFormulario.cs</DependentUpon>
+    <Compile Include="UI\Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\rCategoria.Designer.cs">
       <DependentUpon>rCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCliente.Designer.cs">
+      <DependentUpon>rCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rEntradaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rEntradaProducto.Designer.cs">
+      <DependentUpon>rEntradaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rProducto.Designer.cs">
+      <DependentUpon>rProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rUsuario.cs">
       <SubType>Form</SubType>
@@ -172,11 +190,20 @@
     <EmbeddedResource Include="UI\Consultas\cUsuario.resx">
       <DependentUpon>cUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Login\LoginFormulario.resx">
-      <DependentUpon>LoginFormulario.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCategoria.resx">
       <DependentUpon>rCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCliente.resx">
+      <DependentUpon>rCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rEntradaProducto.resx">
+      <DependentUpon>rEntradaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rProducto.resx">
+      <DependentUpon>rProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rUsuario.resx">
       <DependentUpon>rUsuario.cs</DependentUpon>
@@ -255,6 +282,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BuscarIcono36Px.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masBlancoNegro_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EliminarFila27Px.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

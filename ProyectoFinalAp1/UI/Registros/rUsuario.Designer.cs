@@ -33,6 +33,7 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Campospanel = new System.Windows.Forms.Panel();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -48,8 +49,7 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Creadolabel = new System.Windows.Forms.Label();
-            this.CreadoPortextBox = new System.Windows.Forms.TextBox();
-            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Campospanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -100,45 +100,58 @@
             this.Campospanel.Controls.Add(this.label2);
             this.Campospanel.Controls.Add(this.label1);
             this.Campospanel.Controls.Add(this.IDlabel);
+            this.Campospanel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Campospanel.Location = new System.Drawing.Point(35, 73);
             this.Campospanel.Name = "Campospanel";
             this.Campospanel.Size = new System.Drawing.Size(390, 231);
             this.Campospanel.TabIndex = 2;
             // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono36Px;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(284, 7);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(91, 34);
+            this.Buscarbutton.TabIndex = 6;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(152, 175);
+            this.dateTimePicker1.Location = new System.Drawing.Point(173, 175);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(101, 24);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 132);
+            this.textBox3.Location = new System.Drawing.Point(173, 132);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(202, 22);
+            this.textBox3.Size = new System.Drawing.Size(202, 24);
             this.textBox3.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 92);
+            this.textBox2.Location = new System.Drawing.Point(173, 92);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 22);
+            this.textBox2.Size = new System.Drawing.Size(202, 24);
             this.textBox2.TabIndex = 3;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 50);
+            this.textBox1.Location = new System.Drawing.Point(173, 50);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 22);
+            this.textBox1.Size = new System.Drawing.Size(202, 24);
             this.textBox1.TabIndex = 2;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(152, 11);
+            this.numericUpDown1.Location = new System.Drawing.Point(173, 14);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(101, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(101, 24);
             this.numericUpDown1.TabIndex = 1;
             // 
             // label4
@@ -146,7 +159,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(15, 175);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 17);
+            this.label4.Size = new System.Drawing.Size(145, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "FECHA DE INGRESO:";
             // 
@@ -155,7 +168,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 17);
+            this.label3.Size = new System.Drawing.Size(103, 19);
             this.label3.TabIndex = 0;
             this.label3.Text = "CONTRASEÑA:";
             // 
@@ -164,7 +177,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 17);
+            this.label2.Size = new System.Drawing.Size(157, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "NOMBRE DE USUARIO:";
             // 
@@ -173,7 +186,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(80, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "NOMBRES:";
             // 
@@ -182,7 +195,7 @@
             this.IDlabel.AutoSize = true;
             this.IDlabel.Location = new System.Drawing.Point(15, 16);
             this.IDlabel.Name = "IDlabel";
-            this.IDlabel.Size = new System.Drawing.Size(23, 17);
+            this.IDlabel.Size = new System.Drawing.Size(26, 19);
             this.IDlabel.TabIndex = 0;
             this.IDlabel.Text = "ID:";
             // 
@@ -238,29 +251,17 @@
             this.Creadolabel.AutoSize = true;
             this.Creadolabel.Location = new System.Drawing.Point(115, 398);
             this.Creadolabel.Name = "Creadolabel";
-            this.Creadolabel.Size = new System.Drawing.Size(88, 17);
+            this.Creadolabel.Size = new System.Drawing.Size(63, 17);
             this.Creadolabel.TabIndex = 0;
-            this.Creadolabel.Text = "CREADO POR:";
+            this.Creadolabel.Text = "USUARIO:";
             // 
-            // CreadoPortextBox
+            // UsuariotextBox
             // 
-            this.CreadoPortextBox.Location = new System.Drawing.Point(209, 393);
-            this.CreadoPortextBox.Name = "CreadoPortextBox";
-            this.CreadoPortextBox.ReadOnly = true;
-            this.CreadoPortextBox.Size = new System.Drawing.Size(116, 22);
-            this.CreadoPortextBox.TabIndex = 4;
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono36Px;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(274, 3);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(91, 34);
-            this.Buscarbutton.TabIndex = 6;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.UsuariotextBox.Location = new System.Drawing.Point(209, 393);
+            this.UsuariotextBox.Name = "UsuariotextBox";
+            this.UsuariotextBox.ReadOnly = true;
+            this.UsuariotextBox.Size = new System.Drawing.Size(116, 22);
+            this.UsuariotextBox.TabIndex = 4;
             // 
             // MyerrorProvider
             // 
@@ -272,7 +273,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(460, 424);
-            this.Controls.Add(this.CreadoPortextBox);
+            this.Controls.Add(this.UsuariotextBox);
             this.Controls.Add(this.Creadolabel);
             this.Controls.Add(this.Botonespanel);
             this.Controls.Add(this.Campospanel);
@@ -312,7 +313,7 @@
         private System.Windows.Forms.Panel Botonespanel;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Label Creadolabel;
-        private System.Windows.Forms.TextBox CreadoPortextBox;
+        private System.Windows.Forms.TextBox UsuariotextBox;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Buscarbutton;

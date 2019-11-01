@@ -143,6 +143,16 @@ namespace ProyectoFinalAp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EliminarFila27Px {
+            get {
+                object obj = ResourceManager.GetObject("EliminarFila27Px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EntradaIcono {
             get {
                 object obj = ResourceManager.GetObject("EntradaIcono", resourceCulture);
@@ -216,6 +226,16 @@ namespace ProyectoFinalAp1.Properties {
         internal static System.Drawing.Bitmap mas40px {
             get {
                 object obj = ResourceManager.GetObject("mas40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap masBlancoNegro_opt {
+            get {
+                object obj = ResourceManager.GetObject("masBlancoNegro_opt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

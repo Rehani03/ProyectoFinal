@@ -17,14 +17,14 @@ namespace ProyectoFinalAp1
     {
         public MainForm()
         {
-            //LoginFormulario lo = new LoginFormulario();
-            //lo.ShowDialog();
             InitializeComponent();
         }
 
         private void ProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            rProducto producto = new rProducto();
+            producto.MdiParent = this;
+            producto.Show();
         }
 
         private void ClienteToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -81,6 +81,20 @@ namespace ProyectoFinalAp1
             rCategoria categoria = new rCategoria();
             categoria.MdiParent = this;
             categoria.Show();
+        }
+
+        private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rCliente cliente = new rCliente();
+            cliente.MdiParent = this;
+            cliente.Show();
+        }
+
+        private void EntradaYSalidaProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEntradaProducto entradaProducto = new rEntradaProducto();
+            entradaProducto.MdiParent = this;
+            entradaProducto.Show();
         }
     }
 }

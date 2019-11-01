@@ -33,18 +33,18 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Principalpanel = new System.Windows.Forms.Panel();
-            this.IDlabel = new System.Windows.Forms.Label();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IDlabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.RegistradoPorlabel = new System.Windows.Forms.Label();
-            this.RegistradotextBox = new System.Windows.Forms.TextBox();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Gurdarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.RegistradoPorlabel = new System.Windows.Forms.Label();
+            this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Principalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -95,14 +95,24 @@
             this.Principalpanel.Size = new System.Drawing.Size(367, 82);
             this.Principalpanel.TabIndex = 2;
             // 
-            // IDlabel
+            // Buscarbutton
             // 
-            this.IDlabel.AutoSize = true;
-            this.IDlabel.Location = new System.Drawing.Point(15, 9);
-            this.IDlabel.Name = "IDlabel";
-            this.IDlabel.Size = new System.Drawing.Size(23, 17);
-            this.IDlabel.TabIndex = 0;
-            this.IDlabel.Text = "ID:";
+            this.Buscarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono36Px;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(240, 2);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(89, 30);
+            this.Buscarbutton.TabIndex = 3;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(115, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(225, 22);
+            this.textBox1.TabIndex = 2;
             // 
             // numericUpDown1
             // 
@@ -128,12 +138,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "DESCRIPCION:";
             // 
-            // textBox1
+            // IDlabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 22);
-            this.textBox1.TabIndex = 2;
+            this.IDlabel.AutoSize = true;
+            this.IDlabel.Location = new System.Drawing.Point(15, 9);
+            this.IDlabel.Name = "IDlabel";
+            this.IDlabel.Size = new System.Drawing.Size(23, 17);
+            this.IDlabel.TabIndex = 0;
+            this.IDlabel.Text = "ID:";
             // 
             // panel1
             // 
@@ -145,23 +157,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(333, 45);
             this.panel1.TabIndex = 3;
-            // 
-            // RegistradoPorlabel
-            // 
-            this.RegistradoPorlabel.AutoSize = true;
-            this.RegistradoPorlabel.Location = new System.Drawing.Point(92, 235);
-            this.RegistradoPorlabel.Name = "RegistradoPorlabel";
-            this.RegistradoPorlabel.Size = new System.Drawing.Size(111, 17);
-            this.RegistradoPorlabel.TabIndex = 4;
-            this.RegistradoPorlabel.Text = "REGISTRADO POR:";
-            // 
-            // RegistradotextBox
-            // 
-            this.RegistradotextBox.Location = new System.Drawing.Point(220, 230);
-            this.RegistradotextBox.Name = "RegistradotextBox";
-            this.RegistradotextBox.ReadOnly = true;
-            this.RegistradotextBox.Size = new System.Drawing.Size(122, 22);
-            this.RegistradotextBox.TabIndex = 5;
             // 
             // Eliminarbutton
             // 
@@ -199,17 +194,22 @@
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
             // 
-            // Buscarbutton
+            // RegistradoPorlabel
             // 
-            this.Buscarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono36Px;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(240, 2);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(89, 30);
-            this.Buscarbutton.TabIndex = 3;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.RegistradoPorlabel.AutoSize = true;
+            this.RegistradoPorlabel.Location = new System.Drawing.Point(92, 235);
+            this.RegistradoPorlabel.Name = "RegistradoPorlabel";
+            this.RegistradoPorlabel.Size = new System.Drawing.Size(63, 17);
+            this.RegistradoPorlabel.TabIndex = 4;
+            this.RegistradoPorlabel.Text = "USUARIO:";
+            // 
+            // UsuariotextBox
+            // 
+            this.UsuariotextBox.Location = new System.Drawing.Point(220, 230);
+            this.UsuariotextBox.Name = "UsuariotextBox";
+            this.UsuariotextBox.ReadOnly = true;
+            this.UsuariotextBox.Size = new System.Drawing.Size(122, 22);
+            this.UsuariotextBox.TabIndex = 5;
             // 
             // MyerrorProvider
             // 
@@ -221,7 +221,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(453, 261);
-            this.Controls.Add(this.RegistradotextBox);
+            this.Controls.Add(this.UsuariotextBox);
             this.Controls.Add(this.RegistradoPorlabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Principalpanel);
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Button Gurdarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Label RegistradoPorlabel;
-        private System.Windows.Forms.TextBox RegistradotextBox;
+        private System.Windows.Forms.TextBox UsuariotextBox;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
     }
 }

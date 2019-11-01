@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoFinalAp1.UI.Login
+namespace ProyectoFinalAp1.UI.Registros
 {
-    public partial class LoginFormulario : Form
+    public partial class rCliente : Form
     {
-        public LoginFormulario()
+        public rCliente()
         {
             InitializeComponent();
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
