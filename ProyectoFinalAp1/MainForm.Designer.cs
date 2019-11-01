@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,7 +86,7 @@
             // 
             // clienteToolStripMenuItem
             // 
-            this.clienteToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.ClienteIcono;
+            this.clienteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clienteToolStripMenuItem.Image")));
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.clienteToolStripMenuItem.Text = "Clientes";
@@ -93,7 +94,7 @@
             // 
             // productoToolStripMenuItem
             // 
-            this.productoToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.productoIcono;
+            this.productoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("productoToolStripMenuItem.Image")));
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.productoToolStripMenuItem.Text = "Productos";
@@ -101,7 +102,7 @@
             // 
             // categoriaToolStripMenuItem
             // 
-            this.categoriaToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.CategoriaIcono;
+            this.categoriaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("categoriaToolStripMenuItem.Image")));
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
             this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.categoriaToolStripMenuItem.Text = "Categorias";
@@ -109,7 +110,7 @@
             // 
             // entradaYSalidaProductoToolStripMenuItem
             // 
-            this.entradaYSalidaProductoToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.EntradaIcono;
+            this.entradaYSalidaProductoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("entradaYSalidaProductoToolStripMenuItem.Image")));
             this.entradaYSalidaProductoToolStripMenuItem.Name = "entradaYSalidaProductoToolStripMenuItem";
             this.entradaYSalidaProductoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.entradaYSalidaProductoToolStripMenuItem.Text = "Entrada de Productos";
@@ -117,7 +118,7 @@
             // 
             // usuarioToolStripMenuItem
             // 
-            this.usuarioToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.usuarioIcono;
+            this.usuarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("usuarioToolStripMenuItem.Image")));
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.usuarioToolStripMenuItem.Text = "Usuarios";
@@ -140,7 +141,7 @@
             // 
             // clienteToolStripMenuItem1
             // 
-            this.clienteToolStripMenuItem1.Image = global::ProyectoFinalAp1.Properties.Resources.consultaIcono;
+            this.clienteToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("clienteToolStripMenuItem1.Image")));
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
             this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.clienteToolStripMenuItem1.Text = "Clientes";
@@ -148,7 +149,7 @@
             // 
             // productosToolStripMenuItem
             // 
-            this.productosToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.consultaIcono;
+            this.productosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("productosToolStripMenuItem.Image")));
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -156,7 +157,7 @@
             // 
             // entradaYSalidaProductosToolStripMenuItem
             // 
-            this.entradaYSalidaProductosToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.consultaIcono;
+            this.entradaYSalidaProductosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("entradaYSalidaProductosToolStripMenuItem.Image")));
             this.entradaYSalidaProductosToolStripMenuItem.Name = "entradaYSalidaProductosToolStripMenuItem";
             this.entradaYSalidaProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.entradaYSalidaProductosToolStripMenuItem.Text = "Entrada de Productos";
@@ -164,7 +165,7 @@
             // 
             // categoriaToolStripMenuItem1
             // 
-            this.categoriaToolStripMenuItem1.Image = global::ProyectoFinalAp1.Properties.Resources.consultaIcono;
+            this.categoriaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("categoriaToolStripMenuItem1.Image")));
             this.categoriaToolStripMenuItem1.Name = "categoriaToolStripMenuItem1";
             this.categoriaToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.categoriaToolStripMenuItem1.Text = "Categorias";
@@ -172,7 +173,7 @@
             // 
             // usuarioToolStripMenuItem1
             // 
-            this.usuarioToolStripMenuItem1.Image = global::ProyectoFinalAp1.Properties.Resources.consultaIcono;
+            this.usuarioToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("usuarioToolStripMenuItem1.Image")));
             this.usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
             this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.usuarioToolStripMenuItem1.Text = "Usuarios";
@@ -180,7 +181,7 @@
             // 
             // facturaciónToolStripMenuItem1
             // 
-            this.facturaciónToolStripMenuItem1.Image = global::ProyectoFinalAp1.Properties.Resources.consultaIcono;
+            this.facturaciónToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("facturaciónToolStripMenuItem1.Image")));
             this.facturaciónToolStripMenuItem1.Name = "facturaciónToolStripMenuItem1";
             this.facturaciónToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.facturaciónToolStripMenuItem1.Text = "Facturas";
@@ -202,35 +203,35 @@
             // 
             // facturasToolStripMenuItem
             // 
-            this.facturasToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.ReporteIcono;
+            this.facturasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("facturasToolStripMenuItem.Image")));
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
             this.facturasToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.facturasToolStripMenuItem.Text = "Facturas";
             // 
             // productosToolStripMenuItem1
             // 
-            this.productosToolStripMenuItem1.Image = global::ProyectoFinalAp1.Properties.Resources.ReporteIcono;
+            this.productosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("productosToolStripMenuItem1.Image")));
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
             this.productosToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.productosToolStripMenuItem1.Text = "Productos";
             // 
             // entradaDeProductosToolStripMenuItem
             // 
-            this.entradaDeProductosToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.ReporteIcono;
+            this.entradaDeProductosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("entradaDeProductosToolStripMenuItem.Image")));
             this.entradaDeProductosToolStripMenuItem.Name = "entradaDeProductosToolStripMenuItem";
             this.entradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.entradaDeProductosToolStripMenuItem.Text = "Entrada de Productos";
             // 
             // usuariosToolStripMenuItem
             // 
-            this.usuariosToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.ReporteIcono;
+            this.usuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("usuariosToolStripMenuItem.Image")));
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.usuariosToolStripMenuItem.Text = "Clientes";
             // 
             // usuariosToolStripMenuItem1
             // 
-            this.usuariosToolStripMenuItem1.Image = global::ProyectoFinalAp1.Properties.Resources.ReporteIcono;
+            this.usuariosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("usuariosToolStripMenuItem1.Image")));
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
             this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
@@ -247,10 +248,11 @@
             // 
             // contadoToolStripMenuItem
             // 
-            this.contadoToolStripMenuItem.Image = global::ProyectoFinalAp1.Properties.Resources.facturaIcono;
+            this.contadoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("contadoToolStripMenuItem.Image")));
             this.contadoToolStripMenuItem.Name = "contadoToolStripMenuItem";
-            this.contadoToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.contadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contadoToolStripMenuItem.Text = "Contado";
+            this.contadoToolStripMenuItem.Click += new System.EventHandler(this.ContadoToolStripMenuItem_Click);
             // 
             // label
             // 

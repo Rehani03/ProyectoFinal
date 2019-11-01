@@ -96,5 +96,12 @@ namespace ProyectoFinalAp1
             entradaProducto.MdiParent = this;
             entradaProducto.Show();
         }
+
+        private void ContadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rFactura factura = new rFactura();
+            factura.MdiParent = this;
+            factura.Show();
+        }
     }
 }

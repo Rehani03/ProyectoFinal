@@ -63,7 +63,7 @@
             // 
             // Consultarbutton
             // 
-            this.Consultarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono_opt;
+           // this.Consultarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono_opt;
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultarbutton.Location = new System.Drawing.Point(696, 17);
             this.Consultarbutton.Name = "Consultarbutton";

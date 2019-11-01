@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalAp1.UI.Registros
 {
-    public partial class rCategoria : Form
+    public partial class rFactura : Form
     {
-        public rCategoria()
+        public rFactura()
         {
             InitializeComponent();
         }
 
-        private void Gurdarbutton_Click(object sender, EventArgs e)
+        private void Fechalabel_Click(object sender, EventArgs e)
         {
 
         }

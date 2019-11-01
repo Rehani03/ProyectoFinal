@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rCategoria));
             this.Categorialabel = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -97,7 +98,7 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono36Px;
+            this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(240, 2);
             this.Buscarbutton.Name = "Buscarbutton";
@@ -160,7 +161,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.Eliminar38Px;
+            this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(233, 4);
             this.Eliminarbutton.Name = "Eliminarbutton";
@@ -172,7 +173,7 @@
             // 
             // Gurdarbutton
             // 
-            this.Gurdarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.guardar36Px;
+            this.Gurdarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Gurdarbutton.Image")));
             this.Gurdarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Gurdarbutton.Location = new System.Drawing.Point(118, 4);
             this.Gurdarbutton.Name = "Gurdarbutton";
@@ -181,10 +182,11 @@
             this.Gurdarbutton.Text = "Guardar";
             this.Gurdarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Gurdarbutton.UseVisualStyleBackColor = true;
+            this.Gurdarbutton.Click += new System.EventHandler(this.Gurdarbutton_Click);
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Image = global::ProyectoFinalAp1.Properties.Resources.mas38px;
+            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.Location = new System.Drawing.Point(4, 4);
             this.Nuevobutton.Name = "Nuevobutton";

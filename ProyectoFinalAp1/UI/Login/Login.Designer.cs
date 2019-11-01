@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -112,7 +113,7 @@
             // Ingresarbutton
             // 
             this.Ingresarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Ingresarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.Ingresar49Px;
+            this.Ingresarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Ingresarbutton.Image")));
             this.Ingresarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Ingresarbutton.Location = new System.Drawing.Point(140, 164);
             this.Ingresarbutton.Name = "Ingresarbutton";

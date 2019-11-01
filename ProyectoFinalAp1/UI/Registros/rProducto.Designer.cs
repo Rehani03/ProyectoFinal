@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rProducto));
             this.Productolabel = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -123,7 +124,7 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono36Px;
+            this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(226, 8);
             this.Buscarbutton.Name = "Buscarbutton";
@@ -280,7 +281,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.Eliminar38Px;
+            this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(210, 4);
             this.Eliminarbutton.Name = "Eliminarbutton";
@@ -292,7 +293,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.guardar36Px;
+            this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.Location = new System.Drawing.Point(104, 4);
             this.Guardarbutton.Name = "Guardarbutton";
@@ -304,7 +305,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Image = global::ProyectoFinalAp1.Properties.Resources.mas38px;
+            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.Location = new System.Drawing.Point(3, 4);
             this.Nuevobutton.Name = "Nuevobutton";
