@@ -39,7 +39,9 @@
             this.ContraseñatextBox = new System.Windows.Forms.TextBox();
             this.MyerrorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
             this.Ingresarbutton = new System.Windows.Forms.Button();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProviderLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,6 +126,10 @@
             this.Ingresarbutton.UseVisualStyleBackColor = true;
             this.Ingresarbutton.Click += new System.EventHandler(this.Ingresarbutton_Click);
             // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -145,6 +151,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ButterSoft";
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProviderLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +168,6 @@
         private System.Windows.Forms.TextBox ContraseñatextBox;
         private System.Windows.Forms.Button Ingresarbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProviderLogin;
+        private System.Windows.Forms.ErrorProvider MyerrorProvider;
     }
 }
