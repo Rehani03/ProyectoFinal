@@ -35,11 +35,11 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Campospanel = new System.Windows.Forms.Panel();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.ContraseñatextBox = new System.Windows.Forms.TextBox();
+            this.NombreUsuariotextBox = new System.Windows.Forms.TextBox();
+            this.NombretextBox = new System.Windows.Forms.TextBox();
+            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,11 +49,9 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Creadolabel = new System.Windows.Forms.Label();
-            this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Campospanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.Botonespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +73,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(460, 424);
+            this.shapeContainer1.Size = new System.Drawing.Size(460, 396);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
@@ -91,11 +89,11 @@
             // 
             this.Campospanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Campospanel.Controls.Add(this.Buscarbutton);
-            this.Campospanel.Controls.Add(this.dateTimePicker1);
-            this.Campospanel.Controls.Add(this.textBox3);
-            this.Campospanel.Controls.Add(this.textBox2);
-            this.Campospanel.Controls.Add(this.textBox1);
-            this.Campospanel.Controls.Add(this.numericUpDown1);
+            this.Campospanel.Controls.Add(this.FechadateTimePicker);
+            this.Campospanel.Controls.Add(this.ContraseñatextBox);
+            this.Campospanel.Controls.Add(this.NombreUsuariotextBox);
+            this.Campospanel.Controls.Add(this.NombretextBox);
+            this.Campospanel.Controls.Add(this.IDnumericUpDown);
             this.Campospanel.Controls.Add(this.label4);
             this.Campospanel.Controls.Add(this.label3);
             this.Campospanel.Controls.Add(this.label2);
@@ -118,42 +116,44 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // dateTimePicker1
+            // FechadateTimePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(173, 175);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 24);
-            this.dateTimePicker1.TabIndex = 5;
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(173, 175);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(101, 24);
+            this.FechadateTimePicker.TabIndex = 5;
             // 
-            // textBox3
+            // ContraseñatextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(173, 132);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(202, 24);
-            this.textBox3.TabIndex = 4;
+            this.ContraseñatextBox.Location = new System.Drawing.Point(173, 132);
+            this.ContraseñatextBox.Name = "ContraseñatextBox";
+            this.ContraseñatextBox.Size = new System.Drawing.Size(202, 24);
+            this.ContraseñatextBox.TabIndex = 4;
             // 
-            // textBox2
+            // NombreUsuariotextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(173, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 24);
-            this.textBox2.TabIndex = 3;
+            this.NombreUsuariotextBox.Location = new System.Drawing.Point(173, 92);
+            this.NombreUsuariotextBox.Name = "NombreUsuariotextBox";
+            this.NombreUsuariotextBox.Size = new System.Drawing.Size(202, 24);
+            this.NombreUsuariotextBox.TabIndex = 3;
             // 
-            // textBox1
+            // NombretextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 24);
-            this.textBox1.TabIndex = 2;
+            this.NombretextBox.Location = new System.Drawing.Point(173, 50);
+            this.NombretextBox.Name = "NombretextBox";
+            this.NombretextBox.Size = new System.Drawing.Size(202, 24);
+            this.NombretextBox.TabIndex = 2;
+            this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretextBox_KeyPress);
             // 
-            // numericUpDown1
+            // IDnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(173, 14);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(101, 24);
-            this.numericUpDown1.TabIndex = 1;
+            this.IDnumericUpDown.Location = new System.Drawing.Point(173, 14);
+            this.IDnumericUpDown.Name = "IDnumericUpDown";
+            this.IDnumericUpDown.Size = new System.Drawing.Size(101, 24);
+            this.IDnumericUpDown.TabIndex = 1;
             // 
             // label4
             // 
@@ -222,6 +222,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -234,6 +235,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -246,23 +248,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
-            // 
-            // Creadolabel
-            // 
-            this.Creadolabel.AutoSize = true;
-            this.Creadolabel.Location = new System.Drawing.Point(115, 398);
-            this.Creadolabel.Name = "Creadolabel";
-            this.Creadolabel.Size = new System.Drawing.Size(63, 17);
-            this.Creadolabel.TabIndex = 0;
-            this.Creadolabel.Text = "USUARIO:";
-            // 
-            // UsuariotextBox
-            // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(209, 393);
-            this.UsuariotextBox.Name = "UsuariotextBox";
-            this.UsuariotextBox.ReadOnly = true;
-            this.UsuariotextBox.Size = new System.Drawing.Size(116, 22);
-            this.UsuariotextBox.TabIndex = 4;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // MyerrorProvider
             // 
@@ -273,9 +259,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(460, 424);
-            this.Controls.Add(this.UsuariotextBox);
-            this.Controls.Add(this.Creadolabel);
+            this.ClientSize = new System.Drawing.Size(460, 396);
             this.Controls.Add(this.Botonespanel);
             this.Controls.Add(this.Campospanel);
             this.Controls.Add(this.Usuariolabel);
@@ -287,7 +271,7 @@
             this.Text = "ButterSoft";
             this.Campospanel.ResumeLayout(false);
             this.Campospanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.Botonespanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -301,20 +285,18 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Panel Campospanel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label IDlabel;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NombreUsuariotextBox;
+        private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ContraseñatextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel Botonespanel;
         private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.Label Creadolabel;
-        private System.Windows.Forms.TextBox UsuariotextBox;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Buscarbutton;
