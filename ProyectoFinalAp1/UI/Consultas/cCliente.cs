@@ -43,7 +43,7 @@ namespace ProyectoFinalAp1.UI.Consultas
 
             if (DesdedateTimePicker.Value.Date > HastadateTimePicker.Value.Date)
             {
-                MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha menor al Hasta.");
+                MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor al Hasta.");
                 paso = false;
             }
             return paso;
@@ -100,7 +100,7 @@ namespace ProyectoFinalAp1.UI.Consultas
                         listado = repositorio.GetList(p => p.Visitas == visitas);
                         break;
                     default:
-                        MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                 }
                 listado = listado.Where(p => p.Fecha >= DesdedateTimePicker.Value.Date &&

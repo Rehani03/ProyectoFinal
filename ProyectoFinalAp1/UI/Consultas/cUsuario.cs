@@ -53,7 +53,7 @@ namespace ProyectoFinalAp1.UI.Consultas
 
             if (DesdedateTimePicker.Value.Date > HastadateTimePicker.Value.Date)
             {
-                MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha menor al Hasta.");
+                MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor al Hasta.");
                 paso = false;
             }
             return paso;
