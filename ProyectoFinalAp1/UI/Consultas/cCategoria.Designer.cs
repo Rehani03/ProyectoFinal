@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cCategoria));
             this.Frontalpanel = new System.Windows.Forms.Panel();
             this.Consultarbutton = new System.Windows.Forms.Button();
@@ -36,8 +37,10 @@
             this.Criteriolabel = new System.Windows.Forms.Label();
             this.Filtrolabel = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Frontalpanel
@@ -64,6 +67,7 @@
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
             // 
@@ -75,6 +79,10 @@
             // FiltrocomboBox
             // 
             this.FiltrocomboBox.FormattingEnabled = true;
+            this.FiltrocomboBox.Items.AddRange(new object[] {
+            "Todo",
+            "ID",
+            "Descripción"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(81, 20);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(121, 21);
@@ -106,6 +114,10 @@
             this.ConsultadataGridView.Size = new System.Drawing.Size(619, 244);
             this.ConsultadataGridView.TabIndex = 1;
             // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
             // cCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +131,7 @@
             this.Frontalpanel.ResumeLayout(false);
             this.Frontalpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -132,5 +145,6 @@
         private System.Windows.Forms.Label Criteriolabel;
         private System.Windows.Forms.Label Filtrolabel;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
+        private System.Windows.Forms.ErrorProvider MyerrorProvider;
     }
 }
