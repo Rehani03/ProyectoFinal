@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cCliente));
             this.Frontalpanel1 = new System.Windows.Forms.Panel();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
@@ -39,8 +41,10 @@
             this.Hastalabel = new System.Windows.Forms.Label();
             this.Desdelabel = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Frontalpanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Frontalpanel1
@@ -63,15 +67,16 @@
             // 
             // Consultarbutton
             // 
-           // this.Consultarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono_opt;
+            this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(696, 17);
+            this.Consultarbutton.Location = new System.Drawing.Point(690, 5);
             this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(84, 23);
+            this.Consultarbutton.Size = new System.Drawing.Size(93, 36);
             this.Consultarbutton.TabIndex = 5;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
             // 
@@ -83,6 +88,17 @@
             // FiltrocomboBox
             // 
             this.FiltrocomboBox.FormattingEnabled = true;
+            this.FiltrocomboBox.Items.AddRange(new object[] {
+            "Todo",
+            "ID",
+            "Nombres",
+            "Apellidos",
+            "Cedula",
+            "Dirección",
+            "Telefono",
+            "Email",
+            "Consumo",
+            "Visitas"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(289, 20);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(131, 21);
@@ -148,6 +164,10 @@
             this.ConsultadataGridView.Size = new System.Drawing.Size(788, 304);
             this.ConsultadataGridView.TabIndex = 1;
             // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
             // cCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,11 +175,13 @@
             this.ClientSize = new System.Drawing.Size(809, 377);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Frontalpanel1);
+            this.MaximizeBox = false;
             this.Name = "cCliente";
             this.Text = "Consulta de Clientes";
             this.Frontalpanel1.ResumeLayout(false);
             this.Frontalpanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,5 +199,6 @@
         private System.Windows.Forms.Label Hastalabel;
         private System.Windows.Forms.Label Desdelabel;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
+        private System.Windows.Forms.ErrorProvider MyerrorProvider;
     }
 }
