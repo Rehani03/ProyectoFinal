@@ -133,6 +133,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // CantidadtextBox
             // 
@@ -165,6 +166,7 @@
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
             this.PrecionumericUpDown.Size = new System.Drawing.Size(120, 24);
             this.PrecionumericUpDown.TabIndex = 5;
+            this.PrecionumericUpDown.ValueChanged += new System.EventHandler(this.PrecionumericUpDown_ValueChanged);
             // 
             // CostonumericUpDown
             // 
@@ -173,6 +175,7 @@
             this.CostonumericUpDown.Name = "CostonumericUpDown";
             this.CostonumericUpDown.Size = new System.Drawing.Size(120, 24);
             this.CostonumericUpDown.TabIndex = 4;
+            this.CostonumericUpDown.ValueChanged += new System.EventHandler(this.CostonumericUpDown_ValueChanged);
             // 
             // DescripciontextBox
             // 
@@ -290,6 +293,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -302,6 +306,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -314,6 +319,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // MyerrorProvider
             // 

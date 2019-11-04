@@ -24,7 +24,7 @@ namespace ProyectoFinalAp1
 
         private void ProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProducto producto = new rProducto();
+            rProducto producto = new rProducto(ID);
             producto.MdiParent = this;
             producto.Show();
         }
