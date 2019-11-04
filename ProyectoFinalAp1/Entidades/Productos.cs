@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace ProyectoFinalAp1.Entidades
         public decimal Ganancia { get; set; }
         public DateTime Fecha { get; set; }
         public int Cantidad { get; set; }
+
+        //[ForeignKey("UsuarioId")]
+        //public virtual Usuarios Usuarios { get; set; }
+        //[ForeignKey("CategoriaId")]
+        //public virtual Categorias Categorias { get; set; }
 
         public Productos()
         {

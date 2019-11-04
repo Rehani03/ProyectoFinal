@@ -13,6 +13,9 @@ namespace ProyectoFinalAp1.DAL
         public DbSet<Usuarios> Usuario { get; set; }
         public DbSet<Categorias> Categoria { get; set; }
         public DbSet<Clientes> Cliente { get; set; }
+        public DbSet<Productos> Productos { get; set; }
+        public DbSet<Facturas> Facturas { get; set; }
+        public DbSet<EntradaProducto> EntradaProductos { get; set; }
         public Contexto() : base("ConStr")
         {
 
