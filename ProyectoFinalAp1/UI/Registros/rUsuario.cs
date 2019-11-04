@@ -14,10 +14,11 @@ namespace ProyectoFinalAp1.UI.Registros
 {
     public partial class rUsuario : Form
     {
-        public rUsuario()
+        private int ID = 0;
+        public rUsuario(int ID)
         {
             InitializeComponent();
-
+            this.ID = ID;
         }
 
         private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -156,6 +157,12 @@ namespace ProyectoFinalAp1.UI.Registros
                 var resultado = MessageBox.Show("Seguro que desea eliminar a este usuario.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(resultado == DialogResult.Yes)
                 {
+                    if (this.ID == IDnumericUpDown.Value)
+                    {
+                        MessageBox.Show("No puedes eliminar este usuario porque lo estas usando", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                     
                     paso = repositorio.Eliminar(ID);
                     if (paso)
                     {

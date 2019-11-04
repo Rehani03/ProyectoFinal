@@ -35,8 +35,8 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Principalpanel = new System.Windows.Forms.Panel();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.DescripciontextBox = new System.Windows.Forms.TextBox();
+            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.IDlabel = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Principalpanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -86,8 +86,8 @@
             // 
             this.Principalpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Principalpanel.Controls.Add(this.Buscarbutton);
-            this.Principalpanel.Controls.Add(this.textBox1);
-            this.Principalpanel.Controls.Add(this.numericUpDown1);
+            this.Principalpanel.Controls.Add(this.DescripciontextBox);
+            this.Principalpanel.Controls.Add(this.IDnumericUpDown);
             this.Principalpanel.Controls.Add(this.label1);
             this.Principalpanel.Controls.Add(this.label2);
             this.Principalpanel.Controls.Add(this.IDlabel);
@@ -107,20 +107,21 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // textBox1
+            // DescripciontextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 22);
-            this.textBox1.TabIndex = 2;
+            this.DescripciontextBox.Location = new System.Drawing.Point(115, 43);
+            this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.Size = new System.Drawing.Size(225, 22);
+            this.DescripciontextBox.TabIndex = 2;
             // 
-            // numericUpDown1
+            // IDnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(115, 4);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(119, 22);
-            this.numericUpDown1.TabIndex = 1;
+            this.IDnumericUpDown.Location = new System.Drawing.Point(115, 4);
+            this.IDnumericUpDown.Name = "IDnumericUpDown";
+            this.IDnumericUpDown.Size = new System.Drawing.Size(119, 22);
+            this.IDnumericUpDown.TabIndex = 1;
             // 
             // label1
             // 
@@ -170,6 +171,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Gurdarbutton
             // 
@@ -195,6 +197,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // RegistradoPorlabel
             // 
@@ -236,7 +239,7 @@
             this.Text = "ButterSoft";
             this.Principalpanel.ResumeLayout(false);
             this.Principalpanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -250,10 +253,10 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Panel Principalpanel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label IDlabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Panel panel1;

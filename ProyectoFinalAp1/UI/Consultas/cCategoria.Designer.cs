@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cCategoria));
             this.Frontalpanel = new System.Windows.Forms.Panel();
-            this.Filtrolabel = new System.Windows.Forms.Label();
+            this.Consultarbutton = new System.Windows.Forms.Button();
+            this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
             this.Criteriolabel = new System.Windows.Forms.Label();
-            this.CriteriotextBox = new System.Windows.Forms.TextBox();
-            this.Consultarbutton = new System.Windows.Forms.Button();
+            this.Filtrolabel = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
@@ -52,14 +53,24 @@
             this.Frontalpanel.Size = new System.Drawing.Size(620, 50);
             this.Frontalpanel.TabIndex = 0;
             // 
-            // Filtrolabel
+            // Consultarbutton
             // 
-            this.Filtrolabel.AutoSize = true;
-            this.Filtrolabel.Location = new System.Drawing.Point(78, 4);
-            this.Filtrolabel.Name = "Filtrolabel";
-            this.Filtrolabel.Size = new System.Drawing.Size(29, 13);
-            this.Filtrolabel.TabIndex = 0;
-            this.Filtrolabel.Text = "Filtro";
+            this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
+            this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Consultarbutton.Location = new System.Drawing.Point(457, 9);
+            this.Consultarbutton.Name = "Consultarbutton";
+            this.Consultarbutton.Size = new System.Drawing.Size(95, 36);
+            this.Consultarbutton.TabIndex = 3;
+            this.Consultarbutton.Text = "Consultar";
+            this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Consultarbutton.UseVisualStyleBackColor = true;
+            // 
+            // CriteriotextBox
+            // 
+            this.CriteriotextBox.Location = new System.Drawing.Point(240, 20);
+            this.CriteriotextBox.Name = "CriteriotextBox";
+            this.CriteriotextBox.Size = new System.Drawing.Size(173, 20);
+            this.CriteriotextBox.TabIndex = 2;
             // 
             // FiltrocomboBox
             // 
@@ -78,24 +89,14 @@
             this.Criteriolabel.TabIndex = 0;
             this.Criteriolabel.Text = "Criterio";
             // 
-            // CriteriotextBox
+            // Filtrolabel
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(240, 20);
-            this.CriteriotextBox.Name = "CriteriotextBox";
-            this.CriteriotextBox.Size = new System.Drawing.Size(173, 20);
-            this.CriteriotextBox.TabIndex = 2;
-            // 
-            // Consultarbutton
-            // 
-            //this.Consultarbutton.Image = global::ProyectoFinalAp1.Properties.Resources.BuscarIcono_opt;
-            this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(451, 13);
-            this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(87, 27);
-            this.Consultarbutton.TabIndex = 3;
-            this.Consultarbutton.Text = "Consultar";
-            this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Filtrolabel.AutoSize = true;
+            this.Filtrolabel.Location = new System.Drawing.Point(78, 4);
+            this.Filtrolabel.Name = "Filtrolabel";
+            this.Filtrolabel.Size = new System.Drawing.Size(29, 13);
+            this.Filtrolabel.TabIndex = 0;
+            this.Filtrolabel.Text = "Filtro";
             // 
             // ConsultadataGridView
             // 
@@ -112,6 +113,7 @@
             this.ClientSize = new System.Drawing.Size(644, 326);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Frontalpanel);
+            this.MaximizeBox = false;
             this.Name = "cCategoria";
             this.Text = "Consulta de Categorias";
             this.Frontalpanel.ResumeLayout(false);

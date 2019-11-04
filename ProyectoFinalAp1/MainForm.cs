@@ -15,9 +15,11 @@ namespace ProyectoFinalAp1
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private int ID = 0;
+        public MainForm(int ID)
         {
             InitializeComponent();
+            this.ID = ID;
         }
 
         private void ProductoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,14 +73,14 @@ namespace ProyectoFinalAp1
 
         private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuario usuario = new rUsuario();
+            rUsuario usuario = new rUsuario(ID);
             usuario.MdiParent = this;
             usuario.Show();
         }
 
         private void CategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCategoria categoria = new rCategoria();
+            rCategoria categoria = new rCategoria(ID);
             categoria.MdiParent = this;
             categoria.Show();
         }

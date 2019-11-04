@@ -110,7 +110,8 @@ namespace ProyectoFinalAp1.UI.Login
 
         private void AbrirMain()
         {
-            Application.Run(new MainForm());
+            int ID = (int)UsuariocomboBox.SelectedValue;
+            Application.Run(new MainForm(ID));
         }
     }
 }
