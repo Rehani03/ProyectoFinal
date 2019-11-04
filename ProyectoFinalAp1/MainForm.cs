@@ -87,7 +87,7 @@ namespace ProyectoFinalAp1
 
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCliente cliente = new rCliente();
+            rCliente cliente = new rCliente(ID);
             cliente.MdiParent = this;
             cliente.Show();
         }

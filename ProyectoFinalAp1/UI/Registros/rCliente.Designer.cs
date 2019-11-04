@@ -38,12 +38,10 @@
             this.VisitastextBox = new System.Windows.Forms.TextBox();
             this.ConsumotextBox = new System.Windows.Forms.TextBox();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
             this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.ApellidosmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.NombresmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Visitaslabel = new System.Windows.Forms.Label();
             this.Consumolabel = new System.Windows.Forms.Label();
@@ -62,6 +60,8 @@
             this.Usuariolabel = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NombrestextBox = new System.Windows.Forms.TextBox();
+            this.ApellidostextBox = new System.Windows.Forms.TextBox();
             this.Componentespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.Botonespanel.SuspendLayout();
@@ -100,16 +100,16 @@
             // Componentespanel
             // 
             this.Componentespanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Componentespanel.Controls.Add(this.ApellidostextBox);
+            this.Componentespanel.Controls.Add(this.NombrestextBox);
             this.Componentespanel.Controls.Add(this.Buscarbutton);
             this.Componentespanel.Controls.Add(this.VisitastextBox);
             this.Componentespanel.Controls.Add(this.ConsumotextBox);
             this.Componentespanel.Controls.Add(this.FechadateTimePicker);
-            this.Componentespanel.Controls.Add(this.textBox1);
+            this.Componentespanel.Controls.Add(this.EmailtextBox);
             this.Componentespanel.Controls.Add(this.TelefonomaskedTextBox);
             this.Componentespanel.Controls.Add(this.DirecciontextBox);
             this.Componentespanel.Controls.Add(this.CedulamaskedTextBox);
-            this.Componentespanel.Controls.Add(this.ApellidosmaskedTextBox);
-            this.Componentespanel.Controls.Add(this.NombresmaskedTextBox);
             this.Componentespanel.Controls.Add(this.IDnumericUpDown);
             this.Componentespanel.Controls.Add(this.Visitaslabel);
             this.Componentespanel.Controls.Add(this.Consumolabel);
@@ -137,6 +137,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // VisitastextBox
             // 
@@ -162,12 +163,12 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(94, 21);
             this.FechadateTimePicker.TabIndex = 8;
             // 
-            // textBox1
+            // EmailtextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 263);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 21);
-            this.textBox1.TabIndex = 7;
+            this.EmailtextBox.Location = new System.Drawing.Point(139, 263);
+            this.EmailtextBox.Name = "EmailtextBox";
+            this.EmailtextBox.Size = new System.Drawing.Size(201, 21);
+            this.EmailtextBox.TabIndex = 7;
             // 
             // TelefonomaskedTextBox
             // 
@@ -191,22 +192,6 @@
             this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
             this.CedulamaskedTextBox.Size = new System.Drawing.Size(94, 21);
             this.CedulamaskedTextBox.TabIndex = 4;
-            // 
-            // ApellidosmaskedTextBox
-            // 
-            this.ApellidosmaskedTextBox.Location = new System.Drawing.Point(139, 97);
-            this.ApellidosmaskedTextBox.Mask = "??????????????????????????????????";
-            this.ApellidosmaskedTextBox.Name = "ApellidosmaskedTextBox";
-            this.ApellidosmaskedTextBox.Size = new System.Drawing.Size(201, 21);
-            this.ApellidosmaskedTextBox.TabIndex = 3;
-            // 
-            // NombresmaskedTextBox
-            // 
-            this.NombresmaskedTextBox.Location = new System.Drawing.Point(139, 54);
-            this.NombresmaskedTextBox.Mask = "???????????????????????????????????????????";
-            this.NombresmaskedTextBox.Name = "NombresmaskedTextBox";
-            this.NombresmaskedTextBox.Size = new System.Drawing.Size(201, 21);
-            this.NombresmaskedTextBox.TabIndex = 2;
             // 
             // IDnumericUpDown
             // 
@@ -337,6 +322,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -349,6 +335,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -361,6 +348,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Usuariolabel
             // 
@@ -382,6 +370,22 @@
             // MyerrorProvider
             // 
             this.MyerrorProvider.ContainerControl = this;
+            // 
+            // NombrestextBox
+            // 
+            this.NombrestextBox.Location = new System.Drawing.Point(139, 54);
+            this.NombrestextBox.Name = "NombrestextBox";
+            this.NombrestextBox.Size = new System.Drawing.Size(200, 21);
+            this.NombrestextBox.TabIndex = 12;
+            this.NombrestextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrestextBox_KeyPress);
+            // 
+            // ApellidostextBox
+            // 
+            this.ApellidostextBox.Location = new System.Drawing.Point(139, 97);
+            this.ApellidostextBox.Name = "ApellidostextBox";
+            this.ApellidostextBox.Size = new System.Drawing.Size(200, 21);
+            this.ApellidostextBox.TabIndex = 13;
+            this.ApellidostextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidostextBox_KeyPress);
             // 
             // rCliente
             // 
@@ -419,16 +423,14 @@
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label Nombreslabel;
         private System.Windows.Forms.Label ClienteIDlabel;
-        private System.Windows.Forms.MaskedTextBox NombresmaskedTextBox;
         private System.Windows.Forms.Label Apellidolabel;
-        private System.Windows.Forms.MaskedTextBox ApellidosmaskedTextBox;
         private System.Windows.Forms.MaskedTextBox CedulamaskedTextBox;
         private System.Windows.Forms.Label Cedulalabel;
         private System.Windows.Forms.TextBox DirecciontextBox;
         private System.Windows.Forms.Label Telefonolabel;
         private System.Windows.Forms.Label Direccionlabel;
         private System.Windows.Forms.MaskedTextBox TelefonomaskedTextBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox EmailtextBox;
         private System.Windows.Forms.Label Emaillabel;
         private System.Windows.Forms.TextBox VisitastextBox;
         private System.Windows.Forms.TextBox ConsumotextBox;
@@ -444,5 +446,7 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
+        private System.Windows.Forms.TextBox ApellidostextBox;
+        private System.Windows.Forms.TextBox NombrestextBox;
     }
 }
