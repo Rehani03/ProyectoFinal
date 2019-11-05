@@ -68,6 +68,7 @@ namespace ProyectoFinalAp1.UI.Registros
             FechadateTimePicker.Value = e.Fecha;
             UsuariotextBox.Text = GetNombreUsuario(e.UsuarioId);
             CantidadTotaltextBox.Text = e.CantidadTotal.ToString();
+            CantidadTotal = e.CantidadTotal;
             this.Detalle = e.DetalleEntrada;
             CargarGrid();
         }
@@ -78,7 +79,7 @@ namespace ProyectoFinalAp1.UI.Registros
             e.EntradaProductoId = Convert.ToInt32(IDnumericUpDown.Value);
             e.Fecha = FechadateTimePicker.Value;
             e.UsuarioId = ID;
-            e.CantidadTotal = CantidadTotal;
+            e.CantidadTotal = Convert.ToInt32(CantidadTotaltextBox.Text);
             e.DetalleEntrada = this.Detalle;
             return e;
         }

@@ -101,6 +101,7 @@ namespace ProyectoFinalAp1.UI.Registros
             PrecionumericUpDown.Value = p.Precio;
             GananciatextBox.Text = p.Ganancia.ToString();
             FechadateTimePicker.Value = p.Fecha;
+            CantidadtextBox.Text = p.Cantidad.ToString();
             UsuariotextBox.Text = GetNombreUsuario(p.UsuarioId);
         }
 
