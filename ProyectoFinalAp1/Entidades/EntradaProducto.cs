@@ -12,10 +12,10 @@ namespace ProyectoFinalAp1.Entidades
     {
         [Key]
         public int EntradaProductoId { get; set; }
-        public int ProductoId { get; set; }
         public int UsuarioId { get; set; }
         public int Cantidad { get; set; }
         public DateTime Fecha { get; set; }
+        public int CantidadTotal { get; set; }
         public virtual List<DetalleEntradaProductos> DetalleEntrada { get; set; }
         //[ForeignKey("UsuarioId")]
         //public virtual Usuarios Usuarios { get; set; }
@@ -26,10 +26,10 @@ namespace ProyectoFinalAp1.Entidades
         public EntradaProducto()
         {
             EntradaProductoId = 0;
-            ProductoId = 0;
             UsuarioId = 0;
             Cantidad = 0;
             Fecha = DateTime.Now;
+            CantidadTotal = 0;
             DetalleEntrada = new List<DetalleEntradaProductos>();
         }
     }

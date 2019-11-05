@@ -126,6 +126,15 @@
   <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>500, 0</value>
   </metadata>
+  <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>27, 57, 500, 0</value>
+  </metadata>
+  <metadata name="lineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>27, 57</value>
+  </metadata>
+  <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>500, 0</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Buscarbutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -264,23 +273,22 @@
   </data>
   <data name="EliminarFilabutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        /9j/4AAQSkZJRgABAQEAAAAAAAD/4QDyRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAZKG
-        AAcAAAC8AAAALAAAAABVTklDT0RFAABiAG8AcgBkAGUAcgAgAGIAcwA6ADAAIABiAGMAOgAjADAAMAAw
-        ADAAMAAwACAAcABzADoAMAAgAHAAYwA6ACMAZQBlAGUAZQBlAGUAIABlAHMAOgAwACAAZQBjADoAIwAw
-        ADAAMAAwADAAMAAgAGMAawA6ADUAMAAwAGQAMAAyAGEANABmADEAZgAxAGQANwA0ADkANwAzADQAMABj
-        AGMANQA4ADYAOAA5ADYAYgBmADEAMQAA/9sAQwAGBAUGBQQGBgUGBwcGCAoQCgoJCQoUDg8MEBcUGBgX
-        FBYWGh0lHxobIxwWFiAsICMmJykqKRkfLTAtKDAlKCko/9sAQwEHBwcKCAoTCgoTKBoWGigoKCgoKCgo
-        KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgo/8AAEQgAGwAbAwERAAIRAQMR
-        Af/EABsAAAIBBQAAAAAAAAAAAAAAAAIGBQABAwcI/8QAMBAAAQMCAwUGBgMAAAAAAAAAAQIDBAARBRIh
-        BhMxUZEWQVVhcZMHIjIzNYKxssH/xAAaAQEAAgMBAAAAAAAAAAAAAAAABAUBAgMG/8QAKBEAAgIBAgQF
-        BQAAAAAAAAAAAQIAAxEEIQUTMUESUVKBsTI0YcHx/9oADAMBAAIRAxEAPwDoo7Q4MOOKQ/UOAjrXTlP5
-        GIPaTBPFofuinJs9JjaV2kwTxaH7opybPSY2hp2gwZQuMXw8eshIP81g1uOxmQpPSIUdWXZKSUKAUIre
-        qSL/AGk8v9q2EqbBm8Z8z8mR2Iz2m322wpaltuhTgQknKLHj1Gld7dRXWQGM10HCtVqq2sqryMYz+ZlS
-        +l+ZFWy5mbU07qPIo4jnXQMGIIO0htS1SOli4YEfuKG1H52T+n9BUe36zL/hv2y+/wAmbjRsiERFRU4m
-        +YxQG8q20q+UAJA6AcLVWjVsO01bT1s3ixvEZO5wGdMh4w3meS4ShS0J5qs8L/UNb5eBvrqKjXBrGLjv
-        PW6Mq+mrSlgvhGCM49vfz6iTGyOyrs+Cuc9IdiBxZ3I3YOZFk3VrwBI6C/fUqrUvQoQSi4ylGr1JYbjb
-        p3x/ZIyfhvhst5T8qfOU8q2YpyJGgsNMvIVhtY7HOBItIWlAiDYR476ixBW2hy28QleU3TmSDY+VM4iE
-        TfjSJekT/9k=
+        /9j/4AAQSkZJRgABAQEAAAAAAAD/4QDqRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAZKG
+        AAcAAAC2AAAALAAAAABiAG8AcgBkAGUAcgAgAGIAcwA6ADAAIABiAGMAOgAjADAAMAAwADAAMAAwACAA
+        cABzADoAMAAgAHAAYwA6ACMAZQBlAGUAZQBlAGUAIABlAHMAOgAwACAAZQBjADoAIwAwADAAMAAwADAA
+        MAAgAGMAawA6ADUAMAAwAGQAMAAyAGEANABmADEAZgAxAGQANwA0ADkANwAzADQAMABjAGMANQA4ADYA
+        OAA5ADYAYgBmADEAMQAAAP/bAEMABgQFBgUEBgYFBgcHBggKEAoKCQkKFA4PDBAXFBgYFxQWFhodJR8a
+        GyMcFhYgLCAjJicpKikZHy0wLSgwJSgpKP/bAEMBBwcHCggKEwoKEygaFhooKCgoKCgoKCgoKCgoKCgo
+        KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKP/AABEIABsAGwMBEQACEQEDEQH/xAAbAAAC
+        AQUAAAAAAAAAAAAAAAACBgUAAQMHCP/EADAQAAEDAgMFBgYDAAAAAAAAAAECAwQAEQUSIQYTMVGRFkFV
+        YXGTByIyMzWCsbLB/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAQFAQIDBv/EACgRAAICAQIEBQUAAAAAAAAA
+        AAECAAMRBCEFEzFBElFSgbEyNGHB8f/aAAwDAQACEQMRAD8A6KO0ODDjikP1DgI6105T+RiD2kwTxaH7
+        opybPSY2ldpME8Wh+6Kcmz0mNoadoMGULjF8PHrISD/NYNbjsZkKT0iFHVl2SklCgFCK3qki/wBpPL/a
+        thKmwZvGfM/JkdiM9pt9tsKWpbboU4EJJyix49RpXe3UV1kBjNdBwrVaqtrKq8jGM/mZUvpfmRVsuZm1
+        NO6jyKOI510DBiCDtIbUtUjpYuGBH7ihtR+dk/p/QVHt+sy/4b9svv8AJm40bIhERUVOJvmMUBvKttKv
+        lACQOgHC1Vo1bDtNW09bN4sbxGTucBnTIeMN5nkuEoUtCearPC/1DW+Xgb66io1waxi47z1ujKvpq0pY
+        L4RgjOPb38+okxsjsq7PgrnPSHYgcWdyN2DmRZN1a8ASOgv31Kq1L0KEEouMpRq9SWG426d8f2SMn4b4
+        bLeU/KnzlPKtmKciRoLDTLyFYbWOxzgSLSFpQIg2EeO+osQVtoctvEJXlN05kg2PlTOIhE340iXpE//Z
 </value>
   </data>
   <data name="Agregarbutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

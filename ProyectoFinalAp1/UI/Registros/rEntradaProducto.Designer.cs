@@ -44,7 +44,7 @@
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ProductosgroupBox = new System.Windows.Forms.GroupBox();
             this.Agregarbutton = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ProductocomboBox = new System.Windows.Forms.ComboBox();
             this.Cantidadlabel = new System.Windows.Forms.Label();
             this.Productolabel = new System.Windows.Forms.Label();
@@ -54,11 +54,13 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Gurdarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
+            this.CantidadTotallabel = new System.Windows.Forms.Label();
+            this.CantidadTotaltextBox = new System.Windows.Forms.TextBox();
             this.Mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.ProductosgroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +82,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(551, 517);
+            this.shapeContainer1.Size = new System.Drawing.Size(551, 532);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
@@ -119,6 +121,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // UsuariotextBox
             // 
@@ -177,7 +180,7 @@
             // ProductosgroupBox
             // 
             this.ProductosgroupBox.Controls.Add(this.Agregarbutton);
-            this.ProductosgroupBox.Controls.Add(this.numericUpDown1);
+            this.ProductosgroupBox.Controls.Add(this.CantidadnumericUpDown);
             this.ProductosgroupBox.Controls.Add(this.ProductocomboBox);
             this.ProductosgroupBox.Controls.Add(this.Cantidadlabel);
             this.ProductosgroupBox.Controls.Add(this.Productolabel);
@@ -200,13 +203,14 @@
             this.Agregarbutton.Text = "Agregar";
             this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
-            // numericUpDown1
+            // CantidadnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(271, 49);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(74, 25);
-            this.numericUpDown1.TabIndex = 3;
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(271, 49);
+            this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
+            this.CantidadnumericUpDown.Size = new System.Drawing.Size(74, 25);
+            this.CantidadnumericUpDown.TabIndex = 3;
             // 
             // ProductocomboBox
             // 
@@ -239,7 +243,6 @@
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalledataGridView.Location = new System.Drawing.Point(27, 274);
             this.DetalledataGridView.Name = "DetalledataGridView";
-            this.DetalledataGridView.ReadOnly = true;
             this.DetalledataGridView.Size = new System.Drawing.Size(501, 133);
             this.DetalledataGridView.TabIndex = 4;
             // 
@@ -254,6 +257,7 @@
             this.EliminarFilabutton.Text = "Eliminar Fila";
             this.EliminarFilabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarFilabutton.UseVisualStyleBackColor = true;
+            this.EliminarFilabutton.Click += new System.EventHandler(this.EliminarFilabutton_Click);
             // 
             // panel1
             // 
@@ -262,7 +266,7 @@
             this.panel1.Controls.Add(this.Gurdarbutton);
             this.panel1.Controls.Add(this.Nuevobutton);
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(96, 453);
+            this.panel1.Location = new System.Drawing.Point(96, 467);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(331, 53);
             this.panel1.TabIndex = 6;
@@ -278,6 +282,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Gurdarbutton
             // 
@@ -290,6 +295,7 @@
             this.Gurdarbutton.Text = "Guardar";
             this.Gurdarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Gurdarbutton.UseVisualStyleBackColor = true;
+            this.Gurdarbutton.Click += new System.EventHandler(this.Gurdarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -302,13 +308,34 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
+            // CantidadTotallabel
+            // 
+            this.CantidadTotallabel.AutoSize = true;
+            this.CantidadTotallabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CantidadTotallabel.Location = new System.Drawing.Point(316, 418);
+            this.CantidadTotallabel.Name = "CantidadTotallabel";
+            this.CantidadTotallabel.Size = new System.Drawing.Size(111, 17);
+            this.CantidadTotallabel.TabIndex = 7;
+            this.CantidadTotallabel.Text = "Cantidad Total:";
+            // 
+            // CantidadTotaltextBox
+            // 
+            this.CantidadTotaltextBox.Location = new System.Drawing.Point(434, 414);
+            this.CantidadTotaltextBox.Name = "CantidadTotaltextBox";
+            this.CantidadTotaltextBox.ReadOnly = true;
+            this.CantidadTotaltextBox.Size = new System.Drawing.Size(94, 21);
+            this.CantidadTotaltextBox.TabIndex = 8;
             // 
             // rEntradaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(551, 517);
+            this.ClientSize = new System.Drawing.Size(551, 532);
+            this.Controls.Add(this.CantidadTotaltextBox);
+            this.Controls.Add(this.CantidadTotallabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.EliminarFilabutton);
             this.Controls.Add(this.DetalledataGridView);
@@ -318,6 +345,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "rEntradaProducto";
             this.Text = "ButterSoft";
             this.Mainpanel.ResumeLayout(false);
@@ -326,7 +354,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ProductosgroupBox.ResumeLayout(false);
             this.ProductosgroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -351,7 +379,7 @@
         private System.Windows.Forms.ComboBox ProductocomboBox;
         private System.Windows.Forms.Label Productolabel;
         private System.Windows.Forms.Button Agregarbutton;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
         private System.Windows.Forms.Label Cantidadlabel;
         private System.Windows.Forms.Button EliminarFilabutton;
         private System.Windows.Forms.DataGridView DetalledataGridView;
@@ -360,5 +388,7 @@
         private System.Windows.Forms.Button Gurdarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.TextBox CantidadTotaltextBox;
+        private System.Windows.Forms.Label CantidadTotallabel;
     }
 }

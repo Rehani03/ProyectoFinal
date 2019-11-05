@@ -94,7 +94,7 @@ namespace ProyectoFinalAp1
 
         private void EntradaYSalidaProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rEntradaProducto entradaProducto = new rEntradaProducto();
+            rEntradaProducto entradaProducto = new rEntradaProducto(ID);
             entradaProducto.MdiParent = this;
             entradaProducto.Show();
         }

@@ -125,6 +125,12 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
+            if(PrecionumericUpDown.Value < CostonumericUpDown.Value)
+            {
+                MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
+                paso = false;
+            }
+
             return paso;
         }
 
@@ -223,22 +229,30 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
             decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
+            if (precio < costo)
+            {
+                MyerrorProvider.Clear();
+                MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
+                return;
+            }
+            MyerrorProvider.Clear();
             decimal ganancia = precio - costo;
-            if (ganancia < 0)
-                GananciatextBox.Text = "0";
-            else
-                GananciatextBox.Text = ganancia.ToString();
+            GananciatextBox.Text = ganancia.ToString();
         }
 
         private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
             decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
+            if(precio < costo)
+            {
+                MyerrorProvider.Clear();
+                MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
+                return;
+            }
+            MyerrorProvider.Clear();
             decimal ganancia = precio - costo;
-            if (ganancia < 0)
-                GananciatextBox.Text = "0";
-            else
-                GananciatextBox.Text = ganancia.ToString();
+            GananciatextBox.Text = ganancia.ToString();
         }
     }
 }
