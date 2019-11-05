@@ -14,7 +14,7 @@ namespace ProyectoFinalAp1.UI.Registros
 {
     public partial class rEntradaProducto : Form
     {
-        private List<DetalleEntradaProductos> Detalle { get; set; }
+        public List<DetalleEntradaProductos> Detalle { get; set; }
         private int ID = 0;
         private int CantidadTotal = 0;
         public rEntradaProducto(int ID)
@@ -56,10 +56,20 @@ namespace ProyectoFinalAp1.UI.Registros
             ProductocomboBox.Text = string.Empty;
             CantidadnumericUpDown.Value = 0;
             CantidadTotaltextBox.Text = string.Empty;
-            this.CantidadTotal = 0;
+            CantidadTotal = 0;
             UsuariotextBox.Text = GetNombreUsuario(ID);
             this.Detalle = new List<DetalleEntradaProductos>();
-            CargarGrid();
+            CargarGridFor(this.Detalle);
+        }
+
+        private void CargarGridFor(List<DetalleEntradaProductos> detalle)
+        {
+            DetalledataGridView.Rows.Clear();
+            foreach (var item in detalle)
+            {
+                DetalledataGridView.Rows.Add(item.EntradaProductoId, item.EntradaProductoId,
+                    item.ProductoId, item.Descripcion, item.Cantidad);
+            }
         }
 
         private void LlenaCampos(EntradaProducto e)
@@ -70,7 +80,7 @@ namespace ProyectoFinalAp1.UI.Registros
             CantidadTotaltextBox.Text = e.CantidadTotal.ToString();
             CantidadTotal = e.CantidadTotal;
             this.Detalle = e.DetalleEntrada;
-            CargarGrid();
+            CargarGridFor(this.Detalle);
         }
 
         private EntradaProducto LlenaClase()
@@ -89,7 +99,13 @@ namespace ProyectoFinalAp1.UI.Registros
             bool paso = true;
             MyerrorProvider.Clear();
 
-            if(this.Detalle.Count == 0)
+            if (string.IsNullOrWhiteSpace(UsuariotextBox.Text))
+            {
+                MyerrorProvider.SetError(UsuariotextBox, "Debe existir un usuario.");
+                paso = false;
+            }
+
+            if (this.Detalle.Count == 0)
             {
                 MyerrorProvider.SetError(Agregarbutton, "Debe agregar al menos un producto.");
                 paso = false;
@@ -165,7 +181,7 @@ namespace ProyectoFinalAp1.UI.Registros
                  )
              );
             
-            CargarGrid();
+            CargarGridFor(this.Detalle);
             MyerrorProvider.Clear();  
             CantidadTotal += Convert.ToInt32(CantidadnumericUpDown.Value);
             CantidadTotaltextBox.Text = CantidadTotal.ToString();
@@ -198,7 +214,7 @@ namespace ProyectoFinalAp1.UI.Registros
                 this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
                 CantidadTotal -= cantidadTotalAux;
                 CantidadTotaltextBox.Text = CantidadTotal.ToString();
-                CargarGrid();
+                CargarGridFor(this.Detalle);
             }
         }
 
@@ -211,13 +227,8 @@ namespace ProyectoFinalAp1.UI.Registros
 
         private void Gurdarbutton_Click(object sender, EventArgs e)
         {
-            MyerrorProvider.Clear();
-            if (string.IsNullOrWhiteSpace(UsuariotextBox.Text))
-            {
-                MyerrorProvider.SetError(UsuariotextBox, "Debe existir un usuario.");
-                return;
-            }
-
+            if (!Validar())
+                return;  
             bool paso;
             EntradaProducto entrada ;
             RepositorioEntradaProducto repositorio = new RepositorioEntradaProducto();

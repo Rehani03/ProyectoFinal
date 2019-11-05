@@ -56,6 +56,11 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.CantidadTotallabel = new System.Windows.Forms.Label();
             this.CantidadTotaltextBox = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -241,6 +246,12 @@
             // DetalledataGridView
             // 
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalledataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column5,
+            this.Column3,
+            this.Column4});
             this.DetalledataGridView.Location = new System.Drawing.Point(27, 274);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.Size = new System.Drawing.Size(501, 133);
@@ -328,6 +339,36 @@
             this.CantidadTotaltextBox.Size = new System.Drawing.Size(94, 21);
             this.CantidadTotaltextBox.TabIndex = 8;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "DetalleEntradaProductoID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "EntradaID";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "ProductoID";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Descripcion";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Cantidad";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // rEntradaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -390,5 +431,10 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.TextBox CantidadTotaltextBox;
         private System.Windows.Forms.Label CantidadTotallabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
