@@ -34,6 +34,8 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Componentespanel = new System.Windows.Forms.Panel();
+            this.ApellidostextBox = new System.Windows.Forms.TextBox();
+            this.NombrestextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.VisitastextBox = new System.Windows.Forms.TextBox();
             this.ConsumotextBox = new System.Windows.Forms.TextBox();
@@ -41,7 +43,7 @@
             this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
-            this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.RNCmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Visitaslabel = new System.Windows.Forms.Label();
             this.Consumolabel = new System.Windows.Forms.Label();
@@ -49,7 +51,7 @@
             this.Emaillabel = new System.Windows.Forms.Label();
             this.Telefonolabel = new System.Windows.Forms.Label();
             this.Direccionlabel = new System.Windows.Forms.Label();
-            this.Cedulalabel = new System.Windows.Forms.Label();
+            this.RNClabel = new System.Windows.Forms.Label();
             this.Apellidolabel = new System.Windows.Forms.Label();
             this.Nombreslabel = new System.Windows.Forms.Label();
             this.ClienteIDlabel = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@
             this.Usuariolabel = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.NombrestextBox = new System.Windows.Forms.TextBox();
-            this.ApellidostextBox = new System.Windows.Forms.TextBox();
             this.Componentespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.Botonespanel.SuspendLayout();
@@ -109,7 +109,7 @@
             this.Componentespanel.Controls.Add(this.EmailtextBox);
             this.Componentespanel.Controls.Add(this.TelefonomaskedTextBox);
             this.Componentespanel.Controls.Add(this.DirecciontextBox);
-            this.Componentespanel.Controls.Add(this.CedulamaskedTextBox);
+            this.Componentespanel.Controls.Add(this.RNCmaskedTextBox);
             this.Componentespanel.Controls.Add(this.IDnumericUpDown);
             this.Componentespanel.Controls.Add(this.Visitaslabel);
             this.Componentespanel.Controls.Add(this.Consumolabel);
@@ -117,7 +117,7 @@
             this.Componentespanel.Controls.Add(this.Emaillabel);
             this.Componentespanel.Controls.Add(this.Telefonolabel);
             this.Componentespanel.Controls.Add(this.Direccionlabel);
-            this.Componentespanel.Controls.Add(this.Cedulalabel);
+            this.Componentespanel.Controls.Add(this.RNClabel);
             this.Componentespanel.Controls.Add(this.Apellidolabel);
             this.Componentespanel.Controls.Add(this.Nombreslabel);
             this.Componentespanel.Controls.Add(this.ClienteIDlabel);
@@ -125,6 +125,22 @@
             this.Componentespanel.Name = "Componentespanel";
             this.Componentespanel.Size = new System.Drawing.Size(365, 413);
             this.Componentespanel.TabIndex = 2;
+            // 
+            // ApellidostextBox
+            // 
+            this.ApellidostextBox.Location = new System.Drawing.Point(139, 97);
+            this.ApellidostextBox.Name = "ApellidostextBox";
+            this.ApellidostextBox.Size = new System.Drawing.Size(200, 21);
+            this.ApellidostextBox.TabIndex = 13;
+            this.ApellidostextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidostextBox_KeyPress);
+            // 
+            // NombrestextBox
+            // 
+            this.NombrestextBox.Location = new System.Drawing.Point(139, 54);
+            this.NombrestextBox.Name = "NombrestextBox";
+            this.NombrestextBox.Size = new System.Drawing.Size(200, 21);
+            this.NombrestextBox.TabIndex = 12;
+            this.NombrestextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrestextBox_KeyPress);
             // 
             // Buscarbutton
             // 
@@ -185,13 +201,13 @@
             this.DirecciontextBox.Size = new System.Drawing.Size(201, 21);
             this.DirecciontextBox.TabIndex = 5;
             // 
-            // CedulamaskedTextBox
+            // RNCmaskedTextBox
             // 
-            this.CedulamaskedTextBox.Location = new System.Drawing.Point(139, 139);
-            this.CedulamaskedTextBox.Mask = "###-#######-#";
-            this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
-            this.CedulamaskedTextBox.Size = new System.Drawing.Size(94, 21);
-            this.CedulamaskedTextBox.TabIndex = 4;
+            this.RNCmaskedTextBox.Location = new System.Drawing.Point(139, 139);
+            this.RNCmaskedTextBox.Mask = "###-#####-#";
+            this.RNCmaskedTextBox.Name = "RNCmaskedTextBox";
+            this.RNCmaskedTextBox.Size = new System.Drawing.Size(94, 21);
+            this.RNCmaskedTextBox.TabIndex = 4;
             // 
             // IDnumericUpDown
             // 
@@ -260,15 +276,15 @@
             this.Direccionlabel.TabIndex = 0;
             this.Direccionlabel.Text = "DIRECCION:";
             // 
-            // Cedulalabel
+            // RNClabel
             // 
-            this.Cedulalabel.AutoSize = true;
-            this.Cedulalabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cedulalabel.Location = new System.Drawing.Point(14, 139);
-            this.Cedulalabel.Name = "Cedulalabel";
-            this.Cedulalabel.Size = new System.Drawing.Size(79, 21);
-            this.Cedulalabel.TabIndex = 0;
-            this.Cedulalabel.Text = "CEDULA:";
+            this.RNClabel.AutoSize = true;
+            this.RNClabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RNClabel.Location = new System.Drawing.Point(14, 139);
+            this.RNClabel.Name = "RNClabel";
+            this.RNClabel.Size = new System.Drawing.Size(49, 21);
+            this.RNClabel.TabIndex = 0;
+            this.RNClabel.Text = "RNC:";
             // 
             // Apellidolabel
             // 
@@ -371,22 +387,6 @@
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
-            // NombrestextBox
-            // 
-            this.NombrestextBox.Location = new System.Drawing.Point(139, 54);
-            this.NombrestextBox.Name = "NombrestextBox";
-            this.NombrestextBox.Size = new System.Drawing.Size(200, 21);
-            this.NombrestextBox.TabIndex = 12;
-            this.NombrestextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrestextBox_KeyPress);
-            // 
-            // ApellidostextBox
-            // 
-            this.ApellidostextBox.Location = new System.Drawing.Point(139, 97);
-            this.ApellidostextBox.Name = "ApellidostextBox";
-            this.ApellidostextBox.Size = new System.Drawing.Size(200, 21);
-            this.ApellidostextBox.TabIndex = 13;
-            this.ApellidostextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidostextBox_KeyPress);
-            // 
             // rCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -424,8 +424,8 @@
         private System.Windows.Forms.Label Nombreslabel;
         private System.Windows.Forms.Label ClienteIDlabel;
         private System.Windows.Forms.Label Apellidolabel;
-        private System.Windows.Forms.MaskedTextBox CedulamaskedTextBox;
-        private System.Windows.Forms.Label Cedulalabel;
+        private System.Windows.Forms.MaskedTextBox RNCmaskedTextBox;
+        private System.Windows.Forms.Label RNClabel;
         private System.Windows.Forms.TextBox DirecciontextBox;
         private System.Windows.Forms.Label Telefonolabel;
         private System.Windows.Forms.Label Direccionlabel;

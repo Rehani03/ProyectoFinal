@@ -76,8 +76,8 @@ namespace ProyectoFinalAp1.UI.Consultas
                         listado = repositorio.GetList(p => p.Apellidos == Apellidos);
                         break;
                     case 4: //cedula
-                        string cedula = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Cedula == cedula);
+                        string rnc = CriteriotextBox.Text;
+                        listado = repositorio.GetList(p => p.RNC == rnc);
                         break;
                     case 5: //direccion
                         string direccion = CriteriotextBox.Text;

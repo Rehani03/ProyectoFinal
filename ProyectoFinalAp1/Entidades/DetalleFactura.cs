@@ -14,7 +14,6 @@ namespace ProyectoFinalAp1.Entidades
         public int FacturaId { get; set; }
         public int ProductoId { get; set; }
         public int Cantidad { get; set; }
-        public string Descripcion { get; set; }
         public decimal Precio { get; set;}
         
 
@@ -24,18 +23,16 @@ namespace ProyectoFinalAp1.Entidades
             FacturaId = 0;
             ProductoId = 0;
             Cantidad = 0;
-            Descripcion = string.Empty;
             Precio = 0;
 
         }
 
-        public DetalleFactura(int detalleFacturaID, int facturaID, int productoID, int cantidad, string descripcion, decimal precio)
+        public DetalleFactura(int detalleFacturaID, int facturaID, int productoID, int cantidad, decimal precio)
         {
             this.DetalleFacturaId = detalleFacturaID;
             this.FacturaId = facturaID;
             this.ProductoId = productoID;
             this.Cantidad = cantidad;
-            this.Descripcion = descripcion;
             this.Precio = precio;
 
         }

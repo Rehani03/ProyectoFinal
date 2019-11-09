@@ -15,7 +15,7 @@ namespace ProyectoFinalAp1.Entidades
         public int UsuarioId { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
-        public string Cedula { get; set; }
+        public string RNC { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
@@ -31,7 +31,7 @@ namespace ProyectoFinalAp1.Entidades
             UsuarioId = 0;
             Nombres = string.Empty;
             Apellidos = string.Empty;
-            Cedula = string.Empty;
+            RNC = string.Empty;
             Direccion = string.Empty;
             Telefono = string.Empty;
             Email = string.Empty;

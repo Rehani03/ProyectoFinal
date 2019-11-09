@@ -162,7 +162,12 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             string nombre;
             RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
-            nombre = repositorio.Buscar(id).Descripcion;
+            Productos productos = new Productos();
+            productos = repositorio.Buscar(id);
+            if (productos == null)
+                nombre = "";
+            else
+                nombre = productos.Descripcion;
             return nombre;
         }
 

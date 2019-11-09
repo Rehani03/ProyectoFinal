@@ -41,7 +41,7 @@ namespace ProyectoFinalAp1.UI.Registros
             IDnumericUpDown.Value = 0;
             NombrestextBox.Text = string.Empty;
             ApellidostextBox.Text = string.Empty;
-            CedulamaskedTextBox.Text = string.Empty;
+            RNCmaskedTextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
             TelefonomaskedTextBox.Text = string.Empty;
             EmailtextBox.Text = string.Empty;
@@ -57,7 +57,7 @@ namespace ProyectoFinalAp1.UI.Registros
             clientes.ClienteId = Convert.ToInt32(IDnumericUpDown.Value);
             clientes.Nombres = NombrestextBox.Text;
             clientes.Apellidos = ApellidostextBox.Text;
-            clientes.Cedula = CedulamaskedTextBox.Text;
+            clientes.RNC = RNCmaskedTextBox.Text;
             clientes.Direccion = DirecciontextBox.Text;
             clientes.Telefono = TelefonomaskedTextBox.Text;
             clientes.Email = EmailtextBox.Text;
@@ -73,7 +73,7 @@ namespace ProyectoFinalAp1.UI.Registros
             IDnumericUpDown.Value = c.ClienteId;
             NombrestextBox.Text = c.Nombres;
             ApellidostextBox.Text = c.Apellidos;
-            CedulamaskedTextBox.Text = c.Cedula;
+            RNCmaskedTextBox.Text = c.RNC;
             DirecciontextBox.Text = c.Direccion;
             TelefonomaskedTextBox.Text = c.Telefono;
             EmailtextBox.Text = c.Email;
@@ -87,6 +87,9 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             bool paso = true;
             MyerrorProvider.Clear();
+            RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+            List<Clientes> lista = new List<Clientes>();
+            lista = repositorio.GetList(p => true);
 
             if (string.IsNullOrWhiteSpace(NombrestextBox.Text))
             {
@@ -101,9 +104,9 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
-            if (!CedulamaskedTextBox.MaskFull)
+            if (!RNCmaskedTextBox.MaskFull)
             {
-                MyerrorProvider.SetError(CedulamaskedTextBox, "El campo Cedula no puede estar vacio.");
+                MyerrorProvider.SetError(RNCmaskedTextBox, "El campo Cedula no puede estar vacio.");
                 paso = false;
             }
 
@@ -124,6 +127,30 @@ namespace ProyectoFinalAp1.UI.Registros
                 MyerrorProvider.SetError(EmailtextBox, "El campo Email no puede estar vacio.");
                 paso = false;
             }
+
+            string rnc = RNCmaskedTextBox.Text;
+            if(IDnumericUpDown.Value == 0)
+            {
+                foreach (var item in lista)
+                {
+                    if (item.RNC == rnc)
+                    {
+                        MyerrorProvider.SetError(RNCmaskedTextBox, "Este RNC ya existe con otro Cliente.");
+                        paso = false;
+                    }
+                }
+
+                string email = EmailtextBox.Text;
+                foreach (var item in lista)
+                {
+                    if (item.Email == email)
+                    {
+                        MyerrorProvider.SetError(EmailtextBox, "Este Email ya existe con otro Cliente.");
+                        paso = false;
+                    }
+                }
+            }
+            
 
             return paso;
         }

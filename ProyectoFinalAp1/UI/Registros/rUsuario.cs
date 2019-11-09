@@ -97,16 +97,19 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
-            string nombreU = NombreUsuariotextBox.Text;
-            foreach (var item in lista)
+            if(IDnumericUpDown.Value == 0)
             {
-                if(item.NombreUsuario == nombreU)
+                string nombreU = NombreUsuariotextBox.Text;
+                foreach (var item in lista)
                 {
-                    MyerrorProvider.SetError(NombreUsuariotextBox, "Este nombre de usuario ya existe.");
-                    paso = false;
+                    if (item.NombreUsuario == nombreU)
+                    {
+                        MyerrorProvider.SetError(NombreUsuariotextBox, "Este nombre de usuario ya existe.");
+                        paso = false;
+                    }
                 }
             }
-            
+               
             return paso;
         }
 
