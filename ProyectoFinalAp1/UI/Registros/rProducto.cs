@@ -21,6 +21,8 @@ namespace ProyectoFinalAp1.UI.Registros
             this.ID = ID;
             Limpiar();
             CargarCombo();
+            CostonumericUpDown.Maximum = 90000;
+            PrecionumericUpDown.Maximum = 100000;
         }
 
         private void Componentespanel_Paint(object sender, PaintEventArgs e)

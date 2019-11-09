@@ -24,6 +24,7 @@ namespace ProyectoFinalAp1.UI.Registros
             UsuariotextBox.Text = GetNombreUsuario(ID);
             this.Detalle = new List<DetalleEntradaProductos>();
             CargarComboProducto();
+            CantidadnumericUpDown.Maximum = 10000;
         }
 
         private void CargarComboProducto()
