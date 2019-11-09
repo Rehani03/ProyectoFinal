@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(779, 433);
+            this.ClientSize = new System.Drawing.Size(779, 431);
             this.Controls.Add(this.Controlespanel);
             this.Controls.Add(this.DetalleEntradadataGridView);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
