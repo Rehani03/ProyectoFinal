@@ -38,6 +38,7 @@
             this.Filtrolabel = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -45,24 +46,27 @@
             // 
             // Frontalpanel
             // 
+            this.Frontalpanel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Frontalpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Frontalpanel.Controls.Add(this.Consultarbutton);
             this.Frontalpanel.Controls.Add(this.CriteriotextBox);
             this.Frontalpanel.Controls.Add(this.FiltrocomboBox);
             this.Frontalpanel.Controls.Add(this.Criteriolabel);
             this.Frontalpanel.Controls.Add(this.Filtrolabel);
-            this.Frontalpanel.Location = new System.Drawing.Point(12, 13);
+            this.Frontalpanel.Location = new System.Drawing.Point(14, 16);
+            this.Frontalpanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Frontalpanel.Name = "Frontalpanel";
-            this.Frontalpanel.Size = new System.Drawing.Size(620, 50);
+            this.Frontalpanel.Size = new System.Drawing.Size(723, 61);
             this.Frontalpanel.TabIndex = 0;
             // 
             // Consultarbutton
             // 
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(457, 9);
+            this.Consultarbutton.Location = new System.Drawing.Point(543, 5);
+            this.Consultarbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(95, 36);
+            this.Consultarbutton.Size = new System.Drawing.Size(111, 44);
             this.Consultarbutton.TabIndex = 3;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -71,9 +75,10 @@
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(240, 20);
+            this.CriteriotextBox.Location = new System.Drawing.Point(280, 25);
+            this.CriteriotextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CriteriotextBox.Name = "CriteriotextBox";
-            this.CriteriotextBox.Size = new System.Drawing.Size(173, 20);
+            this.CriteriotextBox.Size = new System.Drawing.Size(201, 21);
             this.CriteriotextBox.TabIndex = 2;
             // 
             // FiltrocomboBox
@@ -83,48 +88,65 @@
             "Todo",
             "ID",
             "Descripción"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(81, 20);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(94, 25);
+            this.FiltrocomboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
-            this.FiltrocomboBox.Size = new System.Drawing.Size(121, 21);
+            this.FiltrocomboBox.Size = new System.Drawing.Size(140, 24);
             this.FiltrocomboBox.TabIndex = 1;
             // 
             // Criteriolabel
             // 
             this.Criteriolabel.AutoSize = true;
-            this.Criteriolabel.Location = new System.Drawing.Point(237, 4);
+            this.Criteriolabel.Location = new System.Drawing.Point(276, 5);
             this.Criteriolabel.Name = "Criteriolabel";
-            this.Criteriolabel.Size = new System.Drawing.Size(39, 13);
+            this.Criteriolabel.Size = new System.Drawing.Size(45, 16);
             this.Criteriolabel.TabIndex = 0;
             this.Criteriolabel.Text = "Criterio";
             // 
             // Filtrolabel
             // 
             this.Filtrolabel.AutoSize = true;
-            this.Filtrolabel.Location = new System.Drawing.Point(78, 4);
+            this.Filtrolabel.Location = new System.Drawing.Point(91, 5);
             this.Filtrolabel.Name = "Filtrolabel";
-            this.Filtrolabel.Size = new System.Drawing.Size(29, 13);
+            this.Filtrolabel.Size = new System.Drawing.Size(31, 16);
             this.Filtrolabel.TabIndex = 0;
             this.Filtrolabel.Text = "Filtro";
             // 
             // ConsultadataGridView
             // 
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultadataGridView.Location = new System.Drawing.Point(13, 70);
+            this.ConsultadataGridView.Location = new System.Drawing.Point(15, 86);
+            this.ConsultadataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
-            this.ConsultadataGridView.Size = new System.Drawing.Size(619, 244);
+            this.ConsultadataGridView.Size = new System.Drawing.Size(722, 300);
             this.ConsultadataGridView.TabIndex = 1;
             // 
             // MyerrorProvider
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imprimirbutton.Location = new System.Drawing.Point(314, 393);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(111, 42);
+            this.Imprimirbutton.TabIndex = 2;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            // 
             // cCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 326);
+            this.ClientSize = new System.Drawing.Size(751, 440);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Frontalpanel);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "cCategoria";
             this.Text = "Consulta de Categorias";
@@ -146,5 +168,6 @@
         private System.Windows.Forms.Label Filtrolabel;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
+        private System.Windows.Forms.Button Imprimirbutton;
     }
 }

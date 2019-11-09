@@ -17,6 +17,8 @@ namespace ProyectoFinalAp1.UI.Consultas
         public cUsuario()
         {
             InitializeComponent();
+            DesdedateTimePicker.Enabled = false;
+            HastadateTimePicker.Enabled = false;
         }
 
         private void Desdelabel_Click(object sender, EventArgs e)
@@ -38,24 +40,27 @@ namespace ProyectoFinalAp1.UI.Consultas
                 MyerrorProvider.SetError(FiltrocomboBox, "Debe elegir una opción de busquedad.");
                 paso = false;
             }
-
-            if (HastadateTimePicker.Value.Date == DesdedateTimePicker.Value.Date)
+            if(FechacheckBox.Checked == true)
             {
-                MyerrorProvider.SetError(HastadateTimePicker, "Las fechas no pueden ser iguales.");
-                paso = false;
-            }
+                if (HastadateTimePicker.Value.Date == DesdedateTimePicker.Value.Date)
+                {
+                    MyerrorProvider.SetError(HastadateTimePicker, "Las fechas no pueden ser iguales.");
+                    paso = false;
+                }
 
-            if (HastadateTimePicker.Value.Date < DesdedateTimePicker.Value.Date)
-            {
-                MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor a la Desde.");
-                paso = false;
-            }
+                if (HastadateTimePicker.Value.Date < DesdedateTimePicker.Value.Date)
+                {
+                    MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor a la Desde.");
+                    paso = false;
+                }
 
-            if (DesdedateTimePicker.Value.Date > HastadateTimePicker.Value.Date)
-            {
-                MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor al Hasta.");
-                paso = false;
+                if (DesdedateTimePicker.Value.Date > HastadateTimePicker.Value.Date)
+                {
+                    MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor al Hasta.");
+                    paso = false;
+                }
             }
+           
             return paso;
         }
 
@@ -80,19 +85,21 @@ namespace ProyectoFinalAp1.UI.Consultas
                         break;
                     case 2:
                         string Nombres = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Nombres == Nombres);
+                        listado = repositorio.GetList(p => p.Nombres.Contains(Nombres));
                         break;
                     case 3:
                         string NombreUsuario = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.NombreUsuario == NombreUsuario);
+                        listado = repositorio.GetList(p => p.NombreUsuario.Contains(NombreUsuario));
                         break;
                     default:
                         MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                 }
-                listado = listado.Where(p => p.FechaIngreso >= DesdedateTimePicker.Value.Date &&
-                           p.FechaIngreso <= HastadateTimePicker.Value.Date).ToList();
-
+                if(FechacheckBox.Checked == true)
+                {
+                    listado = listado.Where(p => p.FechaIngreso >= DesdedateTimePicker.Value.Date &&
+                         p.FechaIngreso <= HastadateTimePicker.Value.Date).ToList();
+                }
             }
 
 
@@ -117,6 +124,20 @@ namespace ProyectoFinalAp1.UI.Consultas
                 MyerrorProvider.SetError(CriteriotextBox, "El Id debe ser numerico.");
             }
             return ID;
+        }
+
+        private void FechacheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FechacheckBox.Checked == true)
+            {
+                DesdedateTimePicker.Enabled = true;
+                HastadateTimePicker.Enabled = true;
+            }
+            else
+            {
+                DesdedateTimePicker.Enabled = false;
+                HastadateTimePicker.Enabled = false;
+            }
         }
     }
 }
