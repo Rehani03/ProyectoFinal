@@ -105,5 +105,12 @@ namespace ProyectoFinalAp1
             factura.MdiParent = this;
             factura.Show();
         }
+
+        private void DetalleEntradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cDetalleEntradaProducto entradaProducto = new cDetalleEntradaProducto();
+            entradaProducto.MdiParent = this;
+            entradaProducto.Show();
+        }
     }
 }
