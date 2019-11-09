@@ -69,33 +69,29 @@ namespace ProyectoFinalAp1.UI.Consultas
                         break;
                     case 2: //Nombres
                         string Nombres = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Nombres == Nombres);
+                        listado = repositorio.GetList(p => p.Nombres.Contains(Nombres));
                         break;
-                    case 3: //Apellidos
-                        string Apellidos = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Apellidos == Apellidos);
-                        break;
-                    case 4: //cedula
+                    case 3: //rnc
                         string rnc = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.RNC == rnc);
+                        listado = repositorio.GetList(p => p.RNC.Contains(rnc));
                         break;
-                    case 5: //direccion
+                    case 4: //direccion
                         string direccion = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Direccion == direccion);
+                        listado = repositorio.GetList(p => p.Direccion.Contains(direccion));
                         break;
-                    case 6://telefono
+                    case 5://telefono
                         string telefono = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Telefono == telefono);
+                        listado = repositorio.GetList(p => p.Telefono.Contains(telefono));
                         break;
-                    case 7://email
+                    case 6://email
                         string email = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Email == email);
+                        listado = repositorio.GetList(p => p.Email.Contains(email));
                         break;
-                    case 8: //consumo
+                    case 7: //consumo
                         decimal consumo = GetCriterioConsumo();
                         listado = repositorio.GetList(p => p.Consumo == consumo);
                         break;
-                    case 9: //visitas
+                    case 8: //visitas
                         int visitas = GetCriterioVisitas();
                         listado = repositorio.GetList(p => p.Visitas == visitas);
                         break;

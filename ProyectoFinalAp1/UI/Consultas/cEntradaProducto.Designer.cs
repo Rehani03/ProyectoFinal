@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cEntradaProducto));
             this.Frontalpanel = new System.Windows.Forms.Panel();
+            this.FechacheckBox = new System.Windows.Forms.CheckBox();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
@@ -41,8 +42,12 @@
             this.Hastalabel = new System.Windows.Forms.Label();
             this.Desdelabel = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
-            this.FechacheckBox = new System.Windows.Forms.CheckBox();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -65,6 +70,17 @@
             this.Frontalpanel.Name = "Frontalpanel";
             this.Frontalpanel.Size = new System.Drawing.Size(752, 79);
             this.Frontalpanel.TabIndex = 0;
+            // 
+            // FechacheckBox
+            // 
+            this.FechacheckBox.AutoSize = true;
+            this.FechacheckBox.Location = new System.Drawing.Point(17, 53);
+            this.FechacheckBox.Name = "FechacheckBox";
+            this.FechacheckBox.Size = new System.Drawing.Size(97, 17);
+            this.FechacheckBox.TabIndex = 6;
+            this.FechacheckBox.Text = "Habilitar Fecha";
+            this.FechacheckBox.UseVisualStyleBackColor = true;
+            this.FechacheckBox.CheckedChanged += new System.EventHandler(this.FechacheckBox_CheckedChanged);
             // 
             // Consultarbutton
             // 
@@ -91,9 +107,8 @@
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
-            "ID",
+            "Entrada ID",
             "Usuario ID",
-            "Cantidad",
             "Cantidad Total"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(272, 24);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
@@ -157,26 +172,51 @@
             // ConsultadataGridView
             // 
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultadataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.ConsultadataGridView.Location = new System.Drawing.Point(13, 98);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(752, 302);
             this.ConsultadataGridView.TabIndex = 1;
             // 
-            // FechacheckBox
-            // 
-            this.FechacheckBox.AutoSize = true;
-            this.FechacheckBox.Location = new System.Drawing.Point(17, 53);
-            this.FechacheckBox.Name = "FechacheckBox";
-            this.FechacheckBox.Size = new System.Drawing.Size(97, 17);
-            this.FechacheckBox.TabIndex = 6;
-            this.FechacheckBox.Text = "Habilitar Fecha";
-            this.FechacheckBox.UseVisualStyleBackColor = true;
-            this.FechacheckBox.CheckedChanged += new System.EventHandler(this.FechacheckBox_CheckedChanged);
-            // 
             // MyerrorProvider
             // 
             this.MyerrorProvider.ContainerControl = this;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "EntradaProductosId";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "UsuarioId";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Nombre de Usuario";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Cantidad Total";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Fecha";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // cEntradaProducto
             // 
@@ -211,5 +251,10 @@
         private System.Windows.Forms.DataGridView ConsultadataGridView;
         private System.Windows.Forms.CheckBox FechacheckBox;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

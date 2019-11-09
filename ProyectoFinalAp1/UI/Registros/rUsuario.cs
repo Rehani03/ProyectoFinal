@@ -97,9 +97,9 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
-            if(IDnumericUpDown.Value == 0)
+            string nombreU = NombreUsuariotextBox.Text;
+            if (IDnumericUpDown.Value == 0)
             {
-                string nombreU = NombreUsuariotextBox.Text;
                 foreach (var item in lista)
                 {
                     if (item.NombreUsuario == nombreU)
@@ -109,8 +109,39 @@ namespace ProyectoFinalAp1.UI.Registros
                     }
                 }
             }
+            else
+            {
+                if (!Existe())
+                {
+                    MyerrorProvider.SetError(IDnumericUpDown, "Este ID no existe en la Base de Datos.");
+                    paso = false;
+                }
+                else
+                {
+                    if (nombreU != GetNombreUsuario())
+                    {
+                        foreach (var item in lista)
+                        {
+                            if (item.NombreUsuario == nombreU)
+                            {
+                                MyerrorProvider.SetError(NombreUsuariotextBox, "Este nombre de usuario ya existe.");
+                                paso = false;
+                            }
+                        }
+                    }
+                }
+               
+            }
                
             return paso;
+        }
+
+        private string GetNombreUsuario()
+        {
+            string nombre;
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            nombre = repositorio.Buscar((int)IDnumericUpDown.Value).NombreUsuario;
+            return nombre;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

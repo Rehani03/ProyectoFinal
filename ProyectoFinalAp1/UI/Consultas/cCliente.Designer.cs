@@ -161,6 +161,7 @@
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Location = new System.Drawing.Point(13, 70);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
+            this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(788, 304);
             this.ConsultadataGridView.TabIndex = 1;
             // 

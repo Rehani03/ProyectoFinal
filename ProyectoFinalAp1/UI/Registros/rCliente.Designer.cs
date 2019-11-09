@@ -34,7 +34,6 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Componentespanel = new System.Windows.Forms.Panel();
-            this.ApellidostextBox = new System.Windows.Forms.TextBox();
             this.NombrestextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.VisitastextBox = new System.Windows.Forms.TextBox();
@@ -52,7 +51,6 @@
             this.Telefonolabel = new System.Windows.Forms.Label();
             this.Direccionlabel = new System.Windows.Forms.Label();
             this.RNClabel = new System.Windows.Forms.Label();
-            this.Apellidolabel = new System.Windows.Forms.Label();
             this.Nombreslabel = new System.Windows.Forms.Label();
             this.ClienteIDlabel = new System.Windows.Forms.Label();
             this.Botonespanel = new System.Windows.Forms.Panel();
@@ -85,7 +83,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(427, 593);
+            this.shapeContainer1.Size = new System.Drawing.Size(427, 565);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
@@ -100,7 +98,6 @@
             // Componentespanel
             // 
             this.Componentespanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Componentespanel.Controls.Add(this.ApellidostextBox);
             this.Componentespanel.Controls.Add(this.NombrestextBox);
             this.Componentespanel.Controls.Add(this.Buscarbutton);
             this.Componentespanel.Controls.Add(this.VisitastextBox);
@@ -118,21 +115,12 @@
             this.Componentespanel.Controls.Add(this.Telefonolabel);
             this.Componentespanel.Controls.Add(this.Direccionlabel);
             this.Componentespanel.Controls.Add(this.RNClabel);
-            this.Componentespanel.Controls.Add(this.Apellidolabel);
             this.Componentespanel.Controls.Add(this.Nombreslabel);
             this.Componentespanel.Controls.Add(this.ClienteIDlabel);
             this.Componentespanel.Location = new System.Drawing.Point(32, 77);
             this.Componentespanel.Name = "Componentespanel";
-            this.Componentespanel.Size = new System.Drawing.Size(365, 413);
+            this.Componentespanel.Size = new System.Drawing.Size(365, 379);
             this.Componentespanel.TabIndex = 2;
-            // 
-            // ApellidostextBox
-            // 
-            this.ApellidostextBox.Location = new System.Drawing.Point(139, 97);
-            this.ApellidostextBox.Name = "ApellidostextBox";
-            this.ApellidostextBox.Size = new System.Drawing.Size(200, 21);
-            this.ApellidostextBox.TabIndex = 13;
-            this.ApellidostextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidostextBox_KeyPress);
             // 
             // NombrestextBox
             // 
@@ -157,7 +145,7 @@
             // 
             // VisitastextBox
             // 
-            this.VisitastextBox.Location = new System.Drawing.Point(139, 377);
+            this.VisitastextBox.Location = new System.Drawing.Point(139, 335);
             this.VisitastextBox.Name = "VisitastextBox";
             this.VisitastextBox.ReadOnly = true;
             this.VisitastextBox.Size = new System.Drawing.Size(94, 21);
@@ -165,7 +153,7 @@
             // 
             // ConsumotextBox
             // 
-            this.ConsumotextBox.Location = new System.Drawing.Point(139, 342);
+            this.ConsumotextBox.Location = new System.Drawing.Point(139, 300);
             this.ConsumotextBox.Name = "ConsumotextBox";
             this.ConsumotextBox.ReadOnly = true;
             this.ConsumotextBox.Size = new System.Drawing.Size(94, 21);
@@ -174,21 +162,21 @@
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(139, 303);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(139, 261);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(94, 21);
             this.FechadateTimePicker.TabIndex = 8;
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Location = new System.Drawing.Point(139, 263);
+            this.EmailtextBox.Location = new System.Drawing.Point(139, 221);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(201, 21);
             this.EmailtextBox.TabIndex = 7;
             // 
             // TelefonomaskedTextBox
             // 
-            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(139, 220);
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(139, 178);
             this.TelefonomaskedTextBox.Mask = "(###)-###-####";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
             this.TelefonomaskedTextBox.Size = new System.Drawing.Size(94, 21);
@@ -196,14 +184,14 @@
             // 
             // DirecciontextBox
             // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(139, 180);
+            this.DirecciontextBox.Location = new System.Drawing.Point(139, 138);
             this.DirecciontextBox.Name = "DirecciontextBox";
             this.DirecciontextBox.Size = new System.Drawing.Size(201, 21);
             this.DirecciontextBox.TabIndex = 5;
             // 
             // RNCmaskedTextBox
             // 
-            this.RNCmaskedTextBox.Location = new System.Drawing.Point(139, 139);
+            this.RNCmaskedTextBox.Location = new System.Drawing.Point(139, 97);
             this.RNCmaskedTextBox.Mask = "###-#####-#";
             this.RNCmaskedTextBox.Name = "RNCmaskedTextBox";
             this.RNCmaskedTextBox.Size = new System.Drawing.Size(94, 21);
@@ -220,7 +208,7 @@
             // 
             this.Visitaslabel.AutoSize = true;
             this.Visitaslabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Visitaslabel.Location = new System.Drawing.Point(14, 377);
+            this.Visitaslabel.Location = new System.Drawing.Point(14, 335);
             this.Visitaslabel.Name = "Visitaslabel";
             this.Visitaslabel.Size = new System.Drawing.Size(72, 21);
             this.Visitaslabel.TabIndex = 0;
@@ -230,7 +218,7 @@
             // 
             this.Consumolabel.AutoSize = true;
             this.Consumolabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Consumolabel.Location = new System.Drawing.Point(14, 342);
+            this.Consumolabel.Location = new System.Drawing.Point(14, 300);
             this.Consumolabel.Name = "Consumolabel";
             this.Consumolabel.Size = new System.Drawing.Size(101, 21);
             this.Consumolabel.TabIndex = 0;
@@ -240,7 +228,7 @@
             // 
             this.Fechalabel.AutoSize = true;
             this.Fechalabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fechalabel.Location = new System.Drawing.Point(14, 303);
+            this.Fechalabel.Location = new System.Drawing.Point(14, 261);
             this.Fechalabel.Name = "Fechalabel";
             this.Fechalabel.Size = new System.Drawing.Size(68, 21);
             this.Fechalabel.TabIndex = 0;
@@ -250,7 +238,7 @@
             // 
             this.Emaillabel.AutoSize = true;
             this.Emaillabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Emaillabel.Location = new System.Drawing.Point(14, 263);
+            this.Emaillabel.Location = new System.Drawing.Point(14, 221);
             this.Emaillabel.Name = "Emaillabel";
             this.Emaillabel.Size = new System.Drawing.Size(63, 21);
             this.Emaillabel.TabIndex = 0;
@@ -260,7 +248,7 @@
             // 
             this.Telefonolabel.AutoSize = true;
             this.Telefonolabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telefonolabel.Location = new System.Drawing.Point(14, 220);
+            this.Telefonolabel.Location = new System.Drawing.Point(14, 178);
             this.Telefonolabel.Name = "Telefonolabel";
             this.Telefonolabel.Size = new System.Drawing.Size(95, 21);
             this.Telefonolabel.TabIndex = 0;
@@ -270,7 +258,7 @@
             // 
             this.Direccionlabel.AutoSize = true;
             this.Direccionlabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Direccionlabel.Location = new System.Drawing.Point(14, 180);
+            this.Direccionlabel.Location = new System.Drawing.Point(14, 138);
             this.Direccionlabel.Name = "Direccionlabel";
             this.Direccionlabel.Size = new System.Drawing.Size(107, 21);
             this.Direccionlabel.TabIndex = 0;
@@ -280,21 +268,11 @@
             // 
             this.RNClabel.AutoSize = true;
             this.RNClabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RNClabel.Location = new System.Drawing.Point(14, 139);
+            this.RNClabel.Location = new System.Drawing.Point(14, 97);
             this.RNClabel.Name = "RNClabel";
             this.RNClabel.Size = new System.Drawing.Size(49, 21);
             this.RNClabel.TabIndex = 0;
             this.RNClabel.Text = "RNC:";
-            // 
-            // Apellidolabel
-            // 
-            this.Apellidolabel.AutoSize = true;
-            this.Apellidolabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Apellidolabel.Location = new System.Drawing.Point(14, 97);
-            this.Apellidolabel.Name = "Apellidolabel";
-            this.Apellidolabel.Size = new System.Drawing.Size(98, 21);
-            this.Apellidolabel.TabIndex = 0;
-            this.Apellidolabel.Text = "APELLIDOS:";
             // 
             // Nombreslabel
             // 
@@ -322,7 +300,7 @@
             this.Botonespanel.Controls.Add(this.Eliminarbutton);
             this.Botonespanel.Controls.Add(this.Guardarbutton);
             this.Botonespanel.Controls.Add(this.Nuevobutton);
-            this.Botonespanel.Location = new System.Drawing.Point(51, 500);
+            this.Botonespanel.Location = new System.Drawing.Point(51, 472);
             this.Botonespanel.Name = "Botonespanel";
             this.Botonespanel.Size = new System.Drawing.Size(322, 52);
             this.Botonespanel.TabIndex = 3;
@@ -369,7 +347,7 @@
             // Usuariolabel
             // 
             this.Usuariolabel.AutoSize = true;
-            this.Usuariolabel.Location = new System.Drawing.Point(89, 561);
+            this.Usuariolabel.Location = new System.Drawing.Point(90, 535);
             this.Usuariolabel.Name = "Usuariolabel";
             this.Usuariolabel.Size = new System.Drawing.Size(60, 16);
             this.Usuariolabel.TabIndex = 4;
@@ -377,7 +355,7 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(180, 556);
+            this.UsuariotextBox.Location = new System.Drawing.Point(181, 530);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.ReadOnly = true;
             this.UsuariotextBox.Size = new System.Drawing.Size(128, 21);
@@ -392,7 +370,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(427, 593);
+            this.ClientSize = new System.Drawing.Size(427, 565);
             this.Controls.Add(this.UsuariotextBox);
             this.Controls.Add(this.Usuariolabel);
             this.Controls.Add(this.Botonespanel);
@@ -423,7 +401,6 @@
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label Nombreslabel;
         private System.Windows.Forms.Label ClienteIDlabel;
-        private System.Windows.Forms.Label Apellidolabel;
         private System.Windows.Forms.MaskedTextBox RNCmaskedTextBox;
         private System.Windows.Forms.Label RNClabel;
         private System.Windows.Forms.TextBox DirecciontextBox;
@@ -446,7 +423,6 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
-        private System.Windows.Forms.TextBox ApellidostextBox;
         private System.Windows.Forms.TextBox NombrestextBox;
     }
 }

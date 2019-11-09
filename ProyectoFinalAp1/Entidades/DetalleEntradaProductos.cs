@@ -11,7 +11,6 @@ namespace ProyectoFinalAp1.Entidades
         public int DetalleEntradaProductosId { get; set; }
         public int EntradaProductoId { get; set; }
         public int ProductoId { get; set; }
-        public string Descripcion { get; set; }
         public int Cantidad { get; set; }
         
         public DetalleEntradaProductos()
@@ -19,16 +18,14 @@ namespace ProyectoFinalAp1.Entidades
             DetalleEntradaProductosId = 0;
             DetalleEntradaProductosId = 0;
             ProductoId = 0;
-            Descripcion = string.Empty;
             Cantidad = 0;
         }
 
-        public DetalleEntradaProductos(int detalleEntradaProductosId, int entradaProductoId, int productoId ,string descripcion, int cantidad)
+        public DetalleEntradaProductos(int detalleEntradaProductosId, int entradaProductoId, int productoId , int cantidad)
         {
             DetalleEntradaProductosId = detalleEntradaProductosId;
             EntradaProductoId = entradaProductoId;
             ProductoId = productoId;
-            Descripcion = descripcion;
             Cantidad = cantidad;
         }
     }

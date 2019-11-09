@@ -17,6 +17,7 @@ namespace ProyectoFinalAp1.UI.Consultas
         public cEntradaProducto()
         {
             InitializeComponent();
+            this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void FechacheckBox_CheckedChanged(object sender, EventArgs e)
@@ -51,11 +52,11 @@ namespace ProyectoFinalAp1.UI.Consultas
                         int ID = GetCriterio();
                         listado = repositorio.GetList(p => p.EntradaProductoId == ID);
                         break;
-                    case 2:
+                    case 2: //ID Usuario
                         int UsuarioID = GetCriterio();
                         listado = repositorio.GetList(p => p.UsuarioId == UsuarioID);
                         break;
-                    case 3:
+                    case 3: //Total
                         int cantidadTotal = GetCriterio();
                         listado = repositorio.GetList(p => p.CantidadTotal == cantidadTotal);
                         break;
@@ -71,11 +72,31 @@ namespace ProyectoFinalAp1.UI.Consultas
                 }
             }
 
+            CargarGridFor(listado);
+            
+        }
 
+        private void CargarGridFor(List<EntradaProducto> lista)
+        {
+            ConsultadataGridView.Rows.Clear();
+            foreach (var item in lista)
+            {
+                ConsultadataGridView.Rows.Add(item.EntradaProductoId, item.UsuarioId,
+                    GetNombreUsuario(item.UsuarioId), item.CantidadTotal, item.Fecha);
+            }
+        }
 
-            ConsultadataGridView.DataSource = null;
-            this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            ConsultadataGridView.DataSource = listado;
+        private string GetNombreUsuario(int Id)
+        {
+            string nombre;
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            Usuarios usuarios = new Usuarios();
+            usuarios = repositorio.Buscar(Id);
+            if (usuarios == null)
+                nombre = "";
+            else
+                nombre = usuarios.NombreUsuario;
+            return nombre;
         }
 
         private int GetCriterio()

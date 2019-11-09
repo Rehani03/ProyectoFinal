@@ -69,7 +69,7 @@ namespace ProyectoFinalAp1.UI.Registros
             foreach (var item in detalle)
             {
                 DetalledataGridView.Rows.Add(item.EntradaProductoId, item.EntradaProductoId,
-                    item.ProductoId, item.Descripcion, item.Cantidad);
+                    item.ProductoId, GetDescripcion(item.ProductoId), item.Cantidad);
             }
         }
 
@@ -182,7 +182,6 @@ namespace ProyectoFinalAp1.UI.Registros
                     detalleEntradaProductosId: 0,
                     entradaProductoId: (int)IDnumericUpDown.Value,
                     productoId:(int)ProductocomboBox.SelectedValue,
-                    descripcion:GetDescripcion((int)ProductocomboBox.SelectedValue),
                     cantidad: (int)CantidadnumericUpDown.Value  
                  )
              );
@@ -279,7 +278,7 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                MessageBox.Show("Asistencia no encontrada.");
+                MessageBox.Show("Entrada de Productos no encontrada.");
             }
         }
 

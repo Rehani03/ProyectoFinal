@@ -40,7 +40,6 @@ namespace ProyectoFinalAp1.UI.Registros
             MyerrorProvider.Clear();
             IDnumericUpDown.Value = 0;
             NombrestextBox.Text = string.Empty;
-            ApellidostextBox.Text = string.Empty;
             RNCmaskedTextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
             TelefonomaskedTextBox.Text = string.Empty;
@@ -56,7 +55,6 @@ namespace ProyectoFinalAp1.UI.Registros
             Clientes clientes = new Clientes();
             clientes.ClienteId = Convert.ToInt32(IDnumericUpDown.Value);
             clientes.Nombres = NombrestextBox.Text;
-            clientes.Apellidos = ApellidostextBox.Text;
             clientes.RNC = RNCmaskedTextBox.Text;
             clientes.Direccion = DirecciontextBox.Text;
             clientes.Telefono = TelefonomaskedTextBox.Text;
@@ -72,7 +70,6 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             IDnumericUpDown.Value = c.ClienteId;
             NombrestextBox.Text = c.Nombres;
-            ApellidostextBox.Text = c.Apellidos;
             RNCmaskedTextBox.Text = c.RNC;
             DirecciontextBox.Text = c.Direccion;
             TelefonomaskedTextBox.Text = c.Telefono;
@@ -94,13 +91,6 @@ namespace ProyectoFinalAp1.UI.Registros
             if (string.IsNullOrWhiteSpace(NombrestextBox.Text))
             {
                 MyerrorProvider.SetError(NombrestextBox, "El campo Nombre no puede estar vacio.");
-                paso = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(ApellidostextBox.Text))
-            {
-
-                MyerrorProvider.SetError(ApellidostextBox, "El campo Apellido no puede estar vacio.");
                 paso = false;
             }
 
@@ -129,7 +119,8 @@ namespace ProyectoFinalAp1.UI.Registros
             }
 
             string rnc = RNCmaskedTextBox.Text;
-            if(IDnumericUpDown.Value == 0)
+            string email = EmailtextBox.Text;
+            if (IDnumericUpDown.Value == 0)
             {
                 foreach (var item in lista)
                 {
@@ -139,8 +130,7 @@ namespace ProyectoFinalAp1.UI.Registros
                         paso = false;
                     }
                 }
-
-                string email = EmailtextBox.Text;
+                
                 foreach (var item in lista)
                 {
                     if (item.Email == email)
@@ -150,9 +140,61 @@ namespace ProyectoFinalAp1.UI.Registros
                     }
                 }
             }
+            else
+            {
+                if (!Existe())
+                {
+                    MyerrorProvider.SetError(IDnumericUpDown, "Este ID no existe en la Base De Datos.");
+                    paso = false;
+                }
+                else
+                {
+                    if (rnc != GetRNC())
+                    {
+                        foreach (var item in lista)
+                        {
+                            if (item.RNC == rnc)
+                            {
+                                MyerrorProvider.SetError(RNCmaskedTextBox, "Este RNC ya existe con otro Cliente.");
+                                paso = false;
+                            }
+                        }
+                    }
+
+                    if (email != GetEmail())
+                    {
+                        foreach (var item in lista)
+                        {
+                            if (item.Email == email)
+                            {
+                                MyerrorProvider.SetError(EmailtextBox, "Este Email ya existe con otro Cliente.");
+                                paso = false;
+                            }
+                        }
+                    }
+                }
+                
+
+            }
             
 
             return paso;
+        }
+
+        private string GetEmail()
+        {
+            string email;
+            RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+            email = repositorio.Buscar((int)IDnumericUpDown.Value).Email;
+            return email;
+        }
+
+        private string GetRNC()
+        {
+            string RNC;
+            RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+            RNC = repositorio.Buscar((int)IDnumericUpDown.Value).RNC;
+            return RNC;
         }
 
         private bool Existe()
