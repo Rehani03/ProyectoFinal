@@ -54,6 +54,7 @@
             this.contadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
+            this.detalleFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,7 +136,8 @@
             this.categoriaToolStripMenuItem1,
             this.usuarioToolStripMenuItem1,
             this.facturaciónToolStripMenuItem1,
-            this.detalleEntradaDeProductosToolStripMenuItem});
+            this.detalleEntradaDeProductosToolStripMenuItem,
+            this.detalleFacturaToolStripMenuItem});
             this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(77, 21);
@@ -282,6 +284,14 @@
             this.UsuariotextBox.Size = new System.Drawing.Size(143, 22);
             this.UsuariotextBox.TabIndex = 3;
             // 
+            // detalleFacturaToolStripMenuItem
+            // 
+            this.detalleFacturaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("detalleFacturaToolStripMenuItem.Image")));
+            this.detalleFacturaToolStripMenuItem.Name = "detalleFacturaToolStripMenuItem";
+            this.detalleFacturaToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.detalleFacturaToolStripMenuItem.Text = "Detalle Factura";
+            this.detalleFacturaToolStripMenuItem.Click += new System.EventHandler(this.DetalleFacturaToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -330,6 +340,7 @@
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox UsuariotextBox;
         private System.Windows.Forms.ToolStripMenuItem detalleEntradaDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detalleFacturaToolStripMenuItem;
     }
 }
 

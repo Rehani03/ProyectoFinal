@@ -146,7 +146,7 @@ namespace ProyectoFinalAp1.UI.Consultas
             catch (Exception)
             {
                 //MessageBox.Show("El criterio debe ser numérico.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MyerrorProvider.SetError(CriteriotextBox, "El Id debe ser numerico.");
+                MyerrorProvider.SetError(CriteriotextBox, "Debe ser numerico.");
             }
             return ID;
         }

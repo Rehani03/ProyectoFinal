@@ -12,18 +12,18 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalAp1.UI.Consultas
 {
-    public partial class cDetalleEntradaProducto : Form
+    public partial class cDetalleFactura : Form
     {
-        public cDetalleEntradaProducto()
+        public cDetalleFactura()
         {
             InitializeComponent();
-            this.DetalleEntradadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.DetalledataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
-            var listado = new List<DetalleEntradaProductos>();
-            RepositorioBase<DetalleEntradaProductos> repositorio = new RepositorioBase<DetalleEntradaProductos>();
+            var listado = new List<DetalleFactura>();
+            RepositorioBase<DetalleFactura> repositorio = new RepositorioBase<DetalleFactura>();
             if (!Validar())
                 return;
 
@@ -34,21 +34,24 @@ namespace ProyectoFinalAp1.UI.Consultas
                     break;
                 case 1: //ID
                     int ID = GetCriterio();
-                    listado = repositorio.GetList(p => p.DetalleEntradaProductosId == ID);
+                    listado = repositorio.GetList(p => p.DetalleFacturaId == ID);
                     break;
-                case 2: //ID Entrada Producto
-                    int IDEntradaProducto= GetCriterio();
-                    listado = repositorio.GetList(p => p.EntradaProductoId == IDEntradaProducto);
+                case 2: //ID Factura
+                    int FacturaID = GetCriterio();
+                    listado = repositorio.GetList(p => p.FacturaId == FacturaID);
                     break;
-                case 3: //Cantidad
+                case 3: //ProductoID
+                    int productoID = GetCriterio();
+                    listado = repositorio.GetList(p => p.ProductoId == productoID);
+                    break;
+                case 4: //Cantidad
                     int cantidad = GetCriterio();
-                    listado = repositorio.GetList(p => p.Cantidad == cantidad);
+                    listado = repositorio.GetList(p => p.Cantidad == cantidad);  
                     break;
-                case 4:
-                    int productoId = GetCriterio();
-                    listado = repositorio.GetList(p => p.ProductoId == productoId);
+                case 5: //Precio
+                    decimal precio = GetDecimal();
+                    listado = repositorio.GetList(p => p.Precio == precio);
                     break;
-
                 default:
                     MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
@@ -56,7 +59,17 @@ namespace ProyectoFinalAp1.UI.Consultas
 
             CargarGridFor(listado);
 
+        }
 
+        private void CargarGridFor(List<DetalleFactura> lista)
+        {
+            DetalledataGridView.Rows.Clear();
+            foreach (var item in lista)
+            {
+                DetalledataGridView.Rows.Add(item.DetalleFacturaId, item.FacturaId,
+                    item.ProductoId, GetDescripcion(item.ProductoId), item.Precio, 
+                    item.Cantidad);
+            }
         }
 
         private bool Validar()
@@ -69,16 +82,6 @@ namespace ProyectoFinalAp1.UI.Consultas
                 paso = false;
             }
             return paso;
-        }
-
-        private void CargarGridFor(List<DetalleEntradaProductos> lista)
-        {
-            DetalleEntradadataGridView.Rows.Clear();
-            foreach (var item in lista)
-            {
-                DetalleEntradadataGridView.Rows.Add(item.DetalleEntradaProductosId, item.EntradaProductoId,
-                    item.ProductoId, GetDescripcion(item.ProductoId), item.Cantidad);
-            }
         }
 
         private int GetCriterio()
@@ -109,5 +112,22 @@ namespace ProyectoFinalAp1.UI.Consultas
                 nombre = productos.Descripcion;
             return nombre;
         }
+
+        private decimal GetDecimal()
+        {
+            decimal aux = 0;
+            try
+            {
+                aux = Convert.ToDecimal(CriteriotextBox.Text);
+                return aux;
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show("El criterio debe ser numérico.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyerrorProvider.SetError(CriteriotextBox, "Este campo debe ser numerico.");
+            }
+            return aux;
+        }
+
     }
 }
