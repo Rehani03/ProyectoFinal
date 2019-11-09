@@ -17,6 +17,8 @@ namespace ProyectoFinalAp1.UI.Consultas
         public cProducto()
         {
             InitializeComponent();
+            DesdedateTimePicker.Enabled = false;
+            HastadateTimePicker.Enabled = false;
             this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -44,7 +46,7 @@ namespace ProyectoFinalAp1.UI.Consultas
                         break;
                     case 3: //descripcion producto
                         string descripcion = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Descripcion == descripcion);
+                        listado = repositorio.GetList(p => p.Descripcion.Contains(descripcion));
                         break;
                     case 4://costo
                         decimal costo = GetDecimal();
@@ -66,11 +68,13 @@ namespace ProyectoFinalAp1.UI.Consultas
                         MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                 }
-                listado = listado.Where(p => p.Fecha >= DesdedateTimePicker.Value.Date &&
-                           p.Fecha <= HastadateTimePicker.Value.Date).ToList();
-
-                CargarGrid(listado);
+                if(FechacheckBox.Checked == true)
+                {
+                    listado = listado.Where(p => p.Fecha >= DesdedateTimePicker.Value.Date &&
+                          p.Fecha <= HastadateTimePicker.Value.Date).ToList();
+                }     
             }
+            CargarGrid(listado);
 
         }
 
@@ -107,24 +111,27 @@ namespace ProyectoFinalAp1.UI.Consultas
                 MyerrorProvider.SetError(FiltrocomboBox, "Debe elegir una opción de busquedad.");
                 paso = false;
             }
-
-            if (HastadateTimePicker.Value.Date == DesdedateTimePicker.Value.Date)
+            if(FechacheckBox.Checked == true)
             {
-                MyerrorProvider.SetError(HastadateTimePicker, "Las fechas no pueden ser iguales.");
-                paso = false;
-            }
+                if (HastadateTimePicker.Value.Date == DesdedateTimePicker.Value.Date)
+                {
+                    MyerrorProvider.SetError(HastadateTimePicker, "Las fechas no pueden ser iguales.");
+                    paso = false;
+                }
 
-            if (HastadateTimePicker.Value.Date < DesdedateTimePicker.Value.Date)
-            {
-                MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor a la Desde.");
-                paso = false;
-            }
+                if (HastadateTimePicker.Value.Date < DesdedateTimePicker.Value.Date)
+                {
+                    MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor a la Desde.");
+                    paso = false;
+                }
 
-            if (DesdedateTimePicker.Value.Date > HastadateTimePicker.Value.Date)
-            {
-                MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor al Hasta.");
-                paso = false;
+                if (DesdedateTimePicker.Value.Date > HastadateTimePicker.Value.Date)
+                {
+                    MyerrorProvider.SetError(HastadateTimePicker, "Debe colocar una fecha mayor al Hasta.");
+                    paso = false;
+                }
             }
+           
             return paso;
         }
 
@@ -160,6 +167,18 @@ namespace ProyectoFinalAp1.UI.Consultas
             return aux;
         }
 
-
+        private void FechacheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FechacheckBox.Checked == true)
+            {
+                DesdedateTimePicker.Enabled = true;
+                HastadateTimePicker.Enabled = true;
+            }
+            else
+            {
+                DesdedateTimePicker.Enabled = false;
+                HastadateTimePicker.Enabled = false;
+            }
+        }
     }
 }
