@@ -84,6 +84,7 @@ namespace ProyectoFinalAp1.UI.Registros
             RnctextBox.Text = GetRNC(facturas.ClienteId);
             UsuariotextBox.Text = GetNombreUsuario(facturas.UsuarioId);
             TotaltextBox.Text = facturas.Total.ToString();
+            this.TOTAL = facturas.Total;
             this.Detalle = facturas.Detalles;
             CargarGridFor(this.Detalle);
         }

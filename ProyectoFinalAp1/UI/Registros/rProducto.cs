@@ -78,6 +78,7 @@ namespace ProyectoFinalAp1.UI.Registros
             GananciatextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             UsuariotextBox.Text = GetNombreUsuario(ID);
+            CantidadtextBox.Text = string.Empty;
         }
 
         private Productos LlenaClase()
