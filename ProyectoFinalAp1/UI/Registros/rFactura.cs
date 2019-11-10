@@ -50,6 +50,7 @@ namespace ProyectoFinalAp1.UI.Registros
             UsuariotextBox.Text = GetNombreUsuario(this.ID);
             this.TOTAL = 0;
             this.index = 0;
+            CargarGridFor(this.Detalle);
             MyerrorProvider.Clear();
 
         }
@@ -364,7 +365,7 @@ namespace ProyectoFinalAp1.UI.Registros
             decimal precio = Convert.ToDecimal(PreciotextBox.Text);
             int cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
             decimal total = cantidad * precio;
-            TOTAL = total;
+            TOTAL += total;
             TotaltextBox.Text = this.TOTAL.ToString();
             this.index += 1;
         }

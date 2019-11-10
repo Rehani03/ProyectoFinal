@@ -15,24 +15,20 @@ namespace ProyectoFinalAp1.BLL
         {
             bool paso = false;
             Contexto db = new Contexto();
-            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
-            RepositorioBase<Clientes> repositorio1 = new RepositorioBase<Clientes>();
+           
            
             try
             {
                 //Aqui disminuyo la cantidad de productos en la tabla producto
                 foreach (var item in entity.Detalles)
                 {
-                    var Producto = repositorio.Buscar(item.ProductoId);
+                    var Producto = db.Productos.Find(item.ProductoId);
                     if (Producto != null)
                         Producto.Cantidad -= item.Cantidad;
                 }
-
-                var Cliente = repositorio1.Buscar(entity.ClienteId);
-                Cliente.Consumo += entity.Total;
-                Cliente.Visitas += 1;
-                //db.Cliente.Find(entity.ClienteId).Consumo += entity.Total;
-                //db.Cliente.Find(entity.ClienteId).Visitas += 1;
+                //aqui le sumo el total al cliente y una visita
+                db.Cliente.Find(entity.ClienteId).Consumo += entity.Total;
+                db.Cliente.Find(entity.ClienteId).Visitas += 1;
 
                 if (db.Facturas.Add(entity) != null)
                     paso = db.SaveChanges() > 0;
