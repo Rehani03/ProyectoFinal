@@ -62,6 +62,7 @@
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="BLL\RepositorioEntradaProducto.cs" />
+    <Compile Include="BLL\RepositorioFactura.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\Clientes.cs" />

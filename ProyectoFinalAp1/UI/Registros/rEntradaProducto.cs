@@ -17,6 +17,7 @@ namespace ProyectoFinalAp1.UI.Registros
         public List<DetalleEntradaProductos> Detalle { get; set; }
         private int ID = 0;
         private int CantidadTotal = 0;
+        private int index = 0;
         public rEntradaProducto(int ID)
         {
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace ProyectoFinalAp1.UI.Registros
 
         private void Limpiar()
         {
+            index = 0;
             IDnumericUpDown.Value = 0;
             FechadateTimePicker.Value = DateTime.Now;
             ProductocomboBox.Text = string.Empty;
@@ -66,8 +68,10 @@ namespace ProyectoFinalAp1.UI.Registros
         private void CargarGridFor(List<DetalleEntradaProductos> detalle)
         {
             DetalledataGridView.Rows.Clear();
+            index = 0;
             foreach (var item in detalle)
             {
+                index += 1;
                 DetalledataGridView.Rows.Add(item.EntradaProductoId, item.EntradaProductoId,
                     item.ProductoId, GetDescripcion(item.ProductoId), item.Cantidad);
             }
@@ -192,6 +196,7 @@ namespace ProyectoFinalAp1.UI.Registros
             CantidadTotaltextBox.Text = CantidadTotal.ToString();
             ProductocomboBox.Text = string.Empty;
             CantidadnumericUpDown.Value = 0;
+            index += 1;
         }
 
         private bool ValidarRemover()
@@ -211,15 +216,18 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             if (!ValidarRemover())
                 return;
-           
-            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
+            //int filaDetalle = Convert.ToInt32(DetalledataGridView.CurrentRow.Cells[1].Value);
+            //MessageBox.Show(filaDetalle.ToString());
+            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null && index >0)
             {  
                 var cantidad = DetalledataGridView.CurrentRow.Cells[4].Value;
                 int cantidadTotalAux = Convert.ToInt32(cantidad);
                 this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
                 CantidadTotal -= cantidadTotalAux;
                 CantidadTotaltextBox.Text = CantidadTotal.ToString();
+                index -= 1;
                 CargarGridFor(this.Detalle);
+                
             }
         }
 

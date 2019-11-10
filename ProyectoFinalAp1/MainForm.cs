@@ -101,7 +101,7 @@ namespace ProyectoFinalAp1
 
         private void ContadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rFactura factura = new rFactura();
+            rFactura factura = new rFactura(ID);
             factura.MdiParent = this;
             factura.Show();
         }
