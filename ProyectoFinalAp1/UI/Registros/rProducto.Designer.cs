@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rProducto));
-            this.Productolabel = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Componentespanel = new System.Windows.Forms.Panel();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
@@ -66,35 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // Productolabel
-            // 
-            this.Productolabel.AutoSize = true;
-            this.Productolabel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Productolabel.Location = new System.Drawing.Point(67, 19);
-            this.Productolabel.Name = "Productolabel";
-            this.Productolabel.Size = new System.Drawing.Size(291, 25);
-            this.Productolabel.TabIndex = 0;
-            this.Productolabel.Text = "REGISTRO DE PRODUCTOS";
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(419, 494);
-            this.shapeContainer1.TabIndex = 1;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 40;
-            this.lineShape1.X2 = 379;
-            this.lineShape1.Y1 = 52;
-            this.lineShape1.Y2 = 52;
-            // 
             // Componentespanel
             // 
             this.Componentespanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -116,7 +84,7 @@
             this.Componentespanel.Controls.Add(this.Categorialabel);
             this.Componentespanel.Controls.Add(this.IdLabel);
             this.Componentespanel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Componentespanel.Location = new System.Drawing.Point(40, 61);
+            this.Componentespanel.Location = new System.Drawing.Point(40, 21);
             this.Componentespanel.Name = "Componentespanel";
             this.Componentespanel.Size = new System.Drawing.Size(340, 331);
             this.Componentespanel.TabIndex = 2;
@@ -124,6 +92,7 @@
             // 
             // Buscarbutton
             // 
+            this.Buscarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(226, 8);
@@ -132,7 +101,7 @@
             this.Buscarbutton.TabIndex = 9;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // CantidadtextBox
@@ -186,6 +155,7 @@
             // 
             // CategoriacomboBox
             // 
+            this.CategoriacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoriacomboBox.FormattingEnabled = true;
             this.CategoriacomboBox.Location = new System.Drawing.Point(129, 53);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
@@ -277,13 +247,14 @@
             this.Botonespanel.Controls.Add(this.Eliminarbutton);
             this.Botonespanel.Controls.Add(this.Guardarbutton);
             this.Botonespanel.Controls.Add(this.Nuevobutton);
-            this.Botonespanel.Location = new System.Drawing.Point(54, 398);
+            this.Botonespanel.Location = new System.Drawing.Point(54, 358);
             this.Botonespanel.Name = "Botonespanel";
             this.Botonespanel.Size = new System.Drawing.Size(305, 52);
             this.Botonespanel.TabIndex = 3;
             // 
             // Eliminarbutton
             // 
+            this.Eliminarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(210, 4);
@@ -292,11 +263,12 @@
             this.Eliminarbutton.TabIndex = 2;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.UseVisualStyleBackColor = false;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
+            this.Guardarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.Location = new System.Drawing.Point(104, 4);
@@ -305,11 +277,12 @@
             this.Guardarbutton.TabIndex = 1;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.UseVisualStyleBackColor = false;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
+            this.Nuevobutton.BackColor = System.Drawing.SystemColors.Window;
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nuevobutton.Location = new System.Drawing.Point(3, 4);
@@ -318,7 +291,7 @@
             this.Nuevobutton.TabIndex = 0;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.UseVisualStyleBackColor = false;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // MyerrorProvider
@@ -328,7 +301,7 @@
             // Usuariolabel
             // 
             this.Usuariolabel.AutoSize = true;
-            this.Usuariolabel.Location = new System.Drawing.Point(91, 465);
+            this.Usuariolabel.Location = new System.Drawing.Point(94, 421);
             this.Usuariolabel.Name = "Usuariolabel";
             this.Usuariolabel.Size = new System.Drawing.Size(63, 17);
             this.Usuariolabel.TabIndex = 4;
@@ -336,7 +309,7 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(185, 460);
+            this.UsuariotextBox.Location = new System.Drawing.Point(188, 416);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.ReadOnly = true;
             this.UsuariotextBox.Size = new System.Drawing.Size(114, 22);
@@ -347,18 +320,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(419, 494);
+            this.ClientSize = new System.Drawing.Size(419, 452);
             this.Controls.Add(this.UsuariotextBox);
             this.Controls.Add(this.Usuariolabel);
             this.Controls.Add(this.Botonespanel);
             this.Controls.Add(this.Componentespanel);
-            this.Controls.Add(this.Productolabel);
-            this.Controls.Add(this.shapeContainer1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "rProducto";
-            this.Text = "ButterSoft";
+            this.Text = "Registro de Productos-ButterSoft";
             this.Componentespanel.ResumeLayout(false);
             this.Componentespanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
@@ -372,10 +343,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Productolabel;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Panel Componentespanel;
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label IdLabel;

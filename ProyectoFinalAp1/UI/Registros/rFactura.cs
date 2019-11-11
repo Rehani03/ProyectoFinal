@@ -15,12 +15,13 @@ namespace ProyectoFinalAp1.UI.Registros
     public partial class rFactura : Form
     {
         private int ID = 0;
-        private int index = 0;
+        //private int index = 0;
         private List<DetalleFactura> Detalle { get; set; }
         private decimal TOTAL = 0;
         public rFactura(int Id)
         {
             InitializeComponent();
+            this.DetalledataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.ID = Id;
             UsuariotextBox.Text = GetNombreUsuario(ID);
             this.Detalle = new List<DetalleFactura>();
@@ -50,7 +51,7 @@ namespace ProyectoFinalAp1.UI.Registros
             this.Detalle = new List<DetalleFactura>();
             UsuariotextBox.Text = GetNombreUsuario(this.ID);
             this.TOTAL = 0;
-            this.index = 0;
+            //this.index = 0;
             CargarGridFor(this.Detalle);
             MyerrorProvider.Clear();
 
@@ -134,12 +135,11 @@ namespace ProyectoFinalAp1.UI.Registros
         private void CargarGridFor(List<DetalleFactura> lista)
         {
             DetalledataGridView.Rows.Clear();
-            index = 0;
+            //index = 0;
             foreach (var item in lista)
             {
-                index += 1;
-                DetalledataGridView.Rows.Add(item.DetalleFacturaId, item.FacturaId,
-                    item.ProductoId, GetDescripcion(item.ProductoId), GetPrecio(item.ProductoId),
+                //index += 1;
+                DetalledataGridView.Rows.Add(item.ProductoId, GetDescripcion(item.ProductoId), GetPrecio(item.ProductoId),
                     item.Cantidad);
             }
         }
@@ -412,18 +412,18 @@ namespace ProyectoFinalAp1.UI.Registros
             decimal total = cantidad * precio;
             TOTAL += total;
             TotaltextBox.Text = this.TOTAL.ToString();
-            this.index += 1;
+            //this.index += 1;
         }
 
         private void EliminarFilabutton_Click(object sender, EventArgs e)
         {
             if (!ValidarRemover())
                 return;
-            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null && index > 0)
+            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
             {
-                var cantidad = DetalledataGridView.CurrentRow.Cells[4].Value;
+                var cantidad = DetalledataGridView.CurrentRow.Cells[2].Value;
                 int cantidadTotalAux = Convert.ToInt32(cantidad);
-                var precio = DetalledataGridView.CurrentRow.Cells[5].Value;
+                var precio = DetalledataGridView.CurrentRow.Cells[3].Value;
                 int precioAux = Convert.ToInt32(precio);
 
                 this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
@@ -431,7 +431,7 @@ namespace ProyectoFinalAp1.UI.Registros
                 decimal total = cantidadTotalAux * precioAux;
                 this.TOTAL -= total;
                 TotaltextBox.Text = this.TOTAL.ToString();
-                index -= 1;
+                //index -= 1;
                 
                 CargarGridFor(this.Detalle);
 

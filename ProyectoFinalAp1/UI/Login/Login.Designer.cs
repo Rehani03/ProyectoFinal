@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Usuariolabel = new System.Windows.Forms.Label();
@@ -40,19 +39,10 @@
             this.MyerrorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
             this.Ingresarbutton = new System.Windows.Forms.Button();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProviderLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(161, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "LOGIN";
             // 
             // shapeContainer1
             // 
@@ -85,6 +75,7 @@
             // 
             // UsuariocomboBox
             // 
+            this.UsuariocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.UsuariocomboBox.FormattingEnabled = true;
             this.UsuariocomboBox.Location = new System.Drawing.Point(166, 70);
             this.UsuariocomboBox.Name = "UsuariocomboBox";
@@ -114,6 +105,7 @@
             // 
             // Ingresarbutton
             // 
+            this.Ingresarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Ingresarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Ingresarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Ingresarbutton.Image")));
             this.Ingresarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,12 +115,22 @@
             this.Ingresarbutton.TabIndex = 5;
             this.Ingresarbutton.Text = "INGRESAR";
             this.Ingresarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Ingresarbutton.UseVisualStyleBackColor = true;
+            this.Ingresarbutton.UseVisualStyleBackColor = false;
             this.Ingresarbutton.Click += new System.EventHandler(this.Ingresarbutton_Click);
             // 
             // MyerrorProvider
             // 
             this.MyerrorProvider.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(161, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "LOGIN";
             // 
             // Login
             // 
@@ -158,8 +160,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label Usuariolabel;
@@ -169,5 +169,6 @@
         private System.Windows.Forms.Button Ingresarbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProviderLogin;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -44,6 +44,7 @@
             this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.detalleEntradaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detalleFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,6 @@
             this.contadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
-            this.detalleFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,6 +199,14 @@
             this.detalleEntradaDeProductosToolStripMenuItem.Text = "Detalle Entrada de Productos";
             this.detalleEntradaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.DetalleEntradaDeProductosToolStripMenuItem_Click);
             // 
+            // detalleFacturaToolStripMenuItem
+            // 
+            this.detalleFacturaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("detalleFacturaToolStripMenuItem.Image")));
+            this.detalleFacturaToolStripMenuItem.Name = "detalleFacturaToolStripMenuItem";
+            this.detalleFacturaToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.detalleFacturaToolStripMenuItem.Text = "Detalle Factura";
+            this.detalleFacturaToolStripMenuItem.Click += new System.EventHandler(this.DetalleFacturaToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -262,7 +270,7 @@
             // 
             this.contadoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("contadoToolStripMenuItem.Image")));
             this.contadoToolStripMenuItem.Name = "contadoToolStripMenuItem";
-            this.contadoToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.contadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contadoToolStripMenuItem.Text = "Contado";
             this.contadoToolStripMenuItem.Click += new System.EventHandler(this.ContadoToolStripMenuItem_Click);
             // 
@@ -283,14 +291,6 @@
             this.UsuariotextBox.ReadOnly = true;
             this.UsuariotextBox.Size = new System.Drawing.Size(143, 22);
             this.UsuariotextBox.TabIndex = 3;
-            // 
-            // detalleFacturaToolStripMenuItem
-            // 
-            this.detalleFacturaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("detalleFacturaToolStripMenuItem.Image")));
-            this.detalleFacturaToolStripMenuItem.Name = "detalleFacturaToolStripMenuItem";
-            this.detalleFacturaToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
-            this.detalleFacturaToolStripMenuItem.Text = "Detalle Factura";
-            this.detalleFacturaToolStripMenuItem.Click += new System.EventHandler(this.DetalleFacturaToolStripMenuItem_Click);
             // 
             // MainForm
             // 
