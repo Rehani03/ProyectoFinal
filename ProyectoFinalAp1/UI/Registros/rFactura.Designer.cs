@@ -40,6 +40,7 @@
             this.Fechalabel = new System.Windows.Forms.Label();
             this.IDlabel = new System.Windows.Forms.Label();
             this.Clientepanel = new System.Windows.Forms.Panel();
+            this.Setbutton = new System.Windows.Forms.Button();
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.RnctextBox = new System.Windows.Forms.TextBox();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
@@ -47,6 +48,7 @@
             this.Cedulalabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ProductogroupBox = new System.Windows.Forms.GroupBox();
+            this.SetProductobutton = new System.Windows.Forms.Button();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.ImportetextBox = new System.Windows.Forms.TextBox();
@@ -74,8 +76,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.Setbutton = new System.Windows.Forms.Button();
-            this.SetProductobutton = new System.Windows.Forms.Button();
             this.Mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.Clientepanel.SuspendLayout();
@@ -90,7 +90,7 @@
             // 
             this.Facturalabel.AutoSize = true;
             this.Facturalabel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Facturalabel.Location = new System.Drawing.Point(225, 25);
+            this.Facturalabel.Location = new System.Drawing.Point(248, 26);
             this.Facturalabel.Name = "Facturalabel";
             this.Facturalabel.Size = new System.Drawing.Size(114, 25);
             this.Facturalabel.TabIndex = 0;
@@ -103,17 +103,17 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(580, 581);
+            this.shapeContainer1.Size = new System.Drawing.Size(602, 581);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 32;
-            this.lineShape1.X2 = 542;
-            this.lineShape1.Y1 = 61;
-            this.lineShape1.Y2 = 61;
+            this.lineShape1.X1 = 53;
+            this.lineShape1.X2 = 563;
+            this.lineShape1.Y1 = 62;
+            this.lineShape1.Y2 = 62;
             // 
             // Mainpanel
             // 
@@ -125,7 +125,7 @@
             this.Mainpanel.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mainpanel.Location = new System.Drawing.Point(24, 73);
             this.Mainpanel.Name = "Mainpanel";
-            this.Mainpanel.Size = new System.Drawing.Size(533, 55);
+            this.Mainpanel.Size = new System.Drawing.Size(566, 55);
             this.Mainpanel.TabIndex = 2;
             // 
             // Buscarbutton
@@ -187,8 +187,18 @@
             this.Clientepanel.Controls.Add(this.label1);
             this.Clientepanel.Location = new System.Drawing.Point(24, 134);
             this.Clientepanel.Name = "Clientepanel";
-            this.Clientepanel.Size = new System.Drawing.Size(533, 63);
+            this.Clientepanel.Size = new System.Drawing.Size(566, 63);
             this.Clientepanel.TabIndex = 3;
+            // 
+            // Setbutton
+            // 
+            this.Setbutton.Location = new System.Drawing.Point(157, 21);
+            this.Setbutton.Name = "Setbutton";
+            this.Setbutton.Size = new System.Drawing.Size(39, 32);
+            this.Setbutton.TabIndex = 4;
+            this.Setbutton.Text = "SET";
+            this.Setbutton.UseVisualStyleBackColor = true;
+            this.Setbutton.Click += new System.EventHandler(this.Setbutton_Click);
             // 
             // TelefonotextBox
             // 
@@ -259,14 +269,24 @@
             this.ProductogroupBox.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductogroupBox.Location = new System.Drawing.Point(24, 213);
             this.ProductogroupBox.Name = "ProductogroupBox";
-            this.ProductogroupBox.Size = new System.Drawing.Size(533, 89);
+            this.ProductogroupBox.Size = new System.Drawing.Size(566, 89);
             this.ProductogroupBox.TabIndex = 4;
             this.ProductogroupBox.TabStop = false;
             this.ProductogroupBox.Text = "PRODUCTO";
             // 
+            // SetProductobutton
+            // 
+            this.SetProductobutton.Location = new System.Drawing.Point(152, 47);
+            this.SetProductobutton.Name = "SetProductobutton";
+            this.SetProductobutton.Size = new System.Drawing.Size(39, 32);
+            this.SetProductobutton.TabIndex = 8;
+            this.SetProductobutton.Text = "SET";
+            this.SetProductobutton.UseVisualStyleBackColor = true;
+            this.SetProductobutton.Click += new System.EventHandler(this.SetProductobutton_Click);
+            // 
             // CantidadnumericUpDown
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(278, 52);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(299, 49);
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(74, 25);
             this.CantidadnumericUpDown.TabIndex = 7;
@@ -277,7 +297,7 @@
             this.Agregarbutton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Agregarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Agregarbutton.Image")));
             this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregarbutton.Location = new System.Drawing.Point(448, 41);
+            this.Agregarbutton.Location = new System.Drawing.Point(474, 41);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(79, 36);
             this.Agregarbutton.TabIndex = 6;
@@ -288,7 +308,7 @@
             // 
             // ImportetextBox
             // 
-            this.ImportetextBox.Location = new System.Drawing.Point(368, 52);
+            this.ImportetextBox.Location = new System.Drawing.Point(389, 49);
             this.ImportetextBox.Name = "ImportetextBox";
             this.ImportetextBox.ReadOnly = true;
             this.ImportetextBox.Size = new System.Drawing.Size(63, 25);
@@ -296,7 +316,7 @@
             // 
             // PreciotextBox
             // 
-            this.PreciotextBox.Location = new System.Drawing.Point(182, 52);
+            this.PreciotextBox.Location = new System.Drawing.Point(203, 49);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(73, 25);
@@ -307,13 +327,13 @@
             this.ProductocomboBox.FormattingEnabled = true;
             this.ProductocomboBox.Location = new System.Drawing.Point(12, 49);
             this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(111, 28);
+            this.ProductocomboBox.Size = new System.Drawing.Size(125, 28);
             this.ProductocomboBox.TabIndex = 1;
             // 
             // Importelabel
             // 
             this.Importelabel.AutoSize = true;
-            this.Importelabel.Location = new System.Drawing.Point(364, 28);
+            this.Importelabel.Location = new System.Drawing.Point(385, 25);
             this.Importelabel.Name = "Importelabel";
             this.Importelabel.Size = new System.Drawing.Size(67, 20);
             this.Importelabel.TabIndex = 0;
@@ -322,7 +342,7 @@
             // Cantidadlabel
             // 
             this.Cantidadlabel.AutoSize = true;
-            this.Cantidadlabel.Location = new System.Drawing.Point(274, 28);
+            this.Cantidadlabel.Location = new System.Drawing.Point(295, 25);
             this.Cantidadlabel.Name = "Cantidadlabel";
             this.Cantidadlabel.Size = new System.Drawing.Size(78, 20);
             this.Cantidadlabel.TabIndex = 0;
@@ -331,7 +351,7 @@
             // Preciolabel
             // 
             this.Preciolabel.AutoSize = true;
-            this.Preciolabel.Location = new System.Drawing.Point(178, 28);
+            this.Preciolabel.Location = new System.Drawing.Point(199, 25);
             this.Preciolabel.Name = "Preciolabel";
             this.Preciolabel.Size = new System.Drawing.Size(56, 20);
             this.Preciolabel.TabIndex = 0;
@@ -363,7 +383,7 @@
             this.DetalledataGridView.Location = new System.Drawing.Point(24, 309);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.ReadOnly = true;
-            this.DetalledataGridView.Size = new System.Drawing.Size(533, 116);
+            this.DetalledataGridView.Size = new System.Drawing.Size(566, 116);
             this.DetalledataGridView.TabIndex = 5;
             // 
             // Column1
@@ -469,7 +489,7 @@
             // 
             this.Totallabel.AutoSize = true;
             this.Totallabel.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Totallabel.Location = new System.Drawing.Point(375, 432);
+            this.Totallabel.Location = new System.Drawing.Point(389, 435);
             this.Totallabel.Name = "Totallabel";
             this.Totallabel.Size = new System.Drawing.Size(55, 18);
             this.Totallabel.TabIndex = 8;
@@ -477,7 +497,7 @@
             // 
             // TotaltextBox
             // 
-            this.TotaltextBox.Location = new System.Drawing.Point(438, 431);
+            this.TotaltextBox.Location = new System.Drawing.Point(452, 434);
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.ReadOnly = true;
             this.TotaltextBox.Size = new System.Drawing.Size(119, 22);
@@ -512,32 +532,12 @@
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
-            // Setbutton
-            // 
-            this.Setbutton.Location = new System.Drawing.Point(148, 20);
-            this.Setbutton.Name = "Setbutton";
-            this.Setbutton.Size = new System.Drawing.Size(39, 32);
-            this.Setbutton.TabIndex = 4;
-            this.Setbutton.Text = "SET";
-            this.Setbutton.UseVisualStyleBackColor = true;
-            this.Setbutton.Click += new System.EventHandler(this.Setbutton_Click);
-            // 
-            // SetProductobutton
-            // 
-            this.SetProductobutton.Location = new System.Drawing.Point(131, 46);
-            this.SetProductobutton.Name = "SetProductobutton";
-            this.SetProductobutton.Size = new System.Drawing.Size(45, 31);
-            this.SetProductobutton.TabIndex = 8;
-            this.SetProductobutton.Text = "Set";
-            this.SetProductobutton.UseVisualStyleBackColor = true;
-            this.SetProductobutton.Click += new System.EventHandler(this.SetProductobutton_Click);
-            // 
             // rFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(580, 581);
+            this.ClientSize = new System.Drawing.Size(602, 581);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.UsuariotextBox);
             this.Controls.Add(this.label2);

@@ -46,6 +46,7 @@ namespace ProyectoFinalAp1.UI.Registros
             PreciotextBox.Text = string.Empty;
             CantidadnumericUpDown.Value = 0;
             ImportetextBox.Text = string.Empty;
+            TotaltextBox.Text = string.Empty;
             this.Detalle = new List<DetalleFactura>();
             UsuariotextBox.Text = GetNombreUsuario(this.ID);
             this.TOTAL = 0;
@@ -72,7 +73,36 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
+            if (paso)
+            {
+                foreach (var item in this.Detalle)
+                {
+              
+                    int cantidad = GetCantidadProducto(item.ProductoId);
+                    int cantidadDetalle = GetTotalProducto(item.ProductoId);
+                    int resultado = cantidad - cantidadDetalle;
+                    if (resultado < 0)
+                    {
+                        MessageBox.Show("La cantidad de " + GetDescripcion(item.ProductoId) + " supera a la existente.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return paso = false;
+                    }                
+                }
+            }
+
             return paso;
+        }
+
+        private int GetTotalProducto(int id)
+        {
+            int cantidad = 0;
+            foreach (var item in this.Detalle)
+            {
+                if(item.ProductoId == id)
+                {
+                    cantidad += item.Cantidad;
+                }
+            }
+            return cantidad;
         }
 
         private void LlenaCampos(Facturas facturas)
@@ -345,6 +375,20 @@ namespace ProyectoFinalAp1.UI.Registros
             }
 
             return paso;
+        }
+
+        private int GetCantidadProducto(int id)
+        {
+            int cantidad = 0;
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            Productos productos = new Productos();
+            productos = repositorio.Buscar(id);
+            if (productos == null)
+                cantidad = 0;
+            else
+                cantidad = productos.Cantidad;
+
+            return cantidad;
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)

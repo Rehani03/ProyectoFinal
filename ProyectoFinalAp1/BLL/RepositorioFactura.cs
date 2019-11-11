@@ -136,20 +136,19 @@ namespace ProyectoFinalAp1.BLL
             try
             {
                 //Aqui le devuelvo las cantidades de productos a la tabla producto
-                var Anterior = db.Facturas.Find(ID);
-                decimal Consumo = repositorio.Buscar(ID).Total;
+                var Anterior = repositorio.Buscar(ID);
                 foreach (var item in Anterior.Detalles)
                 {
-                    var Producto = db.Productos.Find(ID);
+                    var Producto = db.Productos.Find(item.ProductoId);
                     if (Producto != null)
                         Producto.Cantidad += item.Cantidad;
                 }
                 //Le quito el consumo y la visita al cliente
-                db.Cliente.Find(Anterior.ClienteId).Consumo-=Consumo;
+                db.Cliente.Find(Anterior.ClienteId).Consumo-=Anterior.Total;
                 db.Cliente.Find(Anterior.ClienteId).Visitas -= 1;
 
                 //Elimino
-                var eliminar = db.EntradaProductos.Find(ID);
+                var eliminar = db.Facturas.Find(ID);
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = db.SaveChanges() > 0;
             }
