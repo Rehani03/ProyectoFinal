@@ -21,8 +21,8 @@ namespace ProyectoFinalAp1.Entidades
         public DateTime Fecha { get; set; }
         public decimal Consumo { get; set; }
         public int Visitas { get; set; }
-        //[ForeignKey("UsuarioId")]
-        //public virtual Usuarios Usuarios { get; set; }
+        [ForeignKey("UsuarioId")]
+        public virtual Usuarios Usuarios { get; set; }
 
         public Clientes()
         {

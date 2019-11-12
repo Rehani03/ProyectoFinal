@@ -17,11 +17,8 @@ namespace ProyectoFinalAp1.Entidades
         public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
         public virtual List<DetalleFactura> Detalles { get; set; }
-
-        //[ForeignKey("UsuarioId")]
-        //public virtual Usuarios Usuarios { get; set; }
-        //[ForeignKey("ClienteId")]
-        //public virtual Clientes Clientes { get; set; }
+        [ForeignKey("ClienteId")]
+        public virtual Clientes Clientes { get; set; }
 
 
         public Facturas()

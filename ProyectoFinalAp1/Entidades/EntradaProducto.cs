@@ -16,11 +16,11 @@ namespace ProyectoFinalAp1.Entidades
         public DateTime Fecha { get; set; }
         public int CantidadTotal { get; set; }
         public virtual List<DetalleEntradaProductos> DetalleEntrada { get; set; }
-        //[ForeignKey("UsuarioId")]
-        //public virtual Usuarios Usuarios { get; set; }
+        [ForeignKey("UsuarioId")]
+        public virtual Usuarios Usuarios { get; set; }
         //[ForeignKey("ProductoId")]
         //public virtual Productos Productos { get; set; }
-       
+
 
         public EntradaProducto()
         {

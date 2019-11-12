@@ -20,11 +20,11 @@ namespace ProyectoFinalAp1.Entidades
         public decimal Ganancia { get; set; }
         public DateTime Fecha { get; set; }
         public int Cantidad { get; set; }
-
+        [ForeignKey("CategoriaId")]
+        public virtual Categorias Categorias { get; set; }
         //[ForeignKey("UsuarioId")]
         //public virtual Usuarios Usuarios { get; set; }
-        //[ForeignKey("CategoriaId")]
-        //public virtual Categorias Categorias { get; set; }
+
 
         public Productos()
         {
