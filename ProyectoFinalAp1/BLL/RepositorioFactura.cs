@@ -75,7 +75,7 @@ namespace ProyectoFinalAp1.BLL
                     {
                         db.Entry(item).State = EntityState.Added;
                         if (producto != null)
-                            producto.Cantidad += item.Cantidad;
+                            producto.Cantidad -= item.Cantidad;
                     }
                     else
                         db.Entry(item).State = EntityState.Modified;
