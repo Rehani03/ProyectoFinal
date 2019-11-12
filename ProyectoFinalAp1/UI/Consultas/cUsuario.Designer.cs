@@ -81,6 +81,7 @@
             // 
             // Consultarbutton
             // 
+            this.Consultarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultarbutton.Location = new System.Drawing.Point(719, 5);
@@ -90,7 +91,7 @@
             this.Consultarbutton.TabIndex = 5;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.UseVisualStyleBackColor = false;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
@@ -104,6 +105,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
@@ -118,7 +120,8 @@
             // 
             // HastadateTimePicker
             // 
-            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.HastadateTimePicker.Location = new System.Drawing.Point(157, 25);
             this.HastadateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
@@ -127,7 +130,8 @@
             // 
             // DesdedateTimePicker
             // 
-            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DesdedateTimePicker.Location = new System.Drawing.Point(19, 26);
             this.DesdedateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
@@ -190,6 +194,7 @@
             // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imprimirbutton.Location = new System.Drawing.Point(385, 424);
@@ -198,7 +203,7 @@
             this.Imprimirbutton.TabIndex = 2;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.UseVisualStyleBackColor = false;
             // 
             // cUsuario
             // 
@@ -212,7 +217,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "cUsuario";
-            this.Text = "Consulta de Usuario";
+            this.Text = "Consulta de Usuario-ButterSoft";
             this.Frontalpanel.ResumeLayout(false);
             this.Frontalpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();

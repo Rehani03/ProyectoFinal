@@ -61,6 +61,7 @@
             // 
             // Consultarbutton
             // 
+            this.Consultarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultarbutton.Location = new System.Drawing.Point(543, 5);
@@ -70,7 +71,7 @@
             this.Consultarbutton.TabIndex = 3;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.UseVisualStyleBackColor = false;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
@@ -83,6 +84,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
@@ -127,6 +129,7 @@
             // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imprimirbutton.Location = new System.Drawing.Point(314, 393);
@@ -135,7 +138,7 @@
             this.Imprimirbutton.TabIndex = 2;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.UseVisualStyleBackColor = false;
             // 
             // cCategoria
             // 
@@ -149,7 +152,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "cCategoria";
-            this.Text = "Consulta de Categorias";
+            this.Text = "Consulta de Categorias-ButterSoft";
             this.Frontalpanel.ResumeLayout(false);
             this.Frontalpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();

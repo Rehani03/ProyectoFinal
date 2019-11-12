@@ -67,6 +67,7 @@
             // 
             // Consultarbutton
             // 
+            this.Consultarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultarbutton.Location = new System.Drawing.Point(582, 7);
@@ -75,7 +76,7 @@
             this.Consultarbutton.TabIndex = 3;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.UseVisualStyleBackColor = false;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
@@ -87,6 +88,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
@@ -124,6 +126,7 @@
             // 
             // DetalledataGridView
             // 
+            this.DetalledataGridView.AllowUserToAddRows = false;
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalledataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -176,6 +179,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(339, 384);
@@ -184,7 +188,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Imprimir";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // cDetalleFactura
             // 
@@ -199,7 +203,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "cDetalleFactura";
-            this.Text = "Consula de Detalle de Factura";
+            this.Text = "Consulta de Detalle de Factura-ButterSoft";
             this.Componentespanel.ResumeLayout(false);
             this.Componentespanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();

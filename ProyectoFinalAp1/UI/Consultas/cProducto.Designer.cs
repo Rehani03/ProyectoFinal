@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cProducto));
             this.Frontalpanel = new System.Windows.Forms.Panel();
+            this.FechacheckBox = new System.Windows.Forms.CheckBox();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
@@ -51,7 +52,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.FechacheckBox = new System.Windows.Forms.CheckBox();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -75,6 +75,17 @@
             this.Frontalpanel.Name = "Frontalpanel";
             this.Frontalpanel.Size = new System.Drawing.Size(877, 76);
             this.Frontalpanel.TabIndex = 0;
+            // 
+            // FechacheckBox
+            // 
+            this.FechacheckBox.AutoSize = true;
+            this.FechacheckBox.Location = new System.Drawing.Point(20, 52);
+            this.FechacheckBox.Name = "FechacheckBox";
+            this.FechacheckBox.Size = new System.Drawing.Size(109, 20);
+            this.FechacheckBox.TabIndex = 6;
+            this.FechacheckBox.Text = "Habilitar Fecha";
+            this.FechacheckBox.UseVisualStyleBackColor = true;
+            this.FechacheckBox.CheckedChanged += new System.EventHandler(this.FechacheckBox_CheckedChanged);
             // 
             // Consultarbutton
             // 
@@ -100,6 +111,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
@@ -118,7 +130,8 @@
             // 
             // HastadateTimePicker
             // 
-            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.HastadateTimePicker.Location = new System.Drawing.Point(160, 25);
             this.HastadateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
@@ -127,7 +140,8 @@
             // 
             // DesdedateTimePicker
             // 
-            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DesdedateTimePicker.Location = new System.Drawing.Point(20, 26);
             this.DesdedateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
@@ -172,6 +186,7 @@
             // 
             // ConsultadataGridView
             // 
+            this.ConsultadataGridView.AllowUserToAddRows = false;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -253,17 +268,6 @@
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
-            // FechacheckBox
-            // 
-            this.FechacheckBox.AutoSize = true;
-            this.FechacheckBox.Location = new System.Drawing.Point(20, 52);
-            this.FechacheckBox.Name = "FechacheckBox";
-            this.FechacheckBox.Size = new System.Drawing.Size(109, 20);
-            this.FechacheckBox.TabIndex = 6;
-            this.FechacheckBox.Text = "Habilitar Fecha";
-            this.FechacheckBox.UseVisualStyleBackColor = true;
-            this.FechacheckBox.CheckedChanged += new System.EventHandler(this.FechacheckBox_CheckedChanged);
-            // 
             // cProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -277,7 +281,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "cProducto";
-            this.Text = "Consulta de Productos";
+            this.Text = "Consulta de Productos-ButterSoft";
             this.Frontalpanel.ResumeLayout(false);
             this.Frontalpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();

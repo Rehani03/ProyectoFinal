@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cCliente));
             this.Frontalpanel1 = new System.Windows.Forms.Panel();
+            this.FechacheckBox = new System.Windows.Forms.CheckBox();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
@@ -43,7 +44,6 @@
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.FechacheckBox = new System.Windows.Forms.CheckBox();
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Frontalpanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
@@ -70,8 +70,20 @@
             this.Frontalpanel1.Size = new System.Drawing.Size(861, 80);
             this.Frontalpanel1.TabIndex = 0;
             // 
+            // FechacheckBox
+            // 
+            this.FechacheckBox.AutoSize = true;
+            this.FechacheckBox.Location = new System.Drawing.Point(22, 54);
+            this.FechacheckBox.Name = "FechacheckBox";
+            this.FechacheckBox.Size = new System.Drawing.Size(109, 20);
+            this.FechacheckBox.TabIndex = 6;
+            this.FechacheckBox.Text = "Habilitar Fecha";
+            this.FechacheckBox.UseVisualStyleBackColor = true;
+            this.FechacheckBox.CheckedChanged += new System.EventHandler(this.FechacheckBox_CheckedChanged);
+            // 
             // Consultarbutton
             // 
+            this.Consultarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultarbutton.Location = new System.Drawing.Point(757, 16);
@@ -81,7 +93,7 @@
             this.Consultarbutton.TabIndex = 5;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.UseVisualStyleBackColor = false;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
@@ -94,6 +106,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
@@ -114,7 +127,8 @@
             // 
             // HastadateTimePicker
             // 
-            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.HastadateTimePicker.Location = new System.Drawing.Point(181, 25);
             this.HastadateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
@@ -123,7 +137,8 @@
             // 
             // DesdedateTimePicker
             // 
-            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DesdedateTimePicker.Location = new System.Drawing.Point(22, 26);
             this.DesdedateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
@@ -190,19 +205,9 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // FechacheckBox
-            // 
-            this.FechacheckBox.AutoSize = true;
-            this.FechacheckBox.Location = new System.Drawing.Point(22, 54);
-            this.FechacheckBox.Name = "FechacheckBox";
-            this.FechacheckBox.Size = new System.Drawing.Size(109, 20);
-            this.FechacheckBox.TabIndex = 6;
-            this.FechacheckBox.Text = "Habilitar Fecha";
-            this.FechacheckBox.UseVisualStyleBackColor = true;
-            this.FechacheckBox.CheckedChanged += new System.EventHandler(this.FechacheckBox_CheckedChanged);
-            // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imprimirbutton.Location = new System.Drawing.Point(399, 385);
@@ -211,7 +216,7 @@
             this.Imprimirbutton.TabIndex = 3;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.UseVisualStyleBackColor = false;
             // 
             // cCliente
             // 
@@ -227,7 +232,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "cCliente";
-            this.Text = "Consulta de Clientes";
+            this.Text = "Consulta de Clientes-ButterSoft";
             this.Frontalpanel1.ResumeLayout(false);
             this.Frontalpanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();

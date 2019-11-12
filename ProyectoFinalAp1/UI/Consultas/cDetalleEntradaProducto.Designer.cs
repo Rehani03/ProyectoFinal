@@ -51,6 +51,7 @@
             // 
             // DetalleEntradadataGridView
             // 
+            this.DetalleEntradadataGridView.AllowUserToAddRows = false;
             this.DetalleEntradadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalleEntradadataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -112,6 +113,7 @@
             // 
             // Consultarbutton
             // 
+            this.Consultarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultarbutton.Location = new System.Drawing.Point(554, 9);
@@ -120,7 +122,7 @@
             this.Consultarbutton.TabIndex = 4;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.UseVisualStyleBackColor = false;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
@@ -141,6 +143,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
@@ -168,6 +171,7 @@
             // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imprimirbutton.Location = new System.Drawing.Point(324, 426);
@@ -176,7 +180,7 @@
             this.Imprimirbutton.TabIndex = 2;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.UseVisualStyleBackColor = false;
             // 
             // cDetalleEntradaProducto
             // 
@@ -189,9 +193,9 @@
             this.Controls.Add(this.DetalleEntradadataGridView);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "cDetalleEntradaProducto";
-            this.Text = "Detalle de Entrada de Productos";
+            this.Text = "Detalle de Entrada de Productos-ButterSoft";
             ((System.ComponentModel.ISupportInitialize)(this.DetalleEntradadataGridView)).EndInit();
             this.Controlespanel.ResumeLayout(false);
             this.Controlespanel.PerformLayout();

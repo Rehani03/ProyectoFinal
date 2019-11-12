@@ -42,8 +42,6 @@
             this.Hastalabel = new System.Windows.Forms.Label();
             this.Desdelabel = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
-            this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +49,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -88,6 +88,7 @@
             // 
             // Consultarbutton
             // 
+            this.Consultarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultarbutton.Location = new System.Drawing.Point(724, 9);
@@ -97,7 +98,7 @@
             this.Consultarbutton.TabIndex = 5;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.UseVisualStyleBackColor = false;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
@@ -110,6 +111,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
@@ -125,7 +127,8 @@
             // 
             // HastadateTimePicker
             // 
-            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.HastadateTimePicker.Location = new System.Drawing.Point(161, 25);
             this.HastadateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
@@ -134,7 +137,8 @@
             // 
             // DesdedateTimePicker
             // 
-            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DesdedateTimePicker.Location = new System.Drawing.Point(22, 26);
             this.DesdedateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
@@ -179,6 +183,7 @@
             // 
             // ConsultadataGridView
             // 
+            this.ConsultadataGridView.AllowUserToAddRows = false;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -194,22 +199,6 @@
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(839, 274);
             this.ConsultadataGridView.TabIndex = 1;
-            // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
-            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(386, 384);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(107, 45);
-            this.Imprimirbutton.TabIndex = 2;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
-            // 
-            // MyerrorProvider
-            // 
-            this.MyerrorProvider.ContainerControl = this;
             // 
             // Column1
             // 
@@ -253,6 +242,23 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
+            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imprimirbutton.Location = new System.Drawing.Point(386, 384);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(107, 45);
+            this.Imprimirbutton.TabIndex = 2;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Imprimirbutton.UseVisualStyleBackColor = false;
+            // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
             // cFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -266,7 +272,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "cFactura";
-            this.Text = "Consulta de Facturas";
+            this.Text = "Consulta de Facturas-ButterSoft";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();

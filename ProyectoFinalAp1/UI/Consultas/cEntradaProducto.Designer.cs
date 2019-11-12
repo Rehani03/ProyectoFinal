@@ -42,12 +42,12 @@
             this.Hastalabel = new System.Windows.Forms.Label();
             this.Desdelabel = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
-            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
@@ -85,6 +85,7 @@
             // 
             // Consultarbutton
             // 
+            this.Consultarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultarbutton.Location = new System.Drawing.Point(649, 9);
@@ -93,7 +94,7 @@
             this.Consultarbutton.TabIndex = 5;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.UseVisualStyleBackColor = false;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // CriteriotextBox
@@ -105,6 +106,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
@@ -118,20 +120,22 @@
             // 
             // HastadateTimePicker
             // 
+            this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastadateTimePicker.Enabled = false;
-            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.HastadateTimePicker.Location = new System.Drawing.Point(140, 25);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
-            this.HastadateTimePicker.Size = new System.Drawing.Size(92, 20);
+            this.HastadateTimePicker.Size = new System.Drawing.Size(99, 20);
             this.HastadateTimePicker.TabIndex = 2;
             // 
             // DesdedateTimePicker
             // 
+            this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdedateTimePicker.Enabled = false;
-            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DesdedateTimePicker.Location = new System.Drawing.Point(17, 26);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
-            this.DesdedateTimePicker.Size = new System.Drawing.Size(92, 20);
+            this.DesdedateTimePicker.Size = new System.Drawing.Size(97, 20);
             this.DesdedateTimePicker.TabIndex = 1;
             // 
             // Criteriolabel
@@ -172,6 +176,7 @@
             // 
             // ConsultadataGridView
             // 
+            this.ConsultadataGridView.AllowUserToAddRows = false;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -184,10 +189,6 @@
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(752, 302);
             this.ConsultadataGridView.TabIndex = 1;
-            // 
-            // MyerrorProvider
-            // 
-            this.MyerrorProvider.ContainerControl = this;
             // 
             // Column1
             // 
@@ -219,8 +220,13 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imprimirbutton.Location = new System.Drawing.Point(319, 406);
@@ -229,7 +235,7 @@
             this.Imprimirbutton.TabIndex = 2;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.UseVisualStyleBackColor = false;
             // 
             // cEntradaProducto
             // 
@@ -241,7 +247,7 @@
             this.Controls.Add(this.Frontalpanel);
             this.MaximizeBox = false;
             this.Name = "cEntradaProducto";
-            this.Text = "Consultar Entrada de Productos";
+            this.Text = "Consultar Entrada de Productos-ButterSoft";
             this.Frontalpanel.ResumeLayout(false);
             this.Frontalpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
