@@ -48,14 +48,13 @@ namespace ProyectoFinalAp1.BLL
         public override bool Modificar(Facturas entity)
         {
             bool paso = false;
-
+            var Anterior = Buscar(entity.FacturaId);
+            decimal AnteriorConsumo = Buscar(entity.FacturaId).Total;
             Contexto db = new Contexto();
-            RepositorioBase<Facturas> repositorio = new RepositorioBase<Facturas>();
-
+           
             try
             {
-                var Anterior = repositorio.Buscar(entity.FacturaId);
-                decimal AnteriorConsumo = repositorio.Buscar(entity.FacturaId).Total;
+               
                 foreach (var item in Anterior.Detalles)
                 {
                     var producto = db.Productos.Find(item.ProductoId);

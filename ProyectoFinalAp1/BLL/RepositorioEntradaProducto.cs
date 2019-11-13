@@ -44,14 +44,12 @@ namespace ProyectoFinalAp1.BLL
         public override bool Modificar(EntradaProducto entity)
         {
             bool paso = false;
-
+            var Anterior = Buscar(entity.EntradaProductoId);
             Contexto db = new Contexto();
-            RepositorioBase<EntradaProducto> repositorio = new RepositorioBase<EntradaProducto>();
-
+          
             try
             {
-                //aqui elimino los productos que tal vez removieron del detalle y lo disminuyo en la tabla producto
-                var Anterior = repositorio.Buscar(entity.EntradaProductoId);
+                //aqui elimino los productos que tal vez removieron del detalle y lo disminuyo en la tabla producto 
                 foreach (var item in Anterior.DetalleEntrada)
                 {
                     var producto = db.Productos.Find(item.ProductoId);
@@ -67,9 +65,10 @@ namespace ProyectoFinalAp1.BLL
                 //agregar nuevos detalles o modificarlo
                 foreach (var item in entity.DetalleEntrada)
                 {
-                    var producto = db.Productos.Find(item.ProductoId);
+                    
                     if (item.DetalleEntradaProductosId == 0)
                     {
+                        var producto = db.Productos.Find(item.ProductoId);
                         db.Entry(item).State = EntityState.Added;
                         if (producto != null)
                             producto.Cantidad += item.Cantidad;

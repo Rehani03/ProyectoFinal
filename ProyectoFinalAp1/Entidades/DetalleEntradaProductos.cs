@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ namespace ProyectoFinalAp1.Entidades
         public int EntradaProductoId { get; set; }
         public int ProductoId { get; set; }
         public int Cantidad { get; set; }
-        
+        [ForeignKey("ProductoId")]
+        public virtual Productos Productos { get; set; }
         public DetalleEntradaProductos()
         {
             DetalleEntradaProductosId = 0;
