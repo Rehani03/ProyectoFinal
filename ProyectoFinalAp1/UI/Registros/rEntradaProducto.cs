@@ -92,7 +92,7 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             EntradaProducto e = new EntradaProducto();
             e.EntradaProductoId = Convert.ToInt32(IDnumericUpDown.Value);
-            e.Fecha = FechadateTimePicker.Value;
+            e.Fecha = FechadateTimePicker.Value.Date;
             e.UsuarioId = ID;
             e.CantidadTotal = Convert.ToInt32(CantidadTotaltextBox.Text);
             e.DetalleEntrada = this.Detalle;

@@ -51,7 +51,7 @@ namespace ProyectoFinalAp1.UI.Registros
             usuarios.Nombres = NombretextBox.Text;
             usuarios.NombreUsuario = NombreUsuariotextBox.Text;
             usuarios.PassWord = ContraseñatextBox.Text;
-            usuarios.FechaIngreso = FechadateTimePicker.Value;
+            usuarios.FechaIngreso = FechadateTimePicker.Value.Date;
 
             return usuarios;
         }
@@ -76,6 +76,12 @@ namespace ProyectoFinalAp1.UI.Registros
             if (string.IsNullOrWhiteSpace(NombretextBox.Text))
             {
                 MyerrorProvider.SetError(NombretextBox, "Este campo no puede estar vacio,");
+                paso = false;
+            }
+
+            if(NombretextBox.Text.Count() < 6)
+            {
+                MyerrorProvider.SetError(NombretextBox, "Este campo debe tener como minimo 6 caracteres,");
                 paso = false;
             }
 

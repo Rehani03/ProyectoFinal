@@ -90,9 +90,23 @@ namespace ProyectoFinalAp1.UI.Registros
             productos.Costo = Convert.ToDecimal(CostonumericUpDown.Value);
             productos.Precio = Convert.ToDecimal(PrecionumericUpDown.Value);
             productos.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
-            productos.Fecha = FechadateTimePicker.Value;
+            productos.Fecha = FechadateTimePicker.Value.Date;
+            productos.Cantidad = GetCantidadEnBase();
             productos.UsuarioId = ID;
             return productos;
+        }
+
+        private int GetCantidadEnBase()
+        {
+            int cantidad = 0;
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            Productos productos = new Productos();
+            productos = repositorio.Buscar((int)IDnumericUpDown.Value);
+            if (productos == null)
+                cantidad = 0;
+            else
+                cantidad = productos.Cantidad;
+            return cantidad;
         }
 
         private void LlenaCampos(Productos p)
@@ -111,7 +125,11 @@ namespace ProyectoFinalAp1.UI.Registros
         private bool Validar()
         {
             bool paso = true;
-            if(CategoriacomboBox.Text == "" || CategoriacomboBox.SelectedIndex == -1)
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            List<Productos> lista = new List<Productos>();
+            lista = repositorio.GetList(p => true);
+
+            if (CategoriacomboBox.Text == "" || CategoriacomboBox.SelectedIndex == -1)
             {
                 MyerrorProvider.SetError(CategoriacomboBox, "Debe elegir una categoria para el producto.");
                 paso = false;
@@ -120,6 +138,12 @@ namespace ProyectoFinalAp1.UI.Registros
             if (string.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
                 MyerrorProvider.SetError(DescripciontextBox, "El campo Descripción no puede estar vacio.");
+                paso = false;
+            }
+
+            if (DescripciontextBox.Text.Count() < 6)
+            {
+                MyerrorProvider.SetError(DescripciontextBox, "El campo Descripción debe tener como minimo 6 caracteres.");
                 paso = false;
             }
 
@@ -135,8 +159,55 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
+
+            string descripcion = DescripciontextBox.Text;
+            if (IDnumericUpDown.Value == 0)
+            {
+                foreach (var item in lista)
+                {
+                    if (item.Descripcion == descripcion)
+                    {
+                        MyerrorProvider.SetError(DescripciontextBox, "Esta Descripción ya existe con otro Producto.");
+                        paso = false;
+                    }
+                }
+
+            }
+            else
+            {
+                if (!Existe())
+                {
+                    MyerrorProvider.SetError(IDnumericUpDown, "Este ID no existe en la Base De Datos.");
+                    paso = false;
+                }
+                else
+                {
+                    if (descripcion != GetDescripcion())
+                    {
+                        foreach (var item in lista)
+                        {
+                            if (item.Descripcion == descripcion)
+                            {
+                                MyerrorProvider.SetError(DescripciontextBox, "Esta descripción ya existe con otra Producto.");
+                                paso = false;
+                            }
+                        }
+                    }
+                }
+            }
+
             return paso;
         }
+
+        private string GetDescripcion()
+        {
+            string descripcion;
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            descripcion = repositorio.Buscar((int)IDnumericUpDown.Value).Descripcion;
+            return descripcion;
+        }
+
+
 
         private bool Existe()
         {
@@ -237,11 +308,14 @@ namespace ProyectoFinalAp1.UI.Registros
             {
                 MyerrorProvider.Clear();
                 MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
-                return;
             }
-            MyerrorProvider.Clear();
-            decimal ganancia = precio - costo;
-            GananciatextBox.Text = ganancia.ToString();
+            else
+            {
+                MyerrorProvider.Clear();
+                decimal ganancia = precio - costo;
+                GananciatextBox.Text = ganancia.ToString();
+            }
+           
         }
 
         private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -252,11 +326,14 @@ namespace ProyectoFinalAp1.UI.Registros
             {
                 MyerrorProvider.Clear();
                 MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
-                return;
             }
-            MyerrorProvider.Clear();
-            decimal ganancia = precio - costo;
-            GananciatextBox.Text = ganancia.ToString();
+            else
+            {
+                MyerrorProvider.Clear();
+                decimal ganancia = precio - costo;
+                GananciatextBox.Text = ganancia.ToString();
+            }
+           
         }
     }
 }

@@ -125,7 +125,7 @@ namespace ProyectoFinalAp1.UI.Registros
             Facturas facturas = new Facturas();
             facturas.FacturaId = Convert.ToInt32(IDnumericUpDown.Value);
             facturas.ClienteId = (int)ClientecomboBox.SelectedValue;
-            facturas.Fecha = FechadateTimePicker.Value;
+            facturas.Fecha = FechadateTimePicker.Value.Date;
             facturas.UsuarioId = this.ID;
             facturas.Total = Convert.ToDecimal(TotaltextBox.Text);
             facturas.Detalles = this.Detalle;
@@ -139,8 +139,7 @@ namespace ProyectoFinalAp1.UI.Registros
             foreach (var item in lista)
             {
                 //index += 1;
-                DetalledataGridView.Rows.Add(item.ProductoId, GetDescripcion(item.ProductoId), GetPrecio(item.ProductoId),
-                    item.Cantidad);
+                DetalledataGridView.Rows.Add(item.ProductoId, GetDescripcion(item.ProductoId), item.Precio, item.Cantidad);
             }
         }
 
@@ -412,6 +411,9 @@ namespace ProyectoFinalAp1.UI.Registros
             decimal total = cantidad * precio;
             TOTAL += total;
             TotaltextBox.Text = this.TOTAL.ToString();
+
+            CantidadnumericUpDown.Value = 0;
+            ImportetextBox.Text = string.Empty;
             //this.index += 1;
         }
 
