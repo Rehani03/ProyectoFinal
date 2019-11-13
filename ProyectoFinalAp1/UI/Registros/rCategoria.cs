@@ -62,6 +62,9 @@ namespace ProyectoFinalAp1.UI.Registros
         private bool Validar()
         {
             bool paso = true;
+            RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
+            List<Categorias> lista = new List<Categorias>();
+            lista = repositorio.GetList(p => true);
 
             if (string.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
@@ -69,8 +72,59 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
+            if (DescripciontextBox.Text.Count()<6)
+            {
+                MyerrorProvider.SetError(DescripciontextBox, "El Campo Descripción debe tener como minimo 6 caracteres");
+                paso = false;
+            }
+
+            string descripcion = DescripciontextBox.Text;
+            if(IDnumericUpDown.Value == 0)
+            {
+                foreach (var item in lista)
+                {
+                    if (item.Descripcion == descripcion)
+                    {
+                        MyerrorProvider.SetError(DescripciontextBox, "Esta Descripción ya existe con otra Categoria.");
+                        paso = false;
+                    }
+                }
+
+            }
+            else
+            {
+                if (!Existe())
+                {
+                    MyerrorProvider.SetError(IDnumericUpDown, "Este ID no existe en la Base De Datos.");
+                    paso = false;
+                }
+                else
+                {
+                    if (descripcion != GetDescripcion())
+                    {
+                        foreach (var item in lista)
+                        {
+                            if (item.Descripcion == descripcion)
+                            {
+                                MyerrorProvider.SetError(DescripciontextBox, "Esta descripción ya existe con otra Categoria.");
+                                paso = false;
+                            }
+                        }
+                    }
+                }
+            }
+
             return paso;
         }
+
+        private string GetDescripcion()
+        {
+            string descripcion;
+            RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
+            descripcion = repositorio.Buscar((int)IDnumericUpDown.Value).Descripcion;
+            return descripcion;
+        }
+
 
         private bool Existe()
         {
@@ -146,14 +200,19 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                paso = repositorio.Eliminar(ID);
-                if (paso)
+                var resultado = MessageBox.Show("De eliminar esta Categoria perdera información importante.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
                 {
-                    Limpiar();
-                    MessageBox.Show("Eliminado", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    paso = repositorio.Eliminar(ID);
+                    if (paso)
+                    {
+                        Limpiar();
+                        MessageBox.Show("Eliminado", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("No se pudo eliminar", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
-                    MessageBox.Show("No se pudo eliminar", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 
             }
         }
     }

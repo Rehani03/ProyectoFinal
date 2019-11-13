@@ -59,7 +59,8 @@ namespace ProyectoFinalAp1.UI.Registros
             clientes.Direccion = DirecciontextBox.Text;
             clientes.Telefono = TelefonomaskedTextBox.Text;
             clientes.Email = EmailtextBox.Text;
-            clientes.Fecha = FechadateTimePicker.Value;
+            //DateTime formatted = FechadateTimePicker.Value.Date.ToString("dd-MM-yyyy");
+            clientes.Fecha = FechadateTimePicker.Value.Date;
             clientes.Visitas = 0;
             clientes.Consumo = 0;
             clientes.UsuarioId = ID;
@@ -94,6 +95,12 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
+            if (NombrestextBox.Text.Count() < 4)
+            {
+                MyerrorProvider.SetError(NombrestextBox, "El campo Nombre debe tener como minimo 4 caracteres.");
+                paso = false;
+            }
+
             if (!RNCmaskedTextBox.MaskFull)
             {
                 MyerrorProvider.SetError(RNCmaskedTextBox, "El campo Cedula no puede estar vacio.");
@@ -103,6 +110,12 @@ namespace ProyectoFinalAp1.UI.Registros
             if (string.IsNullOrWhiteSpace(DirecciontextBox.Text))
             {
                 MyerrorProvider.SetError(DirecciontextBox, "El campo Dirección no puede estar vacio.");
+                paso = false;
+            }
+
+            if (DirecciontextBox.Text.Count() < 6)
+            {
+                MyerrorProvider.SetError(DirecciontextBox, "El campo Dirección debe tener como minimo 6 caracteres.");
                 paso = false;
             }
 
@@ -120,6 +133,7 @@ namespace ProyectoFinalAp1.UI.Registros
 
             string rnc = RNCmaskedTextBox.Text;
             string email = EmailtextBox.Text;
+            string telefono = TelefonomaskedTextBox.Text;
             if (IDnumericUpDown.Value == 0)
             {
                 foreach (var item in lista)
@@ -136,6 +150,15 @@ namespace ProyectoFinalAp1.UI.Registros
                     if (item.Email == email)
                     {
                         MyerrorProvider.SetError(EmailtextBox, "Este Email ya existe con otro Cliente.");
+                        paso = false;
+                    }
+                }
+
+                foreach (var item in lista)
+                {
+                    if (item.Telefono == telefono)
+                    {
+                        MyerrorProvider.SetError(TelefonomaskedTextBox, "Este Telefono ya existe con otro Cliente.");
                         paso = false;
                     }
                 }
@@ -172,6 +195,19 @@ namespace ProyectoFinalAp1.UI.Registros
                             }
                         }
                     }
+
+                    if (telefono != GetTelefono())
+                    {
+                        foreach (var item in lista)
+                        {
+                            if (item.Telefono == telefono)
+                            {
+                                MyerrorProvider.SetError(TelefonomaskedTextBox, "Este Telefono ya existe con otro Cliente.");
+                                paso = false;
+                            }
+                        }
+                    }
+
                 }
                 
 
@@ -179,6 +215,14 @@ namespace ProyectoFinalAp1.UI.Registros
             
 
             return paso;
+        }
+
+        private string GetTelefono()
+        {
+            string telefono;
+            RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+            telefono = repositorio.Buscar((int)IDnumericUpDown.Value).Telefono;
+            return telefono;
         }
 
         private string GetEmail()

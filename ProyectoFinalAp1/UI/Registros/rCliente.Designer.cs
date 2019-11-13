@@ -352,7 +352,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "rCliente";
-            this.Text = "ButterSoft";
+            this.Text = "Registro de Clientes-ButterSoft";
             this.Componentespanel.ResumeLayout(false);
             this.Componentespanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
