@@ -61,10 +61,37 @@ namespace ProyectoFinalAp1.UI.Registros
             clientes.Email = EmailtextBox.Text;
             //DateTime formatted = FechadateTimePicker.Value.Date.ToString("dd-MM-yyyy");
             clientes.Fecha = FechadateTimePicker.Value.Date;
-            clientes.Visitas = 0;
-            clientes.Consumo = 0;
+            clientes.Visitas = GetVisitas();
+            clientes.Consumo = GetConsumo();
             clientes.UsuarioId = ID;
             return clientes;
+        }
+
+        private decimal GetConsumo()
+        {
+            decimal consumo = 0;
+            RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+            Clientes clientes = new Clientes();
+            clientes = repositorio.Buscar((int)IDnumericUpDown.Value);
+            if (clientes == null)
+                consumo = 0;
+            else
+                consumo = clientes.Consumo;
+            return consumo;
+        }
+
+
+        private int GetVisitas()
+        {
+            int visitas = 0;
+            RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+            Clientes clientes = new Clientes();
+            clientes = repositorio.Buscar((int)IDnumericUpDown.Value);
+            if (clientes == null)
+                visitas = 0;
+            else
+                visitas = clientes.Visitas;
+            return visitas;
         }
 
         private void LlenaCampos(Clientes c)
