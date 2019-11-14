@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rEntradaProducto));
             this.Mainpanel = new System.Windows.Forms.Panel();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Fechalabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.IDlabel = new System.Windows.Forms.Label();
+            this.UsuariotextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ProductosgroupBox = new System.Windows.Forms.GroupBox();
             this.Agregarbutton = new System.Windows.Forms.Button();
@@ -46,6 +46,9 @@
             this.Cantidadlabel = new System.Windows.Forms.Label();
             this.Productolabel = new System.Windows.Forms.Label();
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EliminarFilabutton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Eliminarbutton = new System.Windows.Forms.Button();
@@ -53,9 +56,7 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.CantidadTotallabel = new System.Windows.Forms.Label();
             this.CantidadTotaltextBox = new System.Windows.Forms.TextBox();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Productobutton = new System.Windows.Forms.Button();
             this.Mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -93,14 +94,6 @@
             this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // UsuariotextBox
-            // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(230, 448);
-            this.UsuariotextBox.Name = "UsuariotextBox";
-            this.UsuariotextBox.ReadOnly = true;
-            this.UsuariotextBox.Size = new System.Drawing.Size(112, 21);
-            this.UsuariotextBox.TabIndex = 3;
-            // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
@@ -126,15 +119,6 @@
             this.Fechalabel.TabIndex = 0;
             this.Fechalabel.Text = "FECHA:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 451);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "USUARIO:";
-            // 
             // IDlabel
             // 
             this.IDlabel.AutoSize = true;
@@ -144,12 +128,30 @@
             this.IDlabel.TabIndex = 0;
             this.IDlabel.Text = "ID:";
             // 
+            // UsuariotextBox
+            // 
+            this.UsuariotextBox.Location = new System.Drawing.Point(230, 448);
+            this.UsuariotextBox.Name = "UsuariotextBox";
+            this.UsuariotextBox.ReadOnly = true;
+            this.UsuariotextBox.Size = new System.Drawing.Size(112, 21);
+            this.UsuariotextBox.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(154, 451);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "USUARIO:";
+            // 
             // MyerrorProvider
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
             // ProductosgroupBox
             // 
+            this.ProductosgroupBox.Controls.Add(this.Productobutton);
             this.ProductosgroupBox.Controls.Add(this.Agregarbutton);
             this.ProductosgroupBox.Controls.Add(this.CantidadnumericUpDown);
             this.ProductosgroupBox.Controls.Add(this.ProductocomboBox);
@@ -190,7 +192,7 @@
             this.ProductocomboBox.FormattingEnabled = true;
             this.ProductocomboBox.Location = new System.Drawing.Point(29, 49);
             this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(168, 28);
+            this.ProductocomboBox.Size = new System.Drawing.Size(145, 28);
             this.ProductocomboBox.TabIndex = 1;
             // 
             // Cantidadlabel
@@ -224,6 +226,24 @@
             this.DetalledataGridView.ReadOnly = true;
             this.DetalledataGridView.Size = new System.Drawing.Size(501, 133);
             this.DetalledataGridView.TabIndex = 4;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "ProductoID";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Descripcion";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Cantidad";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // EliminarFilabutton
             // 
@@ -311,23 +331,16 @@
             this.CantidadTotaltextBox.Size = new System.Drawing.Size(94, 21);
             this.CantidadTotaltextBox.TabIndex = 8;
             // 
-            // Column5
+            // Productobutton
             // 
-            this.Column5.HeaderText = "ProductoID";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Descripcion";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Cantidad";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Productobutton.BackColor = System.Drawing.SystemColors.Window;
+            this.Productobutton.Image = ((System.Drawing.Image)(resources.GetObject("Productobutton.Image")));
+            this.Productobutton.Location = new System.Drawing.Point(182, 49);
+            this.Productobutton.Name = "Productobutton";
+            this.Productobutton.Size = new System.Drawing.Size(47, 28);
+            this.Productobutton.TabIndex = 5;
+            this.Productobutton.UseVisualStyleBackColor = false;
+            this.Productobutton.Click += new System.EventHandler(this.Productobutton_Click);
             // 
             // rEntradaProducto
             // 
@@ -390,5 +403,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button Productobutton;
     }
 }
