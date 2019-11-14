@@ -267,6 +267,8 @@
             this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(73, 25);
             this.PreciotextBox.TabIndex = 2;
+            this.PreciotextBox.TextChanged += new System.EventHandler(this.PreciotextBox_TextChanged);
+            this.PreciotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
             // 
             // ProductocomboBox
             // 

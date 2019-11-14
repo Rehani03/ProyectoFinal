@@ -56,6 +56,8 @@ namespace ProyectoFinalAp1.UI.Registros
             UsuariotextBox.Text = GetNombreUsuario(this.ID);
             this.TOTAL = 0;
             //this.index = 0;
+            CantidadnumericUpDown.Enabled = true;
+            PreciotextBox.ReadOnly = true;
             CargarGridFor(this.Detalle);
             MyerrorProvider.Clear();
 
@@ -156,7 +158,12 @@ namespace ProyectoFinalAp1.UI.Registros
             if (productos == null)
                 precio = 0;
             else
-                precio = productos.Precio;
+            {
+                if (productos.Donativo == true)
+                    precio = Convert.ToDecimal(PreciotextBox.Text);
+                else
+                    precio = productos.Precio;
+            }
             return precio;
         }
 
@@ -416,8 +423,15 @@ namespace ProyectoFinalAp1.UI.Registros
             TOTAL += total;
             TotaltextBox.Text = this.TOTAL.ToString();
 
+            ProductocomboBox.Text = string.Empty;
             CantidadnumericUpDown.Value = 0;
+            CantidadnumericUpDown.ReadOnly = false;
+            CantidadnumericUpDown.Enabled = true;
+            PreciotextBox.Text = string.Empty;
+            PreciotextBox.ReadOnly = true;
             ImportetextBox.Text = string.Empty;
+
+           
             //this.index += 1;
         }
 
@@ -478,7 +492,32 @@ namespace ProyectoFinalAp1.UI.Registros
 
         private void CargarCamposProducto(int id)
         {
-            PreciotextBox.Text = GetPrecio(id).ToString();
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            Productos productos = new Productos();
+            productos = repositorio.Buscar(id);
+            if (productos != null)
+            {
+                if (productos.Donativo == true)
+                {
+                    CantidadnumericUpDown.Value = 1;
+                    CantidadnumericUpDown.Enabled = false;
+                    PreciotextBox.Text = string.Empty;
+                    ImportetextBox.Text = string.Empty;
+                    PreciotextBox.ReadOnly = false;
+                   
+                }
+                else
+                {
+                    CantidadnumericUpDown.Value = 0;
+                    CantidadnumericUpDown.Enabled = true;
+                    ImportetextBox.Text = string.Empty;
+                    PreciotextBox.ReadOnly = true;
+                    PreciotextBox.Text = GetPrecio(id).ToString();
+                }
+                   
+            }
+
+           
         }
 
 
@@ -516,6 +555,36 @@ namespace ProyectoFinalAp1.UI.Registros
                 }
             }
             
+        }
+
+        private void PreciotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void PreciotextBox_TextChanged(object sender, EventArgs e)
+        {
+            MyerrorProvider.Clear();
+            if (string.IsNullOrWhiteSpace(PreciotextBox.Text))
+                return;
+            decimal precio = Convert.ToDecimal(PreciotextBox.Text);
+            int cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
+            decimal resultado = precio * cantidad;
+            ImportetextBox.Text = string.Empty;
+            ImportetextBox.Text = resultado.ToString();
         }
     }
 }
