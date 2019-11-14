@@ -95,7 +95,7 @@ namespace ProyectoFinalAp1.UI.Consultas
             if (usuarios == null)
                 nombre = "";
             else
-                nombre = usuarios.NombreUsuario;
+                nombre = usuarios.Nombres;
             return nombre;
         }
 
