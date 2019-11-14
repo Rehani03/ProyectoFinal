@@ -17,6 +17,7 @@ namespace ProyectoFinalAp1.UI.Registros
         private int ID = 0;
         //private int index = 0;
         private int cont = 0;
+        private int cont2 = 0;
         private List<DetalleFactura> Detalle { get; set; }
         private decimal TOTAL = 0;
         public rFactura(int Id)
@@ -30,6 +31,7 @@ namespace ProyectoFinalAp1.UI.Registros
             CargarComboCliente();
             CargarComboProducto();
             cont += 1;
+            cont2 += 1;
         }
 
         private void Fechalabel_Click(object sender, EventArgs e)
@@ -479,29 +481,6 @@ namespace ProyectoFinalAp1.UI.Registros
             PreciotextBox.Text = GetPrecio(id).ToString();
         }
 
-        private void Setbutton_Click(object sender, EventArgs e)
-        {
-            MyerrorProvider.Clear();
-            if (ClientecomboBox.Text == "" || ClientecomboBox.SelectedIndex == -1)
-            {
-                MyerrorProvider.SetError(ClientecomboBox, "Debe elegir un producto.");
-                return;
-            }
-            int id = (int)ClientecomboBox.SelectedValue;
-            CargarCamposCliente(id);
-        }
-
-        private void SetProductobutton_Click(object sender, EventArgs e)
-        {
-            MyerrorProvider.Clear();
-            if (ProductocomboBox.Text == "" || ProductocomboBox.SelectedIndex == -1)
-            {
-                MyerrorProvider.SetError(ProductocomboBox, "Debe elegir un producto.");
-                return;
-            }
-            int id = (int)ProductocomboBox.SelectedValue;
-            CargarCamposProducto(id);
-        }
 
         private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -517,8 +496,26 @@ namespace ProyectoFinalAp1.UI.Registros
                     CargarCamposCliente(id);
 
                }
-                MessageBox.Show(ClientecomboBox.SelectedValue.ToString());
             }
+        }
+
+        private void ProductocomboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            MyerrorProvider.Clear();
+            if (ProductocomboBox.Text == "" || ProductocomboBox.SelectedIndex == -1)
+            {
+                MyerrorProvider.SetError(ProductocomboBox, "Debe elegir un producto.");
+                return;
+            }
+            else
+            {
+                if(cont2 > 0)
+                {
+                    int id = (int)ProductocomboBox.SelectedValue;
+                    CargarCamposProducto(id);
+                }
+            }
+            
         }
     }
 }

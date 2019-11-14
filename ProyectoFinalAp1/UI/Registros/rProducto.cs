@@ -79,6 +79,11 @@ namespace ProyectoFinalAp1.UI.Registros
             FechadateTimePicker.Value = DateTime.Now;
             UsuariotextBox.Text = GetNombreUsuario(ID);
             CantidadtextBox.Text = string.Empty;
+
+            PrecionumericUpDown.Enabled = true;
+            CostonumericUpDown.Enabled = true;
+            GananciatextBox.Enabled = true;
+            DonativocheckBox.Checked = false;
         }
 
         private Productos LlenaClase()
@@ -87,11 +92,21 @@ namespace ProyectoFinalAp1.UI.Registros
             productos.ProductoId = Convert.ToInt32(IDnumericUpDown.Value);
             productos.CategoriaId = (int)CategoriacomboBox.SelectedValue;
             productos.Descripcion = DescripciontextBox.Text;
-            productos.Costo = Convert.ToDecimal(CostonumericUpDown.Value);
-            productos.Precio = Convert.ToDecimal(PrecionumericUpDown.Value);
-            productos.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
+            if(DonativocheckBox.Checked == true)
+            {
+                productos.Costo = 0;
+                productos.Precio = 0;
+                productos.Ganancia = 0;
+            }
+            else
+            {
+                productos.Costo = Convert.ToDecimal(CostonumericUpDown.Value);
+                productos.Precio = Convert.ToDecimal(PrecionumericUpDown.Value);
+                productos.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
+            }   
             productos.Fecha = FechadateTimePicker.Value.Date;
             productos.Cantidad = GetCantidadEnBase();
+            productos.Donativo = DonativocheckBox.Checked;
             productos.UsuarioId = ID;
             return productos;
         }
@@ -114,11 +129,23 @@ namespace ProyectoFinalAp1.UI.Registros
             IDnumericUpDown.Value = p.ProductoId;
             CategoriacomboBox.Text = GetCategoria(p.CategoriaId);
             DescripciontextBox.Text = p.Descripcion;
-            CostonumericUpDown.Value = p.Costo;
-            PrecionumericUpDown.Value = p.Precio;
-            GananciatextBox.Text = p.Ganancia.ToString();
+            if (p.Donativo == false)
+            {
+                CostonumericUpDown.Value = p.Costo;
+                PrecionumericUpDown.Value = p.Precio;
+                GananciatextBox.Text = p.Ganancia.ToString();
+            }
+            else
+            {
+                CostonumericUpDown.Enabled = false;
+                PrecionumericUpDown.Enabled = false;
+                GananciatextBox.Enabled = false;
+                DonativocheckBox.Checked = p.Donativo;
+            }
+            
             FechadateTimePicker.Value = p.Fecha;
             CantidadtextBox.Text = p.Cantidad.ToString();
+            DonativocheckBox.Checked = p.Donativo;
             UsuariotextBox.Text = GetNombreUsuario(p.UsuarioId);
         }
 
@@ -146,17 +173,21 @@ namespace ProyectoFinalAp1.UI.Registros
                 MyerrorProvider.SetError(DescripciontextBox, "El campo Descripción debe tener como minimo 6 caracteres.");
                 paso = false;
             }
-
-            if (CostonumericUpDown.Value == 0)
+            //aqui verifico si es donativo para limpiar los campos precio y costo
+            if(DonativocheckBox.Checked == false)
             {
-                MyerrorProvider.SetError(CostonumericUpDown, "El campo Costo no puede ser igual a cero");
-                paso = false;
-            }
+                if (CostonumericUpDown.Value == 0)
+                {
+                    MyerrorProvider.SetError(CostonumericUpDown, "El campo Costo no puede ser igual a cero");
+                    paso = false;
+                }
 
-            if(PrecionumericUpDown.Value < CostonumericUpDown.Value)
-            {
-                MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
-                paso = false;
+                if (PrecionumericUpDown.Value < CostonumericUpDown.Value)
+                {
+                    MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
+                    paso = false;
+                }
+
             }
 
 
@@ -302,38 +333,41 @@ namespace ProyectoFinalAp1.UI.Registros
 
         private void CostonumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
-            decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
-            if (precio < costo)
-            {
-                MyerrorProvider.Clear();
-                MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
-            }
-            else
-            {
-                MyerrorProvider.Clear();
-                decimal ganancia = precio - costo;
-                GananciatextBox.Text = ganancia.ToString();
-            }
            
+                decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
+                decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
+                if (precio < costo)
+                {
+                    MyerrorProvider.Clear();
+                    MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
+                }
+                else
+                {
+                    MyerrorProvider.Clear();
+                    decimal ganancia = precio - costo;
+                    GananciatextBox.Text = ganancia.ToString();
+                }
+            
+          
         }
 
         private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
-            decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
-            if(precio < costo)
-            {
-                MyerrorProvider.Clear();
-                MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
-            }
-            else
-            {
-                MyerrorProvider.Clear();
-                decimal ganancia = precio - costo;
-                GananciatextBox.Text = ganancia.ToString();
-            }
-           
+
+                decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
+                decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
+                if (precio < costo)
+                {
+                    MyerrorProvider.Clear();
+                    MyerrorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo.");
+                }
+                else
+                {
+                    MyerrorProvider.Clear();
+                    decimal ganancia = precio - costo;
+                    GananciatextBox.Text = ganancia.ToString();
+                }
+                      
         }
 
         private void Categoriabutton_Click(object sender, EventArgs e)
@@ -341,6 +375,25 @@ namespace ProyectoFinalAp1.UI.Registros
             rCategoria categoria = new rCategoria(ID);
             categoria.ShowDialog();
             CargarCombo();
+        }
+
+        private void DonativocheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(DonativocheckBox.Checked == true)
+            {
+                PrecionumericUpDown.Value = 0;
+                CostonumericUpDown.Value = 0;
+                GananciatextBox.Text = string.Empty;
+                PrecionumericUpDown.Enabled = false;
+                CostonumericUpDown.Enabled = false;
+                GananciatextBox.Enabled = false;
+            }
+            else
+            {
+                PrecionumericUpDown.Enabled = true;
+                CostonumericUpDown.Enabled = true;
+                GananciatextBox.Enabled = true; 
+            }
         }
     }
 }

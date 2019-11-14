@@ -19,6 +19,7 @@ namespace ProyectoFinalAp1.Entidades
         public decimal Precio { get; set; }
         public decimal Ganancia { get; set; }
         public DateTime Fecha { get; set; }
+        public bool Donativo { get; set; }
         public int Cantidad { get; set; }
         [ForeignKey("CategoriaId")]
         public virtual Categorias Categorias { get; set; }

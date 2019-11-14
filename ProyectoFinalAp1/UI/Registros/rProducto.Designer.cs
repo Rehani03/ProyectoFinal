@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rProducto));
             this.Componentespanel = new System.Windows.Forms.Panel();
+            this.Categoriabutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -55,7 +56,7 @@
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Usuariolabel = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
-            this.Categoriabutton = new System.Windows.Forms.Button();
+            this.DonativocheckBox = new System.Windows.Forms.CheckBox();
             this.Componentespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
@@ -67,6 +68,7 @@
             // Componentespanel
             // 
             this.Componentespanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Componentespanel.Controls.Add(this.DonativocheckBox);
             this.Componentespanel.Controls.Add(this.Categoriabutton);
             this.Componentespanel.Controls.Add(this.Buscarbutton);
             this.Componentespanel.Controls.Add(this.CantidadtextBox);
@@ -91,6 +93,17 @@
             this.Componentespanel.Size = new System.Drawing.Size(379, 331);
             this.Componentespanel.TabIndex = 2;
             this.Componentespanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Componentespanel_Paint);
+            // 
+            // Categoriabutton
+            // 
+            this.Categoriabutton.BackColor = System.Drawing.SystemColors.Window;
+            this.Categoriabutton.Image = ((System.Drawing.Image)(resources.GetObject("Categoriabutton.Image")));
+            this.Categoriabutton.Location = new System.Drawing.Point(335, 51);
+            this.Categoriabutton.Name = "Categoriabutton";
+            this.Categoriabutton.Size = new System.Drawing.Size(35, 27);
+            this.Categoriabutton.TabIndex = 10;
+            this.Categoriabutton.UseVisualStyleBackColor = false;
+            this.Categoriabutton.Click += new System.EventHandler(this.Categoriabutton_Click);
             // 
             // Buscarbutton
             // 
@@ -317,16 +330,16 @@
             this.UsuariotextBox.Size = new System.Drawing.Size(114, 22);
             this.UsuariotextBox.TabIndex = 5;
             // 
-            // Categoriabutton
+            // DonativocheckBox
             // 
-            this.Categoriabutton.BackColor = System.Drawing.SystemColors.Window;
-            this.Categoriabutton.Image = ((System.Drawing.Image)(resources.GetObject("Categoriabutton.Image")));
-            this.Categoriabutton.Location = new System.Drawing.Point(335, 51);
-            this.Categoriabutton.Name = "Categoriabutton";
-            this.Categoriabutton.Size = new System.Drawing.Size(35, 27);
-            this.Categoriabutton.TabIndex = 10;
-            this.Categoriabutton.UseVisualStyleBackColor = false;
-            this.Categoriabutton.Click += new System.EventHandler(this.Categoriabutton_Click);
+            this.DonativocheckBox.AutoSize = true;
+            this.DonativocheckBox.Location = new System.Drawing.Point(271, 293);
+            this.DonativocheckBox.Name = "DonativocheckBox";
+            this.DonativocheckBox.Size = new System.Drawing.Size(91, 23);
+            this.DonativocheckBox.TabIndex = 11;
+            this.DonativocheckBox.Text = "Donativo";
+            this.DonativocheckBox.UseVisualStyleBackColor = true;
+            this.DonativocheckBox.CheckedChanged += new System.EventHandler(this.DonativocheckBox_CheckedChanged);
             // 
             // rProducto
             // 
@@ -382,5 +395,6 @@
         private System.Windows.Forms.Label Usuariolabel;
         private System.Windows.Forms.TextBox UsuariotextBox;
         private System.Windows.Forms.Button Categoriabutton;
+        private System.Windows.Forms.CheckBox DonativocheckBox;
     }
 }

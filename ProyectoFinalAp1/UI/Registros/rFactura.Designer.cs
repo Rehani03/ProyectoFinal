@@ -37,7 +37,6 @@
             this.Fechalabel = new System.Windows.Forms.Label();
             this.IDlabel = new System.Windows.Forms.Label();
             this.Clientepanel = new System.Windows.Forms.Panel();
-            this.Setbutton = new System.Windows.Forms.Button();
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.RnctextBox = new System.Windows.Forms.TextBox();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
@@ -45,7 +44,6 @@
             this.Cedulalabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ProductogroupBox = new System.Windows.Forms.GroupBox();
-            this.SetProductobutton = new System.Windows.Forms.Button();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.ImportetextBox = new System.Windows.Forms.TextBox();
@@ -146,7 +144,6 @@
             // Clientepanel
             // 
             this.Clientepanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Clientepanel.Controls.Add(this.Setbutton);
             this.Clientepanel.Controls.Add(this.TelefonotextBox);
             this.Clientepanel.Controls.Add(this.RnctextBox);
             this.Clientepanel.Controls.Add(this.ClientecomboBox);
@@ -158,30 +155,20 @@
             this.Clientepanel.Size = new System.Drawing.Size(566, 63);
             this.Clientepanel.TabIndex = 3;
             // 
-            // Setbutton
-            // 
-            this.Setbutton.Location = new System.Drawing.Point(157, 21);
-            this.Setbutton.Name = "Setbutton";
-            this.Setbutton.Size = new System.Drawing.Size(39, 32);
-            this.Setbutton.TabIndex = 4;
-            this.Setbutton.Text = "SET";
-            this.Setbutton.UseVisualStyleBackColor = true;
-            this.Setbutton.Click += new System.EventHandler(this.Setbutton_Click);
-            // 
             // TelefonotextBox
             // 
             this.TelefonotextBox.Location = new System.Drawing.Point(413, 28);
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.ReadOnly = true;
-            this.TelefonotextBox.Size = new System.Drawing.Size(100, 22);
+            this.TelefonotextBox.Size = new System.Drawing.Size(133, 22);
             this.TelefonotextBox.TabIndex = 3;
             // 
             // RnctextBox
             // 
-            this.RnctextBox.Location = new System.Drawing.Point(217, 28);
+            this.RnctextBox.Location = new System.Drawing.Point(202, 31);
             this.RnctextBox.Name = "RnctextBox";
             this.RnctextBox.ReadOnly = true;
-            this.RnctextBox.Size = new System.Drawing.Size(134, 22);
+            this.RnctextBox.Size = new System.Drawing.Size(158, 22);
             this.RnctextBox.TabIndex = 2;
             // 
             // ClientecomboBox
@@ -190,7 +177,7 @@
             this.ClientecomboBox.FormattingEnabled = true;
             this.ClientecomboBox.Location = new System.Drawing.Point(11, 28);
             this.ClientecomboBox.Name = "ClientecomboBox";
-            this.ClientecomboBox.Size = new System.Drawing.Size(131, 25);
+            this.ClientecomboBox.Size = new System.Drawing.Size(146, 25);
             this.ClientecomboBox.TabIndex = 1;
             this.ClientecomboBox.SelectedValueChanged += new System.EventHandler(this.ClientecomboBox_SelectedValueChanged);
             // 
@@ -208,7 +195,7 @@
             // 
             this.Cedulalabel.AutoSize = true;
             this.Cedulalabel.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cedulalabel.Location = new System.Drawing.Point(213, 4);
+            this.Cedulalabel.Location = new System.Drawing.Point(198, 4);
             this.Cedulalabel.Name = "Cedulalabel";
             this.Cedulalabel.Size = new System.Drawing.Size(41, 20);
             this.Cedulalabel.TabIndex = 0;
@@ -226,7 +213,6 @@
             // 
             // ProductogroupBox
             // 
-            this.ProductogroupBox.Controls.Add(this.SetProductobutton);
             this.ProductogroupBox.Controls.Add(this.CantidadnumericUpDown);
             this.ProductogroupBox.Controls.Add(this.Agregarbutton);
             this.ProductogroupBox.Controls.Add(this.ImportetextBox);
@@ -243,16 +229,6 @@
             this.ProductogroupBox.TabIndex = 4;
             this.ProductogroupBox.TabStop = false;
             this.ProductogroupBox.Text = "PRODUCTO";
-            // 
-            // SetProductobutton
-            // 
-            this.SetProductobutton.Location = new System.Drawing.Point(152, 47);
-            this.SetProductobutton.Name = "SetProductobutton";
-            this.SetProductobutton.Size = new System.Drawing.Size(39, 32);
-            this.SetProductobutton.TabIndex = 8;
-            this.SetProductobutton.Text = "SET";
-            this.SetProductobutton.UseVisualStyleBackColor = true;
-            this.SetProductobutton.Click += new System.EventHandler(this.SetProductobutton_Click);
             // 
             // CantidadnumericUpDown
             // 
@@ -298,8 +274,9 @@
             this.ProductocomboBox.FormattingEnabled = true;
             this.ProductocomboBox.Location = new System.Drawing.Point(12, 49);
             this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(125, 28);
+            this.ProductocomboBox.Size = new System.Drawing.Size(146, 28);
             this.ProductocomboBox.TabIndex = 1;
+            this.ProductocomboBox.SelectedValueChanged += new System.EventHandler(this.ProductocomboBox_SelectedValueChanged);
             // 
             // Importelabel
             // 
@@ -568,8 +545,6 @@
         private System.Windows.Forms.Button EliminarFilabutton;
         private System.Windows.Forms.Button Imprimirbutton;
         private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
-        private System.Windows.Forms.Button Setbutton;
-        private System.Windows.Forms.Button SetProductobutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
