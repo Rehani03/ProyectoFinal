@@ -55,6 +55,7 @@
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Usuariolabel = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
+            this.Categoriabutton = new System.Windows.Forms.Button();
             this.Componentespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
@@ -66,6 +67,7 @@
             // Componentespanel
             // 
             this.Componentespanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Componentespanel.Controls.Add(this.Categoriabutton);
             this.Componentespanel.Controls.Add(this.Buscarbutton);
             this.Componentespanel.Controls.Add(this.CantidadtextBox);
             this.Componentespanel.Controls.Add(this.FechadateTimePicker);
@@ -86,7 +88,7 @@
             this.Componentespanel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Componentespanel.Location = new System.Drawing.Point(40, 21);
             this.Componentespanel.Name = "Componentespanel";
-            this.Componentespanel.Size = new System.Drawing.Size(340, 331);
+            this.Componentespanel.Size = new System.Drawing.Size(379, 331);
             this.Componentespanel.TabIndex = 2;
             this.Componentespanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Componentespanel_Paint);
             // 
@@ -247,7 +249,7 @@
             this.Botonespanel.Controls.Add(this.Eliminarbutton);
             this.Botonespanel.Controls.Add(this.Guardarbutton);
             this.Botonespanel.Controls.Add(this.Nuevobutton);
-            this.Botonespanel.Location = new System.Drawing.Point(54, 358);
+            this.Botonespanel.Location = new System.Drawing.Point(79, 358);
             this.Botonespanel.Name = "Botonespanel";
             this.Botonespanel.Size = new System.Drawing.Size(305, 52);
             this.Botonespanel.TabIndex = 3;
@@ -301,7 +303,7 @@
             // Usuariolabel
             // 
             this.Usuariolabel.AutoSize = true;
-            this.Usuariolabel.Location = new System.Drawing.Point(94, 421);
+            this.Usuariolabel.Location = new System.Drawing.Point(122, 421);
             this.Usuariolabel.Name = "Usuariolabel";
             this.Usuariolabel.Size = new System.Drawing.Size(63, 17);
             this.Usuariolabel.TabIndex = 4;
@@ -309,18 +311,29 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(188, 416);
+            this.UsuariotextBox.Location = new System.Drawing.Point(216, 416);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.ReadOnly = true;
             this.UsuariotextBox.Size = new System.Drawing.Size(114, 22);
             this.UsuariotextBox.TabIndex = 5;
+            // 
+            // Categoriabutton
+            // 
+            this.Categoriabutton.BackColor = System.Drawing.SystemColors.Window;
+            this.Categoriabutton.Image = ((System.Drawing.Image)(resources.GetObject("Categoriabutton.Image")));
+            this.Categoriabutton.Location = new System.Drawing.Point(335, 51);
+            this.Categoriabutton.Name = "Categoriabutton";
+            this.Categoriabutton.Size = new System.Drawing.Size(35, 27);
+            this.Categoriabutton.TabIndex = 10;
+            this.Categoriabutton.UseVisualStyleBackColor = false;
+            this.Categoriabutton.Click += new System.EventHandler(this.Categoriabutton_Click);
             // 
             // rProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(419, 452);
+            this.ClientSize = new System.Drawing.Size(446, 452);
             this.Controls.Add(this.UsuariotextBox);
             this.Controls.Add(this.Usuariolabel);
             this.Controls.Add(this.Botonespanel);
@@ -368,5 +381,6 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Label Usuariolabel;
         private System.Windows.Forms.TextBox UsuariotextBox;
+        private System.Windows.Forms.Button Categoriabutton;
     }
 }

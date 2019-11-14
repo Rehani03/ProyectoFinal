@@ -335,5 +335,12 @@ namespace ProyectoFinalAp1.UI.Registros
             }
            
         }
+
+        private void Categoriabutton_Click(object sender, EventArgs e)
+        {
+            rCategoria categoria = new rCategoria(ID);
+            categoria.ShowDialog();
+            CargarCombo();
+        }
     }
 }
