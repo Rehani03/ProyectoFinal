@@ -16,6 +16,7 @@ namespace ProyectoFinalAp1.UI.Registros
     {
         private int ID = 0;
         //private int index = 0;
+        private int cont = 0;
         private List<DetalleFactura> Detalle { get; set; }
         private decimal TOTAL = 0;
         public rFactura(int Id)
@@ -28,6 +29,7 @@ namespace ProyectoFinalAp1.UI.Registros
             CantidadnumericUpDown.Maximum = 100000;
             CargarComboCliente();
             CargarComboProducto();
+            cont += 1;
         }
 
         private void Fechalabel_Click(object sender, EventArgs e)
@@ -499,6 +501,24 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             int id = (int)ProductocomboBox.SelectedValue;
             CargarCamposProducto(id);
+        }
+
+        private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (ClientecomboBox.Text == "" || ClientecomboBox.SelectedIndex == -1)
+            {
+                MyerrorProvider.SetError(ClientecomboBox, "Debe elegir un Cliente.");
+            }
+            else
+            {
+               if(cont > 0)
+               {
+                    int id = Convert.ToInt32(ClientecomboBox.SelectedValue);
+                    CargarCamposCliente(id);
+
+               }
+                MessageBox.Show(ClientecomboBox.SelectedValue.ToString());
+            }
         }
     }
 }

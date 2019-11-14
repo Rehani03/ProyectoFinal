@@ -57,6 +57,10 @@
             this.Descripcionlabel = new System.Windows.Forms.Label();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EliminarFilabutton = new System.Windows.Forms.Button();
             this.Botonespanel = new System.Windows.Forms.Panel();
             this.Eliminarbutton = new System.Windows.Forms.Button();
@@ -67,10 +71,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.Clientepanel.SuspendLayout();
@@ -192,6 +192,7 @@
             this.ClientecomboBox.Name = "ClientecomboBox";
             this.ClientecomboBox.Size = new System.Drawing.Size(131, 25);
             this.ClientecomboBox.TabIndex = 1;
+            this.ClientecomboBox.SelectedValueChanged += new System.EventHandler(this.ClientecomboBox_SelectedValueChanged);
             // 
             // Telefonolabel
             // 
@@ -355,6 +356,30 @@
             this.DetalledataGridView.Size = new System.Drawing.Size(566, 116);
             this.DetalledataGridView.TabIndex = 5;
             // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "ProductoId";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Descripción";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Precio";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Cantidad";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // EliminarFilabutton
             // 
             this.EliminarFilabutton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarFilabutton.Image")));
@@ -468,30 +493,6 @@
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimirbutton.UseVisualStyleBackColor = false;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "ProductoId";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Descripción";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Precio";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Cantidad";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // rFactura
             // 
