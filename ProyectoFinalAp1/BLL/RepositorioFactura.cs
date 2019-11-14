@@ -80,8 +80,21 @@ namespace ProyectoFinalAp1.BLL
                         db.Entry(item).State = EntityState.Modified;
                 }
 
-                db.Cliente.Find(entity.ClienteId).Consumo -= AnteriorConsumo;
-                db.Cliente.Find(entity.ClienteId).Consumo += entity.Total;
+                //Aqui cambio el total de cliente por si el usuario lo cambia
+                if(entity.ClienteId != Anterior.ClienteId)
+                {
+                    db.Cliente.Find(Anterior.ClienteId).Consumo -= AnteriorConsumo;
+                    db.Cliente.Find(Anterior.ClienteId).Visitas -= 1;
+                    db.Cliente.Find(entity.ClienteId).Consumo += entity.Total;
+                    db.Cliente.Find(entity.ClienteId).Visitas += 1;
+                }
+                else
+                {
+
+                    db.Cliente.Find(entity.ClienteId).Consumo -= AnteriorConsumo;
+                    db.Cliente.Find(entity.ClienteId).Consumo += entity.Total;
+                }
+
 
                 db.Entry(entity).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);

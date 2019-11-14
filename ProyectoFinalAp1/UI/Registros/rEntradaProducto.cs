@@ -116,7 +116,36 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
-            return paso;
+          
+
+            return paso = false;
+        }
+
+        private int GetTotalProducto(int id)
+        {
+            int cantidad = 0;
+            foreach (var item in this.Detalle)
+            {
+                if (item.ProductoId == id)
+                {
+                    cantidad += item.Cantidad;
+                }
+            }
+            return cantidad;
+        }
+
+        private int GetCantidadProducto(int id)
+        {
+            int cantidad = 0;
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            Productos productos = new Productos();
+            productos = repositorio.Buscar(id);
+            if (productos == null)
+                cantidad = 0;
+            else
+                cantidad = productos.Cantidad;
+
+            return cantidad;
         }
 
         private bool ValidarAgregar()
@@ -207,6 +236,29 @@ namespace ProyectoFinalAp1.UI.Registros
             {
                 MyerrorProvider.SetError(EliminarFilabutton, "Debe seleccionar al menos una fila.");
                 paso = false;
+            }
+
+            if (paso)
+            {
+                if (IDnumericUpDown.Value != 0)
+                {
+                    foreach (var item in this.Detalle)
+                    {
+
+                        int cantidad = GetCantidadProducto(item.ProductoId);
+                       // MessageBox.Show(cantidad.ToString());
+                        int cantidadDetalle = GetTotalProducto(item.ProductoId);
+                       // MessageBox.Show(cantidadDetalle.ToString());
+                        int resultado = cantidad - cantidadDetalle;
+                        //MessageBox.Show(resultado.ToString());
+                        if (resultado < 0)
+                        {
+                            MessageBox.Show("La cantidad de " + GetDescripcion(item.ProductoId) + " ya fue vendida en facturación.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return paso = false;
+                        }
+                    }
+                }
+
             }
 
             return paso;
