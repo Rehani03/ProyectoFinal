@@ -144,7 +144,7 @@ namespace ProyectoFinalAp1.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            if(listado == null || listado.Count < 0)
+            if(listado == null || listado.Count <= 0)
             {
                 MyerrorProvider.Clear();
                 MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
