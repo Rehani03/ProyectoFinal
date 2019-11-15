@@ -53,8 +53,6 @@
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.contadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label = new System.Windows.Forms.Label();
-            this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -255,6 +253,7 @@
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
             this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
+            this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.UsuariosToolStripMenuItem1_Click);
             // 
             // facturaciónToolStripMenuItem2
             // 
@@ -270,35 +269,15 @@
             // 
             this.contadoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("contadoToolStripMenuItem.Image")));
             this.contadoToolStripMenuItem.Name = "contadoToolStripMenuItem";
-            this.contadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contadoToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.contadoToolStripMenuItem.Text = "Contado";
             this.contadoToolStripMenuItem.Click += new System.EventHandler(this.ContadoToolStripMenuItem_Click);
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(592, 6);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(71, 19);
-            this.label.TabIndex = 2;
-            this.label.Text = "USUARIO:";
-            // 
-            // UsuariotextBox
-            // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(669, 3);
-            this.UsuariotextBox.Name = "UsuariotextBox";
-            this.UsuariotextBox.ReadOnly = true;
-            this.UsuariotextBox.Size = new System.Drawing.Size(143, 22);
-            this.UsuariotextBox.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 471);
-            this.Controls.Add(this.UsuariotextBox);
-            this.Controls.Add(this.label);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
@@ -337,8 +316,6 @@
         private System.Windows.Forms.ToolStripMenuItem entradaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.TextBox UsuariotextBox;
         private System.Windows.Forms.ToolStripMenuItem detalleEntradaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detalleFacturaToolStripMenuItem;
     }

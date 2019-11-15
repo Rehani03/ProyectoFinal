@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using ProyectoFinalAp1.UI.Consultas;
 using ProyectoFinalAp1.UI.Registros;
 using ProyectoFinalAp1.UI.Login;
+using ProyectoFinalAp1.BLL;
+using ProyectoFinalAp1.Entidades;
+using ProyectoFinalAp1.UI.Reportes;
 
 namespace ProyectoFinalAp1
 {
@@ -118,6 +121,24 @@ namespace ProyectoFinalAp1
             cDetalleFactura cDetalle = new cDetalleFactura();
             cDetalle.MdiParent = this;
             cDetalle.Show();
+        }
+
+        private void UsuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            List<Usuarios> lista = new List<Usuarios>();
+            lista = repositorio.GetList(p => true);
+            if(lista.Count > 0)
+            {
+                MessageBox.Show("Un momento por favor.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReporteUsuario reporte = new ReporteUsuario(lista);
+                reporte.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay datos para imprimir.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
     }
 }
