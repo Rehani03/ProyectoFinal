@@ -191,7 +191,8 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             bool paso;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
-            RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
+            //RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
+            RepositorioCategoria repositorio = new RepositorioCategoria();
 
             if (!Existe())
             {
@@ -200,7 +201,7 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                var resultado = MessageBox.Show("De eliminar esta Categoria perdera información importante.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resultado = MessageBox.Show("De eliminar esta Categoria perdera información importante. Seguro?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
                     paso = repositorio.Eliminar(ID);

@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
+    <Compile Include="BLL\RepositorioCategoria.cs" />
     <Compile Include="BLL\RepositorioEntradaProducto.cs" />
     <Compile Include="BLL\RepositorioFactura.cs" />
     <Compile Include="BLL\RepositorioProducto.cs" />
