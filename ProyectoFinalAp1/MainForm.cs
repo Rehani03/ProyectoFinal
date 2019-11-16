@@ -157,5 +157,22 @@ namespace ProyectoFinalAp1
                 MessageBox.Show("No hay datos para imprimir.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void EntradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<EntradaProducto> repositorio = new RepositorioBase<EntradaProducto>();
+            List<EntradaProducto> lista = new List<EntradaProducto>();
+            lista = repositorio.GetList(p => true);
+            if (lista.Count > 0)
+            {
+                MessageBox.Show("Un momento por favor.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReporteEntrada reporte = new ReporteEntrada(lista);
+                reporte.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay datos para imprimir.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

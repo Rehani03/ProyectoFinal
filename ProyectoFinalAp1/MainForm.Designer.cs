@@ -239,6 +239,7 @@
             this.entradaDeProductosToolStripMenuItem.Name = "entradaDeProductosToolStripMenuItem";
             this.entradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.entradaDeProductosToolStripMenuItem.Text = "Entrada de Productos";
+            this.entradaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.EntradaDeProductosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 

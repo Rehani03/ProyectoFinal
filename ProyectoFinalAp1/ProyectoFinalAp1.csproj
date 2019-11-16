@@ -207,6 +207,18 @@
       <DependentUpon>ReporteClienteCrystal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\Reportes\ReporteEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteEntrada.Designer.cs">
+      <DependentUpon>ReporteEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteEntradaCrystal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEntradaCrystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\ReporteUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +299,13 @@
     <EmbeddedResource Include="UI\Reportes\ReporteClienteCrystal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteClienteCrystal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteEntrada.resx">
+      <DependentUpon>ReporteEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteEntradaCrystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteEntradaCrystal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ReporteUsuario.resx">
       <DependentUpon>ReporteUsuario.cs</DependentUpon>
