@@ -305,7 +305,8 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             bool paso;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
-            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            //RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            RepositorioProducto repositorio = new RepositorioProducto();
 
             if (!Existe())
             {
@@ -314,7 +315,7 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                var resultado = MessageBox.Show("De eliminar este Producto perdera información importante.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resultado = MessageBox.Show("De eliminar este Producto perdera información importante. Seguro?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
                     paso = repositorio.Eliminar(ID);
