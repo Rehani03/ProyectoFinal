@@ -246,6 +246,7 @@
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.usuariosToolStripMenuItem.Text = "Clientes";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem1
             // 

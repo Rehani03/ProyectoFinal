@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoFinalAp1.BLL;
 using ProyectoFinalAp1.Entidades;
+using ProyectoFinalAp1.UI.Reportes;
 
 namespace ProyectoFinalAp1.UI.Consultas
 {
     public partial class cCliente : Form
     {
+        private List<Clientes> listado;
         public cCliente()
         {
             InitializeComponent();
@@ -57,7 +59,7 @@ namespace ProyectoFinalAp1.UI.Consultas
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
-            var listado = new List<Clientes>();
+            listado = new List<Clientes>();
             RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
 
             if (!Validar())
@@ -178,6 +180,30 @@ namespace ProyectoFinalAp1.UI.Consultas
             {
                 DesdedateTimePicker.Enabled = false;
                 HastadateTimePicker.Enabled = false;
+            }
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (listado == null || listado.Count <= 0)
+            {
+                MyerrorProvider.Clear();
+                MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
+                return;
+            }
+            else
+            {
+                if (listado.Count > 0)
+                {
+                    ReporteCliente reporte = new ReporteCliente(listado);
+                    reporte.ShowDialog();
+                }
+                else
+                {
+                    MyerrorProvider.Clear();
+                    MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
+                    return;
+                }
             }
         }
     }
