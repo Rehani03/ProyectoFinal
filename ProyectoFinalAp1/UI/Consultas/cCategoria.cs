@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoFinalAp1.Entidades;
 using ProyectoFinalAp1.BLL;
+using ProyectoFinalAp1.UI.Reportes;
 
 namespace ProyectoFinalAp1.UI.Consultas
 {
     public partial class cCategoria : Form
     {
+        private List<Categorias> listado;
         public cCategoria()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace ProyectoFinalAp1.UI.Consultas
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
-            var listado = new List<Categorias>();
+            listado = new List<Categorias>();
             RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
 
             if (!Validar())
@@ -82,6 +84,29 @@ namespace ProyectoFinalAp1.UI.Consultas
             return paso;
         }
 
-
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (listado == null || listado.Count <= 0)
+            {
+                MyerrorProvider.Clear();
+                MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
+                return;
+            }
+            else
+            {
+                if (listado.Count > 0)
+                {
+                    ReporteCategoria reporte = new ReporteCategoria(listado);
+                    reporte.ShowDialog();
+                }
+                else
+                {
+                    MyerrorProvider.Clear();
+                    MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
+                    return;
+                }
+            }
+        }
     }
+    
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalAp1.UI.Reportes
 {
-    partial class ReporteUsuario
+    partial class ReporteCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -39,19 +39,19 @@
             this.ReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReportViewer.Location = new System.Drawing.Point(0, 0);
             this.ReportViewer.Name = "ReportViewer";
-            this.ReportViewer.Size = new System.Drawing.Size(800, 450);
+            this.ReportViewer.Size = new System.Drawing.Size(733, 423);
             this.ReportViewer.TabIndex = 0;
             this.ReportViewer.Load += new System.EventHandler(this.CrystalReportViewer1_Load);
             // 
-            // ReporteUsuario
+            // ReporteCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(733, 423);
             this.Controls.Add(this.ReportViewer);
-            this.Name = "ReporteUsuario";
-            this.Text = "Reporte de Usuario-ButterSoft";
-            this.Load += new System.EventHandler(this.ReporteUsuario_Load);
+            this.Name = "ReporteCategoria";
+            this.Text = "Reporte de Categoria-ButterSoft";
+            this.Load += new System.EventHandler(this.ReporteCategoria_Load);
             this.ResumeLayout(false);
 
         }

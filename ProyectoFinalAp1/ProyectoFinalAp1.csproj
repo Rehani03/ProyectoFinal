@@ -183,6 +183,18 @@
     <Compile Include="UI\Registros\rUsuario.Designer.cs">
       <DependentUpon>rUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ReporteCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteCategoria.Designer.cs">
+      <DependentUpon>ReporteCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteCategoriaCrystal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteCategoriaCrystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\ReporteUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +261,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rUsuario.resx">
       <DependentUpon>rUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteCategoria.resx">
+      <DependentUpon>ReporteCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteCategoriaCrystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCategoriaCrystal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ReporteUsuario.resx">
       <DependentUpon>ReporteUsuario.cs</DependentUpon>

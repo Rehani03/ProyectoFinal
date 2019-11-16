@@ -11,23 +11,23 @@ using ProyectoFinalAp1.Entidades;
 
 namespace ProyectoFinalAp1.UI.Reportes
 {
-    public partial class ReporteUsuario : Form
+    public partial class ReporteCategoria : Form
     {
-        public ReporteUsuario(List<Usuarios> lista)
+        public ReporteCategoria(List<Categorias> lista)
         {
             InitializeComponent();
-            ReporteUsuarioCrystal reporte = new ReporteUsuarioCrystal();
+            ReporteCategoriaCrystal reporte = new ReporteCategoriaCrystal();
             reporte.SetDataSource(lista);
             ReportViewer.ReportSource = reporte;
             ReportViewer.Refresh();
         }
 
-        private void CrystalReportViewer1_Load(object sender, EventArgs e)
+        private void ReporteCategoria_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void ReporteUsuario_Load(object sender, EventArgs e)
+        private void CrystalReportViewer1_Load(object sender, EventArgs e)
         {
 
         }
