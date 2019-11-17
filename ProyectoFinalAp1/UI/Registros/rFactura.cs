@@ -313,12 +313,12 @@ namespace ProyectoFinalAp1.UI.Registros
             if (paso)
             {
                 MessageBox.Show("Guardado!!", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var resultado = MessageBox.Show("Deseas imprimir esta factura?.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (resultado == DialogResult.Yes)
-                {
-                    ReporteFacturaConsumidor reporte = new ReporteFacturaConsumidor(this.Detalle);
-                    reporte.ShowDialog();
-                }
+                //var resultado = MessageBox.Show("Deseas imprimir esta factura?.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if (resultado == DialogResult.Yes)
+                //{
+                //    ReporteFacturaConsumidor reporte = new ReporteFacturaConsumidor(this.Detalle);
+                //    reporte.ShowDialog();
+                //}
 
                 Limpiar();     
             }
