@@ -68,7 +68,7 @@ namespace ProyectoFinalAp1.UI.Registros
             bool paso = true;
             MyerrorProvider.Clear();
 
-            if(ClientecomboBox.Text == "" || ClientecomboBox.SelectedIndex == -1)
+            if(ClientecomboBox.Text == "" || ClientecomboBox.SelectedIndex == -1 || !ExisteCliente())
             {
                 MyerrorProvider.SetError(ClientecomboBox, "Debe seleccionar un Cliente");
                 paso = false;
@@ -97,6 +97,13 @@ namespace ProyectoFinalAp1.UI.Registros
             }
 
             return paso;
+        }
+
+        private bool ExisteCliente()
+        {
+            RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+            var cliente = repositorio.Buscar((int)ClientecomboBox.SelectedValue);
+            return (cliente != null);
         }
 
         private int GetTotalProducto(int id)

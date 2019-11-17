@@ -43,7 +43,6 @@
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
             this.Filtrolabel = new System.Windows.Forms.Label();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Imprimirbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleEntradadataGridView)).BeginInit();
             this.Controlespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -169,26 +168,12 @@
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
-            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
-            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(324, 426);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(104, 37);
-            this.Imprimirbutton.TabIndex = 2;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = false;
-            // 
             // cDetalleEntradaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(779, 470);
-            this.Controls.Add(this.Imprimirbutton);
+            this.ClientSize = new System.Drawing.Size(779, 429);
             this.Controls.Add(this.Controlespanel);
             this.Controls.Add(this.DetalleEntradadataGridView);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,6 +204,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Button Imprimirbutton;
     }
 }
