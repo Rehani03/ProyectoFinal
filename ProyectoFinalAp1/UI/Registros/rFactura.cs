@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoFinalAp1.BLL;
 using ProyectoFinalAp1.Entidades;
+using ProyectoFinalAp1.UI.Reportes;
 
 namespace ProyectoFinalAp1.UI.Registros
 {
@@ -311,8 +312,15 @@ namespace ProyectoFinalAp1.UI.Registros
 
             if (paso)
             {
-                Limpiar();
                 MessageBox.Show("Guardado!!", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var resultado = MessageBox.Show("Deseas imprimir esta factura?.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ReporteFacturaConsumidor reporte = new ReporteFacturaConsumidor(this.Detalle);
+                    reporte.ShowDialog();
+                }
+
+                Limpiar();     
             }
             else
             {
@@ -599,6 +607,20 @@ namespace ProyectoFinalAp1.UI.Registros
             decimal resultado = precio * cantidad;
             ImportetextBox.Text = string.Empty;
             ImportetextBox.Text = resultado.ToString();
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if(this.Detalle.Count > 0)
+            {
+                ReporteFacturaConsumidor reporte = new ReporteFacturaConsumidor(this.Detalle);
+                reporte.ShowDialog();
+            }
+            else
+            {
+                MyerrorProvider.Clear();
+                MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
+            }
         }
     }
 }
