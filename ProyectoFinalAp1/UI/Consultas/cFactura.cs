@@ -1,5 +1,6 @@
 ﻿using ProyectoFinalAp1.BLL;
 using ProyectoFinalAp1.Entidades;
+using ProyectoFinalAp1.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ProyectoFinalAp1.UI.Consultas
 {
     public partial class cFactura : Form
     {
+        private List<Facturas> listado;
         public cFactura()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace ProyectoFinalAp1.UI.Consultas
             HastadateTimePicker.Enabled = false;
             this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
+        
         private void FechacheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (FechacheckBox.Checked == true)
@@ -38,7 +40,7 @@ namespace ProyectoFinalAp1.UI.Consultas
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
-            var listado = new List<Facturas>();
+            listado = new List<Facturas>();
             RepositorioBase<Facturas> repositorio = new RepositorioBase<Facturas>();
 
             if (!Validar())
@@ -182,6 +184,35 @@ namespace ProyectoFinalAp1.UI.Consultas
             }
 
             return paso;
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (listado == null || listado.Count <= 0)
+            {
+                MyerrorProvider.Clear();
+                MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
+                return;
+            }
+            else
+            {
+                if (listado.Count > 0)
+                {
+                    ReporteFactura reporte = new ReporteFactura(listado);
+                    reporte.ShowDialog();
+                }
+                else
+                {
+                    MyerrorProvider.Clear();
+                    MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
+                    return;
+                }
+            }
+        }
+
+        private void Imprimir(List<Facturas> facturas)
+        {
+
         }
     }
 }

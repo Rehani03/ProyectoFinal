@@ -225,6 +225,7 @@
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
             this.facturasToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.facturasToolStripMenuItem.Text = "Facturas";
+            this.facturasToolStripMenuItem.Click += new System.EventHandler(this.FacturasToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem1
             // 
