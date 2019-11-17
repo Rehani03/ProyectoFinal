@@ -373,7 +373,7 @@ namespace ProyectoFinalAp1.UI.Registros
             bool paso = true;
             MyerrorProvider.Clear();
 
-            if (ProductocomboBox.Text == "" || ProductocomboBox.SelectedIndex == -1)
+            if (ProductocomboBox.Text == "" || ProductocomboBox.SelectedIndex == -1 || !ExisteProducto())
             {
                 MyerrorProvider.SetError(ProductocomboBox, "Debe elegir un producto");
                 paso = false;
@@ -392,6 +392,13 @@ namespace ProyectoFinalAp1.UI.Registros
             }
 
             return paso;
+        }
+
+        private bool ExisteProducto()
+        {
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            var producto = repositorio.Buscar((int)ProductocomboBox.SelectedValue);
+            return (producto != null);
         }
 
         private int GetCantidadProducto(int id)
