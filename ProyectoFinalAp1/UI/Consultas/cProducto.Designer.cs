@@ -274,7 +274,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(904, 494);
+            this.ClientSize = new System.Drawing.Size(904, 504);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Frontalpanel);
