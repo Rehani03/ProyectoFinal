@@ -175,5 +175,23 @@ namespace ProyectoFinalAp1.UI.Consultas
                 }
             }
         }
+
+        private void ConsultadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RepositorioBase<EntradaProducto> repositorio = new RepositorioBase<EntradaProducto>();
+            int ID = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells[0].Value);
+            List<DetalleEntradaProductos> dt = new List<DetalleEntradaProductos>();
+            EntradaProducto entrada = repositorio.Buscar(ID);
+            cDetalleEntrada detalle = new cDetalleEntrada();
+
+            dt = entrada.DetalleEntrada;
+            foreach (var item in dt)
+            {
+                detalle.DetelleEntradadataGridView.Rows.Add(item.DetalleEntradaProductosId,
+                    item.ProductoId, item.Productos.Descripcion, item.Cantidad);
+            }
+            detalle.DetelleEntradadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            detalle.ShowDialog();
+        }
     }
 }
