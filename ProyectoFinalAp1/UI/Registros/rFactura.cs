@@ -153,7 +153,9 @@ namespace ProyectoFinalAp1.UI.Registros
             foreach (var item in lista)
             {
                 //index += 1;
-                DetalledataGridView.Rows.Add(item.ProductoId, GetDescripcion(item.ProductoId), item.Precio, item.Cantidad);
+                decimal resultado = item.Cantidad * item.Precio;
+                DetalledataGridView.Rows.Add(item.ProductoId, GetDescripcion(item.ProductoId), item.Precio, item.Cantidad, resultado);
+                resultado = 0;
             }
         }
 

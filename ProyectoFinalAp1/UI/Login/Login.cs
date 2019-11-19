@@ -113,5 +113,20 @@ namespace ProyectoFinalAp1.UI.Login
             int ID = (int)UsuariocomboBox.SelectedValue;
             Application.Run(new MainForm(ID));
         }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            string text = ContraseñatextBox.Text;
+            if(VercheckBox.Checked == true)
+            {
+                ContraseñatextBox.UseSystemPasswordChar = false;
+                ContraseñatextBox.Text = text;
+            }
+            else
+            {
+                ContraseñatextBox.UseSystemPasswordChar = true;
+                ContraseñatextBox.Text = text;
+            }
+        }
     }
 }

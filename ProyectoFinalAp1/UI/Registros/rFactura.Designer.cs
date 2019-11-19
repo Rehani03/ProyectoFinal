@@ -69,6 +69,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.Clientepanel.SuspendLayout();
@@ -328,7 +329,8 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Column1});
             this.DetalledataGridView.Location = new System.Drawing.Point(24, 263);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.ReadOnly = true;
@@ -475,6 +477,12 @@
             this.Imprimirbutton.Visible = false;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Importe";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // rFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -553,5 +561,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

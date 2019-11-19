@@ -208,5 +208,12 @@ namespace ProyectoFinalAp1
                 MessageBox.Show("No hay datos para imprimir.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void FacturaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rFactura factura = new rFactura(ID);
+            factura.MdiParent = this;
+            factura.Show();
+        }
     }
 }

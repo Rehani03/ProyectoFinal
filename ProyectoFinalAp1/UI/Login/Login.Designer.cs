@@ -37,6 +37,7 @@
             this.MyerrorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
             this.Ingresarbutton = new System.Windows.Forms.Button();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.VercheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProviderLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +77,7 @@
             this.ContraseñatextBox.Name = "ContraseñatextBox";
             this.ContraseñatextBox.Size = new System.Drawing.Size(198, 22);
             this.ContraseñatextBox.TabIndex = 4;
+            this.ContraseñatextBox.UseSystemPasswordChar = true;
             // 
             // MyerrorProviderLogin
             // 
@@ -100,12 +102,25 @@
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
+            // VercheckBox
+            // 
+            this.VercheckBox.AutoSize = true;
+            this.VercheckBox.BackColor = System.Drawing.SystemColors.Window;
+            this.VercheckBox.Image = ((System.Drawing.Image)(resources.GetObject("VercheckBox.Image")));
+            this.VercheckBox.Location = new System.Drawing.Point(370, 86);
+            this.VercheckBox.Name = "VercheckBox";
+            this.VercheckBox.Size = new System.Drawing.Size(35, 20);
+            this.VercheckBox.TabIndex = 6;
+            this.VercheckBox.UseVisualStyleBackColor = false;
+            this.VercheckBox.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(396, 194);
+            this.ClientSize = new System.Drawing.Size(410, 194);
+            this.Controls.Add(this.VercheckBox);
             this.Controls.Add(this.Ingresarbutton);
             this.Controls.Add(this.ContraseñatextBox);
             this.Controls.Add(this.Contraseñalabel);
@@ -133,5 +148,6 @@
         private System.Windows.Forms.Button Ingresarbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProviderLogin;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
+        private System.Windows.Forms.CheckBox VercheckBox;
     }
 }

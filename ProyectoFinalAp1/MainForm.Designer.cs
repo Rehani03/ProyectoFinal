@@ -51,8 +51,7 @@
             this.entradaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturaciónToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +60,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrosToolStripMenuItem,
             this.consultasToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.facturaciónToolStripMenuItem2});
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -78,7 +76,8 @@
             this.productoToolStripMenuItem,
             this.categoriaToolStripMenuItem,
             this.entradaYSalidaProductoToolStripMenuItem,
-            this.usuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem,
+            this.facturaciónToolStripMenuItem});
             this.registrosToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
@@ -259,23 +258,13 @@
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.UsuariosToolStripMenuItem1_Click);
             // 
-            // facturaciónToolStripMenuItem2
+            // facturaciónToolStripMenuItem
             // 
-            this.facturaciónToolStripMenuItem2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.facturaciónToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.contadoToolStripMenuItem});
-            this.facturaciónToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.facturaciónToolStripMenuItem2.Name = "facturaciónToolStripMenuItem2";
-            this.facturaciónToolStripMenuItem2.Size = new System.Drawing.Size(92, 21);
-            this.facturaciónToolStripMenuItem2.Text = "Facturación";
-            // 
-            // contadoToolStripMenuItem
-            // 
-            this.contadoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("contadoToolStripMenuItem.Image")));
-            this.contadoToolStripMenuItem.Name = "contadoToolStripMenuItem";
-            this.contadoToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            this.contadoToolStripMenuItem.Text = "Contado";
-            this.contadoToolStripMenuItem.Click += new System.EventHandler(this.ContadoToolStripMenuItem_Click);
+            this.facturaciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("facturaciónToolStripMenuItem.Image")));
+            this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
+            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.facturaciónToolStripMenuItem.Text = "Facturación";
+            this.facturaciónToolStripMenuItem.Click += new System.EventHandler(this.FacturaciónToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -314,8 +303,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem contadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem entradaDeProductosToolStripMenuItem;
@@ -323,6 +310,7 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem detalleEntradaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detalleFacturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
     }
 }
 

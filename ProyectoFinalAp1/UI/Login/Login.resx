@@ -121,6 +121,17 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="VercheckBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABHUlEQVQ4T72UzYmEQBCFGwR/MAP14E0v
+        JmA0ejAV8aJRePBmRmIGRiC184qp3t4eGRmm2Q9K2ldVT6W7VOSY/zU8joO6rqO6rjmwhvaOS8NlWcj3
+        fVJKXQZyqLnixTDPc92Ypin1fU/7vnMMw0BZluk8am3+GAZBwIVxHNN5nk/1GtSgFj0m2jAMQy6oquqp
+        /DJNE4cNatGDXoENi6LgRFmWLArzPLNuBjQT9ECHB1DrurJgPkUQk7ZtqWkafW8TRRHr7OV53mXROI7a
+        TBBT5Gygs9cnhljfGson47VtoIupmCFsZEPZC8I3myK9elP4+sDpsRHMg/0OHPrbgy2Yo4cxw7hh7LZt
+        43WSJDp/O3qC05+DibPf1zc4NiT6AV6hz+1/gb2VAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="Ingresarbutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEBLAEsAAD/4QDqRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAZKG
