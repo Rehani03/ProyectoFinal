@@ -44,7 +44,6 @@
             this.categoriaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.detalleFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,8 +131,7 @@
             this.entradaYSalidaProductosToolStripMenuItem,
             this.categoriaToolStripMenuItem1,
             this.usuarioToolStripMenuItem1,
-            this.facturaciónToolStripMenuItem1,
-            this.detalleFacturaToolStripMenuItem});
+            this.facturaciónToolStripMenuItem1});
             this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(77, 21);
@@ -187,14 +185,6 @@
             this.facturaciónToolStripMenuItem1.Text = "Facturas";
             this.facturaciónToolStripMenuItem1.Click += new System.EventHandler(this.FacturaciónToolStripMenuItem1_Click);
             // 
-            // detalleFacturaToolStripMenuItem
-            // 
-            this.detalleFacturaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("detalleFacturaToolStripMenuItem.Image")));
-            this.detalleFacturaToolStripMenuItem.Name = "detalleFacturaToolStripMenuItem";
-            this.detalleFacturaToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.detalleFacturaToolStripMenuItem.Text = "Detalle Factura";
-            this.detalleFacturaToolStripMenuItem.Click += new System.EventHandler(this.DetalleFacturaToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -231,7 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem detalleFacturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
     }
 }
