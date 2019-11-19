@@ -119,6 +119,12 @@
     <Compile Include="UI\Consultas\cDetalleFactura.Designer.cs">
       <DependentUpon>cDetalleFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cDetalleFactura1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cDetalleFactura1.Designer.cs">
+      <DependentUpon>cDetalleFactura1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\cEntradaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,12 +142,6 @@
     </Compile>
     <Compile Include="UI\Consultas\cProducto.Designer.cs">
       <DependentUpon>cProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Consultas\cReciboIngreso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Consultas\cReciboIngreso.Designer.cs">
-      <DependentUpon>cReciboIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\cUsuario.cs">
       <SubType>Form</SubType>
@@ -297,6 +297,9 @@
     <EmbeddedResource Include="UI\Consultas\cDetalleFactura.resx">
       <DependentUpon>cDetalleFactura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cDetalleFactura1.resx">
+      <DependentUpon>cDetalleFactura1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cEntradaProducto.resx">
       <DependentUpon>cEntradaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,9 +308,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cProducto.resx">
       <DependentUpon>cProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Consultas\cReciboIngreso.resx">
-      <DependentUpon>cReciboIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cUsuario.resx">
       <DependentUpon>cUsuario.cs</DependentUpon>

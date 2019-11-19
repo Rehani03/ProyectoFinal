@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalAp1.UI.Consultas
 {
-    public partial class cReciboIngreso : Form
+    public partial class cDetalleFactura1 : Form
     {
-        public cReciboIngreso()
+        public cDetalleFactura1()
         {
             InitializeComponent();
         }

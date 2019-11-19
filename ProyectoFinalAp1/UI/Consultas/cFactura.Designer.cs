@@ -199,6 +199,7 @@
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(839, 274);
             this.ConsultadataGridView.TabIndex = 1;
+            this.ConsultadataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ConsultadataGridView_CellContentClick);
             // 
             // Column1
             // 

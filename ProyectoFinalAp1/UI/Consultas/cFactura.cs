@@ -214,5 +214,25 @@ namespace ProyectoFinalAp1.UI.Consultas
         {
 
         }
+
+        private void ConsultadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RepositorioBase<Facturas> repositorio = new RepositorioBase<Facturas>();
+            int ID = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells[0].Value);
+            List<DetalleFactura> dt = new List<DetalleFactura>();
+            Facturas facturas = repositorio.Buscar(ID);
+            cDetalleFactura1 detalle = new cDetalleFactura1();
+
+            dt = facturas.Detalles;
+            foreach (var item in dt)
+            {
+                decimal resultado = item.Cantidad * item.Precio;
+                detalle.DetalleFacturadataGridView.Rows.Add(item.DetalleFacturaId,
+                    item.ProductoId, item.Productos.Descripcion, item.Cantidad, item.Precio, resultado);
+                resultado = 0;
+            }
+            detalle.DetalleFacturadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            detalle.ShowDialog();
+        }
     }
 }
