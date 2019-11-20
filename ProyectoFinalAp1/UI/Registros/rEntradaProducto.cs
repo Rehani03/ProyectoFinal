@@ -215,20 +215,23 @@ namespace ProyectoFinalAp1.UI.Registros
 
             if (paso)
             {
-                if (IDnumericUpDown.Value != 0)
+                if(DetalledataGridView.Rows.Count > 0)
                 {
-                    var productoID = DetalledataGridView.CurrentRow.Cells[0].Value;
-                    int auxProductoID = Convert.ToInt32(productoID);
-                    int CantidadDetalle = GetTotalProducto(auxProductoID);
-
-                    int CantidadBaseDatos = GetCantidadProducto(auxProductoID);
-
-                    int resultado = CantidadBaseDatos - CantidadDetalle;
-
-                    if (resultado < 0)
+                    if (IDnumericUpDown.Value != 0)
                     {
-                        MessageBox.Show("La cantidad de " + GetDescripcion(auxProductoID) + " ya fue afectada en Facturación.");
-                        return false;
+                        var productoID = DetalledataGridView.CurrentRow.Cells[0].Value;
+                        int auxProductoID = Convert.ToInt32(productoID);
+                        int CantidadDetalle = GetTotalProducto(auxProductoID);
+
+                        int CantidadBaseDatos = GetCantidadProducto(auxProductoID);
+
+                        int resultado = CantidadBaseDatos - CantidadDetalle;
+
+                        if (resultado < 0)
+                        {
+                            MessageBox.Show("La cantidad de " + GetDescripcion(auxProductoID) + " ya fue afectada en Facturación.");
+                            return false;
+                        }
                     }
                 }
 

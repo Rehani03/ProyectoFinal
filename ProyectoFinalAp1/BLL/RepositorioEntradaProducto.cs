@@ -130,8 +130,8 @@ namespace ProyectoFinalAp1.BLL
                 var Anterior = db.EntradaProductos.Find(ID);
                 foreach (var item in Anterior.DetalleEntrada)
                 {
-                    var Producto = db.Productos.Find(ID);
-                    if(Producto!=null)
+                    var Producto = db.Productos.Find(item.ProductoId);
+                    if (Producto != null)
                         Producto.Cantidad -= item.Cantidad;
                 }
 
