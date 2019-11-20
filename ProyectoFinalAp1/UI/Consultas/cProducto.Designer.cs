@@ -52,6 +52,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -121,7 +122,8 @@
             "Costo",
             "Precio",
             "Ganancia",
-            "Cantidad"});
+            "Cantidad",
+            "Descripción Categoria"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(314, 23);
             this.FiltrocomboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
@@ -196,7 +198,8 @@
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
+            this.Column8,
+            this.Column9});
             this.ConsultadataGridView.Location = new System.Drawing.Point(14, 109);
             this.ConsultadataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
@@ -269,6 +272,12 @@
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Fecha";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
             // cProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -315,5 +324,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.CheckBox FechacheckBox;
         private System.Windows.Forms.Button Imprimirbutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

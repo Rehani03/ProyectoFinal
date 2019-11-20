@@ -66,6 +66,10 @@ namespace ProyectoFinalAp1.UI.Consultas
                         int cantidad = GetEntero();
                         listado = repositorio.GetList(p => p.Cantidad == cantidad);
                         break;
+                    case 8:
+                        string descripcionCategoria = CriteriotextBox.Text;
+                        listado = repositorio.GetList(p => p.Categorias.Descripcion.Contains(descripcionCategoria));
+                        break;
                     default:
                         MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
@@ -86,7 +90,7 @@ namespace ProyectoFinalAp1.UI.Consultas
             foreach (var item in listado)
             {
                 ConsultadataGridView.Rows.Add(item.ProductoId, item.CategoriaId, GetCategoria(item.CategoriaId),
-                                                item.Descripcion, item.Costo, item.Precio, item.Ganancia, item.Cantidad);
+                                                item.Descripcion, item.Costo, item.Precio, item.Ganancia, item.Cantidad, item.Fecha.Date);
             }
            // this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }

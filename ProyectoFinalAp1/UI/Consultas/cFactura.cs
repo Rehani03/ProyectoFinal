@@ -68,6 +68,10 @@ namespace ProyectoFinalAp1.UI.Consultas
                         decimal total = GetDecimal();
                         listado = repositorio.GetList(p => p.Total == total);
                         break;
+                    case 5:
+                        string NombreCliente = CriteriotextBox.Text;
+                        listado = repositorio.GetList(p => p.Clientes.Nombres.Contains(NombreCliente));
+                        break;
 
                     default:
                         MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -86,12 +90,15 @@ namespace ProyectoFinalAp1.UI.Consultas
         private void CargarGridFor(List<Facturas> lista)
         {
             ConsultadataGridView.Rows.Clear();
+            decimal resultado = 0;
             foreach (var item in lista)
             {
                 ConsultadataGridView.Rows.Add(item.FacturaId, item.ClienteId,
                     GetNombreCliente(item.ClienteId), item.UsuarioId,
-                    GetNombreUsuario(item.UsuarioId), item.Total, item.Fecha);
+                    GetNombreUsuario(item.UsuarioId), item.Total, item.Fecha.Date);
+                resultado += item.Total;
             }
+            MontoTotaltextBox.Text = resultado.ToString();
         }
 
         private string GetNombreUsuario(int Id)

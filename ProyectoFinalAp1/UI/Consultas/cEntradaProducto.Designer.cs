@@ -49,6 +49,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Totallabel = new System.Windows.Forms.Label();
+            this.TotaltextBox = new System.Windows.Forms.TextBox();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -239,11 +241,31 @@
             this.Imprimirbutton.UseVisualStyleBackColor = false;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
+            // Totallabel
+            // 
+            this.Totallabel.AutoSize = true;
+            this.Totallabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Totallabel.Location = new System.Drawing.Point(580, 419);
+            this.Totallabel.Name = "Totallabel";
+            this.Totallabel.Size = new System.Drawing.Size(65, 18);
+            this.Totallabel.TabIndex = 3;
+            this.Totallabel.Text = "TOTAL:";
+            // 
+            // TotaltextBox
+            // 
+            this.TotaltextBox.Location = new System.Drawing.Point(652, 419);
+            this.TotaltextBox.Name = "TotaltextBox";
+            this.TotaltextBox.ReadOnly = true;
+            this.TotaltextBox.Size = new System.Drawing.Size(113, 20);
+            this.TotaltextBox.TabIndex = 4;
+            // 
             // cEntradaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 455);
+            this.Controls.Add(this.TotaltextBox);
+            this.Controls.Add(this.Totallabel);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Frontalpanel);
@@ -255,6 +277,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -279,5 +302,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button Imprimirbutton;
+        private System.Windows.Forms.TextBox TotaltextBox;
+        private System.Windows.Forms.Label Totallabel;
     }
 }

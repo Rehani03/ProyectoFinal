@@ -81,11 +81,14 @@ namespace ProyectoFinalAp1.UI.Consultas
         private void CargarGridFor(List<EntradaProducto> lista)
         {
             ConsultadataGridView.Rows.Clear();
+            decimal resultado = 0;
             foreach (var item in lista)
             {
                 ConsultadataGridView.Rows.Add(item.EntradaProductoId, item.UsuarioId,
                     GetNombreUsuario(item.UsuarioId), item.CantidadTotal, item.Fecha);
+                resultado += item.CantidadTotal;
             }
+            TotaltextBox.Text = resultado.ToString();
         }
 
         private string GetNombreUsuario(int Id)

@@ -51,6 +51,8 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MontoTotallabel = new System.Windows.Forms.Label();
+            this.MontoTotaltextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -118,7 +120,8 @@
             "FacturaId",
             "ClienteId",
             "UsuarioId",
-            "Total"});
+            "Total",
+            "Nombre de Cliente"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(299, 22);
             this.FiltrocomboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
@@ -261,12 +264,32 @@
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
+            // MontoTotallabel
+            // 
+            this.MontoTotallabel.AutoSize = true;
+            this.MontoTotallabel.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontoTotallabel.Location = new System.Drawing.Point(613, 395);
+            this.MontoTotallabel.Name = "MontoTotallabel";
+            this.MontoTotallabel.Size = new System.Drawing.Size(116, 18);
+            this.MontoTotallabel.TabIndex = 3;
+            this.MontoTotallabel.Text = "MONTO TOTAL:";
+            // 
+            // MontoTotaltextBox
+            // 
+            this.MontoTotaltextBox.Location = new System.Drawing.Point(735, 395);
+            this.MontoTotaltextBox.Name = "MontoTotaltextBox";
+            this.MontoTotaltextBox.ReadOnly = true;
+            this.MontoTotaltextBox.Size = new System.Drawing.Size(118, 21);
+            this.MontoTotaltextBox.TabIndex = 4;
+            // 
             // cFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(868, 432);
+            this.Controls.Add(this.MontoTotaltextBox);
+            this.Controls.Add(this.MontoTotallabel);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.panel1);
@@ -280,6 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -306,5 +330,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.TextBox MontoTotaltextBox;
+        private System.Windows.Forms.Label MontoTotallabel;
     }
 }
