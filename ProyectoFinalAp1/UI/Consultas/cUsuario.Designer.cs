@@ -44,6 +44,11 @@
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -180,7 +185,15 @@
             // 
             // ConsultadataGridView
             // 
+            this.ConsultadataGridView.AllowUserToAddRows = false;
+            this.ConsultadataGridView.AllowUserToDeleteRows = false;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultadataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.ConsultadataGridView.Location = new System.Drawing.Point(15, 105);
             this.ConsultadataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
@@ -205,6 +218,36 @@
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimirbutton.UseVisualStyleBackColor = false;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "UsuarioId";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombres";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "NombreUsuario";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Contraseña";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "FechaIngreso";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // cUsuario
             // 
@@ -243,5 +286,10 @@
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
         private System.Windows.Forms.CheckBox FechacheckBox;
         private System.Windows.Forms.Button Imprimirbutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

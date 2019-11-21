@@ -90,7 +90,7 @@ namespace ProyectoFinalAp1.UI.Consultas
             foreach (var item in listado)
             {
                 ConsultadataGridView.Rows.Add(item.ProductoId, item.CategoriaId, GetCategoria(item.CategoriaId),
-                                                item.Descripcion, item.Costo, item.Precio, item.Ganancia, item.Cantidad, item.Fecha.Date);
+                                                item.Descripcion, item.Costo, item.Precio, item.Ganancia, item.Cantidad, item.Fecha.ToString("dd/MM/yyyy"));
             }
            // this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }

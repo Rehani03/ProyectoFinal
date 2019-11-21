@@ -19,6 +19,7 @@ namespace ProyectoFinalAp1.UI.Consultas
         public cCliente()
         {
             InitializeComponent();
+            this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DesdedateTimePicker.Enabled = false;
             HastadateTimePicker.Enabled = false;
         }
@@ -115,10 +116,22 @@ namespace ProyectoFinalAp1.UI.Consultas
                 
             }
 
-            ConsultadataGridView.DataSource = null;
-            this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            ConsultadataGridView.DataSource = listado;
-            ConsultadataGridView.Columns["UsuarioId"].Visible = false;
+            CargarGridFor(listado);
+            //ConsultadataGridView.DataSource = null;
+           
+            //ConsultadataGridView.DataSource = listado;
+            //ConsultadataGridView.Columns["UsuarioId"].Visible = false;
+        }
+
+        private void CargarGridFor(List<Clientes> lista)
+        {
+            ConsultadataGridView.Rows.Clear();
+            foreach (var item in lista)
+            {
+                ConsultadataGridView.Rows.Add(item.ClienteId, item.Nombres, item.RNC,
+                    item.Direccion, item.Telefono, item.Email, item.Fecha.ToString("dd/MM/yyyy"),
+                    item.Consumo, item.Visitas);
+            }
         }
 
         private int GetCriterio()

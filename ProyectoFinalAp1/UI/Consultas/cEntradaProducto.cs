@@ -85,7 +85,7 @@ namespace ProyectoFinalAp1.UI.Consultas
             foreach (var item in lista)
             {
                 ConsultadataGridView.Rows.Add(item.EntradaProductoId, item.UsuarioId,
-                    GetNombreUsuario(item.UsuarioId), item.CantidadTotal, item.Fecha);
+                    GetNombreUsuario(item.UsuarioId), item.CantidadTotal, item.Fecha.ToString("dd/MM/yyyy"));
                 resultado += item.CantidadTotal;
             }
             TotaltextBox.Text = resultado.ToString();

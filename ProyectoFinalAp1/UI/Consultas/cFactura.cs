@@ -95,7 +95,7 @@ namespace ProyectoFinalAp1.UI.Consultas
             {
                 ConsultadataGridView.Rows.Add(item.FacturaId, item.ClienteId,
                     GetNombreCliente(item.ClienteId), item.UsuarioId,
-                    GetNombreUsuario(item.UsuarioId), item.Total, item.Fecha.Date);
+                    GetNombreUsuario(item.UsuarioId), item.Total, item.Fecha.ToString("dd/MM/yyyy"));
                 resultado += item.Total;
             }
             MontoTotaltextBox.Text = resultado.ToString();

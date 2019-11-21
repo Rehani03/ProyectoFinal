@@ -19,6 +19,7 @@ namespace ProyectoFinalAp1.UI.Consultas
         public cUsuario()
         {
             InitializeComponent();
+            this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DesdedateTimePicker.Enabled = false;
             HastadateTimePicker.Enabled = false;
         }
@@ -104,12 +105,20 @@ namespace ProyectoFinalAp1.UI.Consultas
                 }
             }
 
+            CargarGridFor(listado);
 
+            //ConsultadataGridView.DataSource = null;  
+            //ConsultadataGridView.DataSource = listado;
+        }
 
-            ConsultadataGridView.DataSource = null;
-            this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            ConsultadataGridView.DataSource = listado;
-
+        private void CargarGridFor(List<Usuarios> lista)
+        {
+            ConsultadataGridView.Rows.Clear();
+            foreach (var item in lista)
+            {
+                ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
+                    item.PassWord, item.FechaIngreso.ToString("dd/MM/yyyy"));
+            }
         }
 
         private int GetCriterio()
