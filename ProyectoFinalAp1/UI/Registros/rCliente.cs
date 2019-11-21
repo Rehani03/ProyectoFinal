@@ -342,7 +342,8 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                var resultado = MessageBox.Show("De eliminar este Cliente perdera información importante.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resultado = MessageBox.Show("De eliminar este Cliente perdera información importante del modulo Factura." +
+                    " Desea continuar?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
                     paso = repositorio.Eliminar(ID);

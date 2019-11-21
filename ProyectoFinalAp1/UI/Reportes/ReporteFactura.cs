@@ -15,33 +15,25 @@ namespace ProyectoFinalAp1.UI.Reportes
 {
     public partial class ReporteFactura : Form
     {
+        private readonly List<Facturas> lista = new List<Facturas>();
         public ReporteFactura(List<Facturas> lista)
         {
             InitializeComponent();
-            //List<string> nombre = new List<string>();
-            //RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
-            //foreach (var item in lista)
-            //{
-            //    string auxNombre = repositorio.Buscar(item.ClienteId).Nombres;
-            //    nombre.Add(auxNombre);
-            //}
-
-            ReporteFacturaCrystal reporte = new ReporteFacturaCrystal();
-            reporte.SetDataSource(lista);
-            ReportViewer.ReportSource = reporte;
-            ReportViewer.Refresh();
-
+            this.lista = lista;
         }
 
         
         private void CrystalReportViewer1_Load(object sender, EventArgs e)
         {
-
+            ReporteFacturaCrystal reporte = new ReporteFacturaCrystal();
+            reporte.SetDataSource(lista);
+            ReportViewer.ReportSource = reporte;
+            ReportViewer.Refresh();
         }
 
         private void ReporteFactura_Load(object sender, EventArgs e)
         {
-            
+            CrystalReportViewer1_Load(sender, e);
         }
     }
 }

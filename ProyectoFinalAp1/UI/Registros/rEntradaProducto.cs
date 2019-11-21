@@ -356,7 +356,9 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                var resultado = MessageBox.Show("De eliminar esta Entrada de Productos perdera información importante.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resultado = MessageBox.Show("Esta acción no cambiara la cantidad de Producto, si desea reducir el inventario." +
+                    "Por favor, eliminelo del detalle."+ 
+                    " De todos modos desea continuar?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
                     paso = repositorio.Eliminar(ID);
