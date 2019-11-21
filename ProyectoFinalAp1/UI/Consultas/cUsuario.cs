@@ -16,9 +16,11 @@ namespace ProyectoFinalAp1.UI.Consultas
     public partial class cUsuario : Form
     {
         private List<Usuarios> listado;
-        public cUsuario()
+        private int ID;
+        public cUsuario(int ID)
         {
             InitializeComponent();
+            this.ID = ID;
             this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DesdedateTimePicker.Enabled = false;
             HastadateTimePicker.Enabled = false;
@@ -114,11 +116,43 @@ namespace ProyectoFinalAp1.UI.Consultas
         private void CargarGridFor(List<Usuarios> lista)
         {
             ConsultadataGridView.Rows.Clear();
-            foreach (var item in lista)
+            if (EsAdmin())
             {
-                ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
-                    item.PassWord, item.FechaIngreso.ToString("dd/MM/yyyy"));
+                foreach (var item in lista)
+                {
+                    ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
+                        DesEncriptar(item.PassWord), item.FechaIngreso.ToString("dd/MM/yyyy"));
+                }
             }
+            else
+            {
+                foreach (var item in lista)
+                {
+                    ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
+                        item.PassWord, item.FechaIngreso.ToString("dd/MM/yyyy"));
+                }
+            }
+            
+        }
+
+        private string DesEncriptar(string _cadenaAdesencriptar)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
+        }
+
+        private bool EsAdmin()
+        {
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            var valor = repositorio.Buscar(ID).Nivel;
+            if (valor == 0)
+                return true;
+            else
+                return false;
+
         }
 
         private int GetCriterio()

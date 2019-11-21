@@ -62,7 +62,7 @@ namespace ProyectoFinalAp1
 
         private void UsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cUsuario usuario = new cUsuario();
+            cUsuario usuario = new cUsuario(ID);
             usuario.MdiParent = this;
             usuario.Show();
         }
@@ -76,9 +76,20 @@ namespace ProyectoFinalAp1
 
         private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuario usuario = new rUsuario(ID);
-            usuario.MdiParent = this;
-            usuario.Show();
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            var usuario1 = repositorio.Buscar(ID).Nivel;
+            if(usuario1 == 0)
+            {
+                rUsuario usuario = new rUsuario(ID);
+                usuario.MdiParent = this;
+                usuario.Show();
+            }
+            else
+            {
+                MessageBox.Show("No tienes permiso para acceder a este módulo, por favor ingrese" +
+                    " en modo Administrador.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void CategoriaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -214,6 +225,11 @@ namespace ProyectoFinalAp1
             rFactura factura = new rFactura(ID);
             factura.MdiParent = this;
             factura.Show();
+        }
+
+        private void RegistrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

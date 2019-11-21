@@ -57,8 +57,8 @@ namespace ProyectoFinalAp1.UI.Login
              string password1 = ContraseñatextBox.Text;
              int ID = (int)UsuariocomboBox.SelectedValue;
              var password2 = repositorio.Buscar(ID).PassWord;
-
-             if (password1 == password2)
+             string clave = DesEncriptar(password2);
+             if (password1 == clave)
              {
                  this.Close();
                  Thread hilo = new Thread(AbrirMain);
@@ -76,7 +76,7 @@ namespace ProyectoFinalAp1.UI.Login
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             List<Usuarios> lista = new List<Usuarios>();
             lista = repositorio.GetList(p => true);
-            MessageBox.Show("Bienvenidos!!!.");
+            MessageBox.Show("Iniciando!!!.");
             if (lista.Count == 0)
             { 
                 Usuarios u = new Usuarios();
@@ -102,8 +102,9 @@ namespace ProyectoFinalAp1.UI.Login
             usuarios.UsuarioId = 0;
             usuarios.Nombres = "Administrador";
             usuarios.NombreUsuario = "Admin";
-            usuarios.PassWord = "1234";
+            usuarios.PassWord = Encriptar("1234");
             usuarios.FechaIngreso = DateTime.Now;
+            usuarios.Nivel = 0;
 
             return usuarios;
         }
@@ -127,6 +128,23 @@ namespace ProyectoFinalAp1.UI.Login
                 ContraseñatextBox.UseSystemPasswordChar = true;
                 ContraseñatextBox.Text = text;
             }
+        }
+
+        public static string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
+        }
+
+        public static string DesEncriptar(string _cadenaAdesencriptar)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
         }
     }
 }

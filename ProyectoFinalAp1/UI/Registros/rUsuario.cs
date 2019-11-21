@@ -42,6 +42,7 @@ namespace ProyectoFinalAp1.UI.Registros
             NombreUsuariotextBox.Text = string.Empty;
             ContraseñatextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
+            NivelcomboBox.Text = "";
         }
 
         private Usuarios LlenaClase()
@@ -50,8 +51,10 @@ namespace ProyectoFinalAp1.UI.Registros
             usuarios.UsuarioId = Convert.ToInt32(IDnumericUpDown.Value);
             usuarios.Nombres = NombretextBox.Text;
             usuarios.NombreUsuario = NombreUsuariotextBox.Text;
-            usuarios.PassWord = ContraseñatextBox.Text;
+            string nuevaClave = Encriptar(ContraseñatextBox.Text);
+            usuarios.PassWord = nuevaClave;
             usuarios.FechaIngreso = FechadateTimePicker.Value.Date;
+            usuarios.Nivel = NivelcomboBox.SelectedIndex;
 
             return usuarios;
         }
@@ -61,8 +64,10 @@ namespace ProyectoFinalAp1.UI.Registros
             IDnumericUpDown.Value = u.UsuarioId;
             NombretextBox.Text = u.Nombres;
             NombreUsuariotextBox.Text = u.NombreUsuario;
-            ContraseñatextBox.Text = u.PassWord;
+            string clave = DesEncriptar(u.PassWord);
+            ContraseñatextBox.Text = clave;
             FechadateTimePicker.Value = u.FechaIngreso;
+            NivelcomboBox.SelectedIndex = u.Nivel;
         }
 
         private bool Validar()
@@ -100,6 +105,12 @@ namespace ProyectoFinalAp1.UI.Registros
             if(ContraseñatextBox.Text.Length < 4)
             {
                 MyerrorProvider.SetError(ContraseñatextBox, "La clave debe ser mayor a 4 caracteres.");
+                paso = false;
+            }
+
+            if(NivelcomboBox.SelectedIndex == -1 || NivelcomboBox.Text == "")
+            {
+                MyerrorProvider.SetError(NivelcomboBox, "Seleccione un nivel para el usuario.");
                 paso = false;
             }
 
@@ -254,6 +265,23 @@ namespace ProyectoFinalAp1.UI.Registros
             {
                 MessageBox.Show("No se puede guardar.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
+        }
+
+        private string DesEncriptar(string _cadenaAdesencriptar)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
         }
     }
 }

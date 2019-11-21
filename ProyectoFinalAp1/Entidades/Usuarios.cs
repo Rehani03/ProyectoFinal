@@ -15,6 +15,7 @@ namespace ProyectoFinalAp1.Entidades
         public string NombreUsuario { get; set; }
         public string PassWord { get; set; }
         public DateTime FechaIngreso { get; set; }
+        public int Nivel { get; set; }
 
         public Usuarios()
         {
@@ -23,6 +24,7 @@ namespace ProyectoFinalAp1.Entidades
             NombreUsuario = string.Empty;
             PassWord = string.Empty;
             FechaIngreso = DateTime.Now;
+            Nivel = 0;
         }
     }
 }

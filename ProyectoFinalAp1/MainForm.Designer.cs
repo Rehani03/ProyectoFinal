@@ -73,6 +73,7 @@
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
             this.registrosToolStripMenuItem.Text = "Registros";
+            this.registrosToolStripMenuItem.Click += new System.EventHandler(this.RegistrosToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem
             // 

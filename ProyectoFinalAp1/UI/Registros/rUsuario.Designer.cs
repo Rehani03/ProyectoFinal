@@ -47,6 +47,8 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.NivelcomboBox = new System.Windows.Forms.ComboBox();
             this.Campospanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.Botonespanel.SuspendLayout();
@@ -56,12 +58,14 @@
             // Campospanel
             // 
             this.Campospanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Campospanel.Controls.Add(this.NivelcomboBox);
             this.Campospanel.Controls.Add(this.Buscarbutton);
             this.Campospanel.Controls.Add(this.FechadateTimePicker);
             this.Campospanel.Controls.Add(this.ContraseñatextBox);
             this.Campospanel.Controls.Add(this.NombreUsuariotextBox);
             this.Campospanel.Controls.Add(this.NombretextBox);
             this.Campospanel.Controls.Add(this.IDnumericUpDown);
+            this.Campospanel.Controls.Add(this.label5);
             this.Campospanel.Controls.Add(this.label4);
             this.Campospanel.Controls.Add(this.label3);
             this.Campospanel.Controls.Add(this.label2);
@@ -70,7 +74,7 @@
             this.Campospanel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Campospanel.Location = new System.Drawing.Point(37, 21);
             this.Campospanel.Name = "Campospanel";
-            this.Campospanel.Size = new System.Drawing.Size(395, 231);
+            this.Campospanel.Size = new System.Drawing.Size(395, 249);
             this.Campospanel.TabIndex = 2;
             // 
             // Buscarbutton
@@ -91,7 +95,7 @@
             // 
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(173, 175);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(173, 170);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(110, 24);
             this.FechadateTimePicker.TabIndex = 5;
@@ -176,7 +180,7 @@
             this.Botonespanel.Controls.Add(this.Eliminarbutton);
             this.Botonespanel.Controls.Add(this.Guardarbutton);
             this.Botonespanel.Controls.Add(this.Nuevobutton);
-            this.Botonespanel.Location = new System.Drawing.Point(57, 269);
+            this.Botonespanel.Location = new System.Drawing.Point(57, 288);
             this.Botonespanel.Name = "Botonespanel";
             this.Botonespanel.Size = new System.Drawing.Size(354, 58);
             this.Botonespanel.TabIndex = 3;
@@ -227,12 +231,33 @@
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 19);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "NIVEL:";
+            // 
+            // NivelcomboBox
+            // 
+            this.NivelcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.NivelcomboBox.FormattingEnabled = true;
+            this.NivelcomboBox.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuario Normal"});
+            this.NivelcomboBox.Location = new System.Drawing.Point(173, 207);
+            this.NivelcomboBox.Name = "NivelcomboBox";
+            this.NivelcomboBox.Size = new System.Drawing.Size(202, 25);
+            this.NivelcomboBox.TabIndex = 7;
+            // 
             // rUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(460, 340);
+            this.ClientSize = new System.Drawing.Size(460, 358);
             this.Controls.Add(this.Botonespanel);
             this.Controls.Add(this.Campospanel);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -267,5 +292,7 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
+        private System.Windows.Forms.ComboBox NivelcomboBox;
+        private System.Windows.Forms.Label label5;
     }
 }
