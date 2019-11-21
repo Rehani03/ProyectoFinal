@@ -89,7 +89,7 @@
             this.Ingresarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Ingresarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Ingresarbutton.Image")));
             this.Ingresarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ingresarbutton.Location = new System.Drawing.Point(140, 127);
+            this.Ingresarbutton.Location = new System.Drawing.Point(154, 131);
             this.Ingresarbutton.Name = "Ingresarbutton";
             this.Ingresarbutton.Size = new System.Drawing.Size(132, 51);
             this.Ingresarbutton.TabIndex = 5;
