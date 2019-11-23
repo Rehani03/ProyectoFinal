@@ -25,9 +25,14 @@ Este registro permite crear usuarios los cuales podras darle diferentes niveles,
 
 Este registro permite crear los clientes en el programa, y posee dos campos muy importantes que son consumo y visitas esos campos se iran actualizando de acuerdo al consumo del cliente y las veces que estuvo en la institución.
 
+## Categoria
+
+
 ## Producto
 ![Producto](https://user-images.githubusercontent.com/54560358/69480677-1129aa00-0de0-11ea-8b86-650c1a4a9e3b.JPG)
 
 Este registro permite crear los productos en el programa. Este tambien posee la opción de marcar el producto como un donativo lo cual es importante para pasar un producto como si fuera un recibo de contribución, cuando esta opción esta marcada se igualan a cero el precio, costo y ganancia. El campo cantidad se ira actualizando de acuerdo a la entrada o venta que se le de a el producto.
+
+
 
 
