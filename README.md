@@ -80,5 +80,25 @@ Esta consulta de Categorias te permite filtrar por los campos de la categoria e 
 Esta consulta es de clientes, te permite filtrar por rango de fecha y por los campos del cliente. Tambien puedes imprimir un reporte.
 
 ## Ya terminando el Readme las otras consultas que faltan son iguales a la de cliente, cada una filtra por fecha y por los campos que posea el registro y tambien imprimen un reporte.
- 
 
+# Pre-Requisitos
+Necesitan una computadora con al menos los siguientes requisitos:
+
+## Requisitos:
+ -Windows 10 64 bits.
+
+-Procesador: Procesador Dual Core.
+
+-Memoria RAM: 4 GigaByte (GB).
+
+-Espacio en disco duro: 100GigaByte (GB).
+ 
+## Construido con:
+-Visual Studio 2019 C#
+
+-SQL Server 2014
+
+-Google Chrome
+
+## Autor
+Rehani Martin Cordero Tejada
