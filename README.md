@@ -45,7 +45,7 @@ Recuerde, que solo puedes darle entrada a un producto a la vez en el detalle.
 
 ## Facturación
 
-
+![Factura](https://user-images.githubusercontent.com/54560358/69480979-38ce4180-0de3-11ea-9bd3-11262db9f114.JPG)
 
 
 
