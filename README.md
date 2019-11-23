@@ -13,8 +13,10 @@ La siguiente ventana que se le mostrara sera la de Menu Principal, en ella encon
 
 En esta ventana como ya mencionado acceder a los siguientes registros:
 
-## Registro de Usuario
+## Usuario
 
 ![Usuario](https://user-images.githubusercontent.com/54560358/69480389-61ebd380-0ddd-11ea-80f9-445a439be847.JPG)
 
 Este registro permite crear usuarios los cuales podras darle diferentes niveles, los de nivel Administrador tendran accedo a todo el programa mientras que los de nivel Usuario Normal solo podran acceder a Facturación. De igual manera, todos los campos deben ser llenados para que pueda ser registrado el usuario.
+
+## Cliente
