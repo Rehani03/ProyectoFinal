@@ -27,6 +27,9 @@ Este registro permite crear los clientes en el programa, y posee dos campos muy 
 
 ## Categoria
 
+![Categoria](https://user-images.githubusercontent.com/54560358/69480791-ee4bc580-0de0-11ea-942b-8a45788052a8.JPG)
+
+Este registro permite crear las categorias para los productos.
 
 ## Producto
 ![Producto](https://user-images.githubusercontent.com/54560358/69480677-1129aa00-0de0-11ea-8b86-650c1a4a9e3b.JPG)
