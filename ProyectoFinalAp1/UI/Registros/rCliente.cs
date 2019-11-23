@@ -360,8 +360,28 @@ namespace ProyectoFinalAp1.UI.Registros
                 MessageBox.Show("Cliente no Encontrado");
         }
 
+        private bool EsAdmin()
+        {
+            bool paso = true;
+
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            var valor = repositorio.Buscar(ID).Nivel;
+            if (valor == 0)
+                paso = true;
+            else
+                paso = false;
+
+            return paso;
+        }
+
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            if(EsAdmin() == false)
+            {
+                MessageBox.Show("No tienes permiso para eliminar Clientes.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             bool paso;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
             RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();

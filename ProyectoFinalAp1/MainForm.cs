@@ -27,9 +27,20 @@ namespace ProyectoFinalAp1
 
         private void ProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProducto producto = new rProducto(ID);
-            producto.MdiParent = this;
-            producto.Show();
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            var usuario1 = repositorio.Buscar(ID).Nivel;
+            if (usuario1 == 0)
+            {
+                rProducto producto = new rProducto(ID);
+                producto.MdiParent = this;
+                producto.Show();
+            }
+            else
+            {
+                MessageBox.Show("No tienes permiso para acceder a este módulo, por favor ingrese" +
+                   " en modo Administrador.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
         }
 
         private void ClienteToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -62,9 +73,21 @@ namespace ProyectoFinalAp1
 
         private void UsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cUsuario usuario = new cUsuario(ID);
-            usuario.MdiParent = this;
-            usuario.Show();
+
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            var usuario1 = repositorio.Buscar(ID).Nivel;
+            if (usuario1 == 0)
+            {
+                cUsuario usuario = new cUsuario(ID);
+                usuario.MdiParent = this;
+                usuario.Show();
+            }
+            else
+            {
+                MessageBox.Show("No tienes permiso para acceder a este módulo, por favor ingrese" +
+                   " en modo Administrador.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
         }
 
         private void FacturaciónToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -94,23 +117,47 @@ namespace ProyectoFinalAp1
 
         private void CategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCategoria categoria = new rCategoria(ID);
-            categoria.MdiParent = this;
-            categoria.Show();
+
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            var usuario1 = repositorio.Buscar(ID).Nivel;
+            if (usuario1 == 0)
+            {
+                rCategoria categoria = new rCategoria(ID);
+                categoria.MdiParent = this;
+                categoria.Show();
+            }
+            else
+            {
+                MessageBox.Show("No tienes permiso para acceder a este módulo, por favor ingrese" +
+                   " en modo Administrador.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+ 
         }
 
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rCliente cliente = new rCliente(ID);
-            cliente.MdiParent = this;
-            cliente.Show();
+        { 
+             rCliente cliente = new rCliente(ID);
+             cliente.MdiParent = this;
+             cliente.Show(); 
         }
 
         private void EntradaYSalidaProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rEntradaProducto entradaProducto = new rEntradaProducto(ID);
-            entradaProducto.MdiParent = this;
-            entradaProducto.Show();
+
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            var usuario1 = repositorio.Buscar(ID).Nivel;
+            if (usuario1 == 0)
+            {
+                rEntradaProducto entradaProducto = new rEntradaProducto(ID);
+                entradaProducto.MdiParent = this;
+                entradaProducto.Show();
+            }
+            else
+            {
+                MessageBox.Show("No tienes permiso para acceder a este módulo, por favor ingrese" +
+                   " en modo Administrador.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+  
         }
 
         private void ContadoToolStripMenuItem_Click(object sender, EventArgs e)

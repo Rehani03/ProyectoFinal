@@ -268,7 +268,7 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                var resultado = MessageBox.Show("De eliminar este Usuario perderas información de facturas y Productos. " +
+                var resultado = MessageBox.Show("De eliminar este Usuario perderas información de facturas y productos. " +
                     " Seguro que desea eliminar a este usuario?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(resultado == DialogResult.Yes)
                 {
