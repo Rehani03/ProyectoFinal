@@ -57,9 +57,10 @@ Existen tres tipos de consultas que varian en su funcionamiento, las cuales son:
 - Facturación
 ![ConsultaFacturacion](https://user-images.githubusercontent.com/54560358/69482644-74bdd280-0df4-11ea-9cd1-87a14cbf02b4.JPG)
 
-Esta consulta de factura te permite ver el detalle de cada factura solamente, dandole doble click a una de las celdas de la fila. Tambien te permite imprimir la factura.
+Esta consulta de factura te permite ver el detalle de cada factura solamente, dandole doble click a una de las celdas de la fila. Tambien te permite imprimir la factura. Ademas, puedes filtrar por fecha y por los otros campos de la factura.
 
 - Entrada de Productos
+Esta consulta de Entrada de Productos te permite ver el detalle de cada Entrada de Productos solamente, dandole doble click a una de las celdas de la fila. Tambien te permite imprimir la Entrada de Productos. Ademas, puedes filtrar por fecha y por los otros campos de la Entrada de Productos.
 
 
 
