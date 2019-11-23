@@ -114,7 +114,15 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
+            string key = ContraseñatextBox.Text;
+            if (key == NombretextBox.Text || key == NombreUsuariotextBox.Text)
+            {
+                MyerrorProvider.SetError(ContraseñatextBox, "La contraseña no puede ser igual al nombre de usuario o nombres");
+                paso = false;
+            }
+
             string nombreU = NombreUsuariotextBox.Text;
+            string nombre = NombretextBox.Text;
             if (IDnumericUpDown.Value == 0)
             {
                 foreach (var item in lista)
@@ -122,6 +130,15 @@ namespace ProyectoFinalAp1.UI.Registros
                     if (item.NombreUsuario == nombreU)
                     {
                         MyerrorProvider.SetError(NombreUsuariotextBox, "Este nombre de usuario ya existe.");
+                        paso = false;
+                    }
+                }
+
+                foreach (var item in lista)
+                {
+                    if (item.Nombres == nombre)
+                    {
+                        MyerrorProvider.SetError(NombretextBox, "Este nombre ya existe.");
                         paso = false;
                     }
                 }
@@ -146,6 +163,18 @@ namespace ProyectoFinalAp1.UI.Registros
                             }
                         }
                     }
+
+                    if (nombre != GetNombre())
+                    {
+                        foreach (var item in lista)
+                        {
+                            if (item.Nombres == nombre)
+                            {
+                                MyerrorProvider.SetError(NombretextBox, "Este nombre ya existe.");
+                                paso = false;
+                            }
+                        }
+                    }
                 }
                
             }
@@ -158,6 +187,14 @@ namespace ProyectoFinalAp1.UI.Registros
             string nombre;
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             nombre = repositorio.Buscar((int)IDnumericUpDown.Value).NombreUsuario;
+            return nombre;
+        }
+
+        private string GetNombre()
+        {
+            string nombre;
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            nombre = repositorio.Buscar((int)IDnumericUpDown.Value).Nombres;
             return nombre;
         }
 
@@ -196,7 +233,7 @@ namespace ProyectoFinalAp1.UI.Registros
         {
             bool paso;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            RepositorioUsuario repositorio = new RepositorioUsuario();
 
             if (!Existe())
             {
@@ -205,7 +242,8 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                var resultado = MessageBox.Show("Seguro que desea eliminar a este usuario.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resultado = MessageBox.Show("De eliminar este Usuario perderas información de facturas y Productos. " +
+                    " Seguro que desea eliminar a este usuario?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(resultado == DialogResult.Yes)
                 {
                     if (this.ID == IDnumericUpDown.Value)

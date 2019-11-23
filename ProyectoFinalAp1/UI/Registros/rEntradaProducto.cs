@@ -267,6 +267,23 @@ namespace ProyectoFinalAp1.UI.Registros
             return cantidad;
         }
 
+        private bool ValidarEliminarRegistro()
+        {
+            bool paso = true;
+            foreach (var item in this.Detalle)
+            {
+                int cantidad = GetCantidadProducto(item.ProductoId);
+                int cantidadDetalle = GetTotalProducto(item.ProductoId);
+                int resultado = cantidad - cantidadDetalle;
+                if (resultado < 0)
+                {
+                   // MessageBox.Show("La cantidad de " + GetDescripcion(item.ProductoId) + " fue afectada en facturación, intente eliminar en detalle.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return paso = false;
+                }
+            }
+            return paso;
+        }
+
         private void EliminarFilabutton_Click(object sender, EventArgs e)
         {
             if (!ValidarRemover())
@@ -356,21 +373,44 @@ namespace ProyectoFinalAp1.UI.Registros
             }
             else
             {
-                var resultado = MessageBox.Show("Esta acción no cambiara la cantidad de Producto, si desea reducir el inventario." +
-                    "Por favor, eliminelo del detalle."+ 
+                var resultado = MessageBox.Show("Esta acción afectara datos de otros modulos." +
                     " De todos modos desea continuar?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
-                    paso = repositorio.Eliminar(ID);
-                    if (paso)
+                    if (!ValidarEliminarRegistro())
                     {
-                        Limpiar();
-                        MessageBox.Show("Entrada de Productos eliminada!!", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var auxResultado = MessageBox.Show("La cantidad de productos fue afectada en facturación." +" Desea eliminar sin afectar ninguna de las cantidades de productos?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if(auxResultado == DialogResult.Yes)
+                        {
+                            paso = repositorio.Eliminar(ID);
+                            if (paso)
+                            {
+                                Limpiar();
+                                MessageBox.Show("Entrada de Productos eliminada!!", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo eliminar la Entrada de Productos", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                      
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar la Entrada de Productos", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        RepositorioEntradaProducto repositorioEntrada = new RepositorioEntradaProducto();
+                        paso = repositorioEntrada.Eliminar(ID);
+                        if (paso)
+                        {
+                            Limpiar();
+                            MessageBox.Show("Entrada de Productos eliminada!!", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo eliminar la Entrada de Productos", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
+                    
                 }
                    
             }

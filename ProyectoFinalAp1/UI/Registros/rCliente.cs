@@ -161,6 +161,7 @@ namespace ProyectoFinalAp1.UI.Registros
             string rnc = RNCmaskedTextBox.Text;
             string email = EmailtextBox.Text;
             string telefono = TelefonomaskedTextBox.Text;
+            string nombre = NombrestextBox.Text;
             if (IDnumericUpDown.Value == 0)
             {
                 foreach (var item in lista)
@@ -186,6 +187,15 @@ namespace ProyectoFinalAp1.UI.Registros
                     if (item.Telefono == telefono)
                     {
                         MyerrorProvider.SetError(TelefonomaskedTextBox, "Este Telefono ya existe con otro Cliente.");
+                        paso = false;
+                    }
+                }
+
+                foreach (var item in lista)
+                {
+                    if (item.Nombres == nombre)
+                    {
+                        MyerrorProvider.SetError(NombrestextBox, "Este Nombre ya existe con otro Cliente.");
                         paso = false;
                     }
                 }
@@ -235,6 +245,19 @@ namespace ProyectoFinalAp1.UI.Registros
                         }
                     }
 
+                    if (nombre != GetNombre())
+                    {
+                        foreach (var item in lista)
+                        {
+                            if (item.Nombres == nombre)
+                            {
+                                MyerrorProvider.SetError(NombrestextBox, "Este Nombre ya existe con otro Cliente.");
+                                paso = false;
+                            }
+                        }
+                    }
+
+
                 }
                 
 
@@ -250,6 +273,14 @@ namespace ProyectoFinalAp1.UI.Registros
             RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
             telefono = repositorio.Buscar((int)IDnumericUpDown.Value).Telefono;
             return telefono;
+        }
+
+        private string GetNombre()
+        {
+            string nombre;
+            RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+            nombre = repositorio.Buscar((int)IDnumericUpDown.Value).Nombres;
+            return nombre;
         }
 
         private string GetEmail()

@@ -116,23 +116,29 @@ namespace ProyectoFinalAp1.UI.Consultas
         private void CargarGridFor(List<Usuarios> lista)
         {
             ConsultadataGridView.Rows.Clear();
-            if (EsAdmin())
+            foreach (var item in lista)
             {
-                foreach (var item in lista)
-                {
-                    ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
-                        DesEncriptar(item.PassWord), item.FechaIngreso.ToString("dd/MM/yyyy"));
-                }
+                ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
+                    item.PassWord, item.FechaIngreso.ToString("dd/MM/yyyy"));
             }
-            else
-            {
-                foreach (var item in lista)
-                {
-                    ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
-                        item.PassWord, item.FechaIngreso.ToString("dd/MM/yyyy"));
-                }
-            }
-            
+
+            //if (EsAdmin())
+            //{
+            //    foreach (var item in lista)
+            //    {
+            //        ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
+            //            DesEncriptar(item.PassWord), item.FechaIngreso.ToString("dd/MM/yyyy"));
+            //    }
+            //}
+            //else
+            //{
+            //    foreach (var item in lista)
+            //    {
+            //        ConsultadataGridView.Rows.Add(item.UsuarioId, item.Nombres, item.NombreUsuario,
+            //            item.PassWord, item.FechaIngreso.ToString("dd/MM/yyyy"));
+            //    }
+            //}
+
         }
 
         private string DesEncriptar(string _cadenaAdesencriptar)

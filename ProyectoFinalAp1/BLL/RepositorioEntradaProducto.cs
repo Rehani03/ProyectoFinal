@@ -124,10 +124,11 @@ namespace ProyectoFinalAp1.BLL
         public override bool Eliminar(int ID)
         {
             bool paso = false;
+            RepositorioEntradaProducto repositorio = new RepositorioEntradaProducto();
+            var Anterior = repositorio.Buscar(ID);
             Contexto db = new Contexto();
             try
             {
-                var Anterior = db.EntradaProductos.Find(ID);
                 foreach (var item in Anterior.DetalleEntrada)
                 {
                     var Producto = db.Productos.Find(item.ProductoId);

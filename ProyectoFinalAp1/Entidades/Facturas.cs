@@ -13,12 +13,15 @@ namespace ProyectoFinalAp1.Entidades
         [Key]
         public int FacturaId { get; set; }
         public int ClienteId { get; set; }
+        [ForeignKey("ClienteId")]
+        public virtual Clientes Clientes { get; set; }
         public int UsuarioId { get; set; }
+        [ForeignKey("UsuarioId")]
+        public virtual Usuarios Usuarios { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
         public virtual List<DetalleFactura> Detalles { get; set; }
-        [ForeignKey("ClienteId")]
-        public virtual Clientes Clientes { get; set; }
+       
 
 
         public Facturas()
