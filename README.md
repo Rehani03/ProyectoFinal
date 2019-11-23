@@ -55,6 +55,12 @@ Cabe mencionar, que solo los administradores podran eliminar facturas los usuari
 Existen tres tipos de consultas que varian en su funcionamiento, las cuales son:
 
 - Facturación
+![ConsultaFacturacion](https://user-images.githubusercontent.com/54560358/69482644-74bdd280-0df4-11ea-9cd1-87a14cbf02b4.JPG)
+
+Esta consulta de factura te permite ver el detalle de cada factura solamente, dandole doble click a una de las celdas de la fila. Tambien te permite imprimir la factura.
+
+- Entrada de Productos
+
 
 
  
