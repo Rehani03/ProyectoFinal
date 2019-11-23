@@ -13,6 +13,7 @@ using ProyectoFinalAp1.UI.Login;
 using ProyectoFinalAp1.BLL;
 using ProyectoFinalAp1.Entidades;
 using ProyectoFinalAp1.UI.Reportes;
+using System.Threading;
 
 namespace ProyectoFinalAp1
 {
@@ -277,6 +278,23 @@ namespace ProyectoFinalAp1
         private void RegistrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread hilo = new Thread(AbrirLogin);
+            hilo.Start();
+        }
+
+        private void AbrirLogin()
+        {
+            Application.Run(new Login());
         }
     }
 }
