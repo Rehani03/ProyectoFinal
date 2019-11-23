@@ -16,7 +16,7 @@ namespace ProyectoFinalAp1.UI.Reportes
         public ReporteProducto(List<Productos> lista)
         {
             InitializeComponent();
-            ReporteProductoCrystal reporte = new ReporteProductoCrystal();
+            ReporteProducto2Crystal reporte = new ReporteProducto2Crystal();
             reporte.SetDataSource(lista);
             ReportViewer.ReportSource = reporte;
             ReportViewer.Refresh();

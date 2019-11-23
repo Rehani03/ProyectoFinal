@@ -258,6 +258,12 @@
     <Compile Include="UI\Reportes\ReporteProducto.Designer.cs">
       <DependentUpon>ReporteProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ReporteProducto2Crystal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteProducto2Crystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\ReporteProductoCrystal.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -371,6 +377,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ReporteProducto.resx">
       <DependentUpon>ReporteProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteProducto2Crystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteProducto2Crystal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ReporteProductoCrystal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
