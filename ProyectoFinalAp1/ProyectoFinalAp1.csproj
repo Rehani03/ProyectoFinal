@@ -234,6 +234,12 @@
     <Compile Include="UI\Reportes\ReporteFactura.Designer.cs">
       <DependentUpon>ReporteFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ReporteFactura2Crystal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteFactura2Crystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\ReporteFacturaConsumidor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +369,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ReporteFactura.resx">
       <DependentUpon>ReporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteFactura2Crystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteFactura2Crystal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ReporteFacturaConsumidor.resx">
       <DependentUpon>ReporteFacturaConsumidor.cs</DependentUpon>
