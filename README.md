@@ -41,7 +41,10 @@ Este registro permite crear los productos en el programa. Este tambien posee la 
 ![EntradaProducto](https://user-images.githubusercontent.com/54560358/69480827-539fb680-0de1-11ea-9d82-71ba686cfc27.JPG)
 
 Este registro permite darle entrada a los productos que se iran a vender. Solo debes elegir el nombre del producto y colocar la cantidad, cuando pulses en el botón agregar ya estaran en detalle y para hacer efectiva la acción solo necesitas pulsar el botón Guardar. Si deseas, tambien podras agregar nuevos productos con el botón que esta al lado de Producto.
-Recuerde, que solo puedes darle entrada a un producto a la vez.
+Recuerde, que solo puedes darle entrada a un producto a la vez en el detalle.
+
+## Facturación
+
 
 
 
