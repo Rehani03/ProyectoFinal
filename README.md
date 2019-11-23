@@ -20,3 +20,10 @@ En esta ventana como ya mencionado acceder a los siguientes registros:
 Este registro permite crear usuarios los cuales podras darle diferentes niveles, los de nivel Administrador tendran accedo a todo el programa mientras que los de nivel Usuario Normal solo podran acceder a Facturación. De igual manera, todos los campos deben ser llenados para que pueda ser registrado el usuario.
 
 ## Cliente
+
+![Cliente](https://user-images.githubusercontent.com/54560358/69480595-25b97280-0ddf-11ea-84eb-e0959753d893.JPG)
+
+Este registro permite crear los clientes en el programa, y posee dos campos muy importantes que son consumo y visitas esos campos se iran actualizando de acuerdo al consumo del cliente y las veces que estuvo en la institución.
+
+## Producto
+
