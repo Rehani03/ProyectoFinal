@@ -9,4 +9,4 @@ y contraseña 1234.
 
 La siguiente ventana que se le mostrara sera la de Menu Principal, en ella encontraras diferentes registros para que puedas comenzar a utilizar el programa. Cabe destacar que los usuarios que ingresen en modo Administrador son los que tendran el acceso completo al programa, en caso de que ingreses con un usuario con nivel de Usuario Normal, solo podras utilizar las consultas y el Registro de Facturación. 
 
-## Registro de Usuario:
+
