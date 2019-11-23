@@ -76,6 +76,9 @@ Esta consulta de Entrada de Productos te permite ver el detalle de cada Entrada 
 Esta consulta de Categorias te permite filtrar por los campos de la categoria e imprimir un reporte de ellos.
  
  - Cliente:
- 
+![ConsultaCliente](https://user-images.githubusercontent.com/54560358/69483561-3679e080-0dff-11ea-9f48-a89207f9381e.JPG)
+Esta consulta es de clientes, te permite filtrar por rango de fecha y por los campos del cliente. Tambien puedes imprimir un reporte.
+
+## Ya terminando el Readme las otras consultas que faltan son iguales a la de cliente, cada una filtra por fecha y por los campos que posea el registro y tambien imprimen un reporte.
  
 
