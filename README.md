@@ -65,6 +65,7 @@ Esta consulta de factura te permite ver el detalle de cada factura solamente, da
 Esta consulta de Entrada de Productos te permite ver el detalle de cada Entrada de Productos solamente, dandole doble click a una de las celdas de la fila. Tambien te permite imprimir la Entrada de Productos. Ademas, puedes filtrar por fecha y por los otros campos de la Entrada de Productos.
 
 
+-- Categoria:
 
  
  
