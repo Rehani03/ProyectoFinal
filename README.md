@@ -1,7 +1,7 @@
 # ProyectoFinal-ButterSoft
 ## Comenzando
-Estas instrucciones permitiran el buen funcionamiento del programa. Esta ventana es la primera que veras el iniciar el sistema. En ella 
-deberas elegir el usuario a logear y colocar la contraseña. En caso de que sea la primera vez que ingreses al sistema tu usuario sera Admin
+Estas instrucciones permitiran el buen funcionamiento del programa. Esta ventana es la primera que veras el iniciar el programa. En ella 
+deberas elegir el usuario a loguear y colocar la contraseña. En caso de que sea la primera vez que ingreses al sistema tu usuario sera Admin
 y contraseña 1234.
 
 
@@ -47,7 +47,16 @@ Recuerde, que solo puedes darle entrada a un producto a la vez en el detalle.
 
 ![Factura](https://user-images.githubusercontent.com/54560358/69480979-38ce4180-0de3-11ea-9bd3-11262db9f114.JPG)
 
+Este registro te permite crear las facturas a nombre de los clientes. Para hacerlo solo debes elegir un cliente, y en Producto eliges el nombre del producto se te mostrara el precio en el apartado precio y colocas la cantidad y luego presionas Agregar para hacer efectiva la factura la debes Guardar.
+Cabe mencionar, que solo los administradores podran eliminar facturas los usuarios normal no podran.
 
 
+## Consultas
+Existen tres tipos de consultas que varian en su funcionamiento, las cuales son:
 
+- Facturación
+
+
+ 
+ 
 
