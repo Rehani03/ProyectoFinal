@@ -117,9 +117,23 @@ namespace ProyectoFinalAp1.UI.Registros
             string key = ContraseñatextBox.Text;
             if (key == NombretextBox.Text || key == NombreUsuariotextBox.Text)
             {
-                MyerrorProvider.SetError(ContraseñatextBox, "La contraseña no puede ser igual al nombre de usuario o nombres");
+                MyerrorProvider.SetError(ContraseñatextBox, "La contraseña no puede ser igual al nombre de usuario o nombres.");
                 paso = false;
             }
+
+            if (EspaciosEnBlanco(NombreUsuariotextBox.Text))
+            {
+                MyerrorProvider.SetError(NombreUsuariotextBox, "El nombre de Usuario no puede tener espacios en blanco.");
+                paso = false;
+            }
+
+            if (EspaciosEnBlanco(ContraseñatextBox.Text))
+            {
+                MyerrorProvider.SetError(ContraseñatextBox, "La contraseña no puede tener espacios en blanco.");
+                paso = false;
+            }
+
+
 
             string nombreU = NombreUsuariotextBox.Text;
             string nombre = NombretextBox.Text;
@@ -179,6 +193,18 @@ namespace ProyectoFinalAp1.UI.Registros
                
             }
                
+            return paso;
+        }
+
+        private bool EspaciosEnBlanco(string cadena)
+        {
+            bool paso = false;
+            char[] letras = cadena.ToCharArray();
+            for (int i = 0; i < letras.Length; i++)
+            {
+                if (letras[i] == ' ')
+                    paso = true;
+            }
             return paso;
         }
 
