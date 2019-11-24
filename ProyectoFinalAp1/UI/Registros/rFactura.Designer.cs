@@ -59,6 +59,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EliminarFilabutton = new System.Windows.Forms.Button();
             this.Botonespanel = new System.Windows.Forms.Panel();
             this.Eliminarbutton = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.Clientepanel.SuspendLayout();
@@ -361,6 +361,12 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Importe";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // EliminarFilabutton
             // 
             this.EliminarFilabutton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarFilabutton.Image")));
@@ -476,12 +482,6 @@
             this.Imprimirbutton.UseVisualStyleBackColor = false;
             this.Imprimirbutton.Visible = false;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Importe";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // rFactura
             // 

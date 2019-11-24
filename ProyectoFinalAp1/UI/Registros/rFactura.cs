@@ -61,6 +61,7 @@ namespace ProyectoFinalAp1.UI.Registros
             PreciotextBox.ReadOnly = true;
             CargarGridFor(this.Detalle);
             MyerrorProvider.Clear();
+            //Imprimirbutton.Visible = false;
 
         }
 
@@ -340,6 +341,8 @@ namespace ProyectoFinalAp1.UI.Registros
             {
                 Limpiar();
                 LlenaCampos(facturas);
+                //Imprimirbutton.Visible = true;
+
             }
             else
             {
@@ -633,9 +636,13 @@ namespace ProyectoFinalAp1.UI.Registros
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            if(this.Detalle.Count > 0)
+            RepositorioFactura factura = new RepositorioFactura();
+            List<DetalleFactura> lista = new List<DetalleFactura>();
+            lista = factura.Buscar((int)IDnumericUpDown.Value).Detalles;
+
+            if (Detalle.Count > 0)
             {
-                ReporteFacturaConsumidor reporte = new ReporteFacturaConsumidor(this.Detalle);
+                ReporteFacturaConsumidor reporte = new ReporteFacturaConsumidor(lista);
                 reporte.ShowDialog();
             }
             else
@@ -644,5 +651,6 @@ namespace ProyectoFinalAp1.UI.Registros
                 MyerrorProvider.SetError(Imprimirbutton, "No hay datos para imprimir.");
             }
         }
+
     }
 }
