@@ -76,8 +76,8 @@ namespace ProyectoFinalAp1.UI.Consultas
                 }
                 if(FechacheckBox.Checked == true)
                 {
-                    listado = listado.Where(p => p.Fecha >= DesdedateTimePicker.Value.Date &&
-                          p.Fecha <= HastadateTimePicker.Value.Date).ToList();
+                    listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
+                          p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
                 }     
             }
             CargarGrid(listado);
@@ -119,11 +119,11 @@ namespace ProyectoFinalAp1.UI.Consultas
             }
             if(FechacheckBox.Checked == true)
             {
-                if (HastadateTimePicker.Value.Date == DesdedateTimePicker.Value.Date)
-                {
-                    MyerrorProvider.SetError(HastadateTimePicker, "Las fechas no pueden ser iguales.");
-                    paso = false;
-                }
+                //if (HastadateTimePicker.Value.Date == DesdedateTimePicker.Value.Date)
+                //{
+                //    MyerrorProvider.SetError(HastadateTimePicker, "Las fechas no pueden ser iguales.");
+                //    paso = false;
+                //}
 
                 if (HastadateTimePicker.Value.Date < DesdedateTimePicker.Value.Date)
                 {
