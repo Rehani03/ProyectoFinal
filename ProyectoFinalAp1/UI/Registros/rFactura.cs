@@ -305,7 +305,7 @@ namespace ProyectoFinalAp1.UI.Registros
             {
                 if (!Existe())
                 {
-                    MessageBox.Show("No se puede modificar porque no existe en la base de datos",
+                    MessageBox.Show("No se puede modificar porque no existe en la base de datos.",
                            "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -315,13 +315,12 @@ namespace ProyectoFinalAp1.UI.Registros
             if (paso)
             {
                 MessageBox.Show("Guardado!!", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //var resultado = MessageBox.Show("Deseas imprimir esta factura?.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //if (resultado == DialogResult.Yes)
-                //{
-                //    ReporteFacturaConsumidor reporte = new ReporteFacturaConsumidor(this.Detalle);
-                //    reporte.ShowDialog();
-                //}
-
+                var resultado = MessageBox.Show("Deseas imprimir esta factura?.", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ReporteFacturaConsumidor reporte = new ReporteFacturaConsumidor(Detalle);
+                    reporte.ShowDialog();
+                }
                 Limpiar();     
             }
             else
