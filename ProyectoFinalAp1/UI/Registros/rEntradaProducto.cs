@@ -116,9 +116,31 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
+            if (paso)
+            {
+                RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+                foreach (var item in this.Detalle)
+                {
+                    var aux = repositorio.Buscar(item.ProductoId);
+                    if (aux == null)
+                    {
+                        MessageBox.Show("No se puede guardar porque el producto con ID" + item.ProductoId.ToString() + " fue eliminado. Por favor, vuelva a cargar la Entrada de Productos", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return false;
+                    }
+                        
+                }
+            }
+
           
 
             return paso;
+        }
+
+        private bool ExisteProducto()
+        {
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            var p = repositorio.Buscar((int)ProductocomboBox.SelectedValue);
+            return (p != null);
         }
 
        
@@ -128,7 +150,7 @@ namespace ProyectoFinalAp1.UI.Registros
             bool paso = true;
             MyerrorProvider.Clear();
 
-            if(ProductocomboBox.Text == "" || ProductocomboBox.SelectedIndex == -1)
+            if(ProductocomboBox.Text == "" || ProductocomboBox.SelectedIndex == -1 || !ExisteProducto())
             {
                 MyerrorProvider.SetError(ProductocomboBox, "Debe elegir un producto");
                 paso = false;
@@ -379,7 +401,7 @@ namespace ProyectoFinalAp1.UI.Registros
                 {
                     if (!ValidarEliminarRegistro())
                     {
-                        var auxResultado = MessageBox.Show("La cantidad de productos fue afectada en facturación." +" Desea eliminar sin afectar ninguna de las cantidades de productos?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        var auxResultado = MessageBox.Show("La cantidad de productos fue afectada en otro modulo." +" Desea eliminar sin afectar ninguna de las cantidades de productos?", "ButterSoft", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if(auxResultado == DialogResult.Yes)
                         {

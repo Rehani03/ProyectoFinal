@@ -424,6 +424,8 @@ namespace ProyectoFinalAp1.UI.Registros
                 paso = false;
             }
 
+            
+
             return paso;
         }
 

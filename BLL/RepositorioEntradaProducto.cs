@@ -71,7 +71,10 @@ namespace BLL
                         var producto = db.Productos.Find(item.ProductoId);
                         db.Entry(item).State = EntityState.Added;
                         if (producto != null)
+                        {
                             producto.Cantidad += item.Cantidad;
+                        }
+                           
                     }
                     else
                         db.Entry(item).State = EntityState.Modified;

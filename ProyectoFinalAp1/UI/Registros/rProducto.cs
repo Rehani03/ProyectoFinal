@@ -149,6 +149,13 @@ namespace ProyectoFinalAp1.UI.Registros
             UsuariotextBox.Text = GetNombreUsuario(p.UsuarioId);
         }
 
+        private bool ExisteCategoria()
+        {
+            RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
+            var c = repositorio.Buscar((int)CategoriacomboBox.SelectedValue);
+            return (c != null);
+        }
+
         private bool Validar()
         {
             bool paso = true;
@@ -156,7 +163,7 @@ namespace ProyectoFinalAp1.UI.Registros
             List<Productos> lista = new List<Productos>();
             lista = repositorio.GetList(p => true);
 
-            if (CategoriacomboBox.Text == "" || CategoriacomboBox.SelectedIndex == -1)
+            if (CategoriacomboBox.Text == "" || CategoriacomboBox.SelectedIndex == -1 || !ExisteCategoria())
             {
                 MyerrorProvider.SetError(CategoriacomboBox, "Debe elegir una categoria para el producto.");
                 paso = false;
