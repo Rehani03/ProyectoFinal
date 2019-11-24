@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProyectoFinalAp1.Entidades;
+using Entidades;
+using BLL;
 
 namespace ProyectoFinalAp1.BLL.Tests
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProyectoFinalAp1.BLL;
-using ProyectoFinalAp1.Entidades;
+using BLL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;

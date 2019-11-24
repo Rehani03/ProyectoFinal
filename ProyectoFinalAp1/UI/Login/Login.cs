@@ -76,7 +76,7 @@ namespace ProyectoFinalAp1.UI.Login
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             List<Usuarios> lista = new List<Usuarios>();
             lista = repositorio.GetList(p => true);
-            MessageBox.Show("Iniciando!!!.");
+            //MessageBox.Show("Iniciando!!!.");
             if (lista.Count == 0)
             { 
                 Usuarios u = new Usuarios();

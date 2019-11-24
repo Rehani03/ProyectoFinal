@@ -77,6 +77,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{1700216C-C316-4834-80C8-338D9AEE19CC}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{01AFB0EC-CA94-4C96-8E16-F2E34416342F}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProyectoFinalAp1\ProyectoFinalAp1.csproj">
       <Project>{498A0414-8DDD-414C-ADF7-1723706FED05}</Project>
       <Name>ProyectoFinalAp1</Name>
