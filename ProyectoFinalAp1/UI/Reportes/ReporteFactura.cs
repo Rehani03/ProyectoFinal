@@ -25,7 +25,7 @@ namespace ProyectoFinalAp1.UI.Reportes
         
         private void CrystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ReporteFactura2Crystal reporte = new ReporteFactura2Crystal();
+            ReporteFacturaCrystal reporte = new ReporteFacturaCrystal();
             reporte.SetDataSource(lista);
             ReportViewer.ReportSource = reporte;
             ReportViewer.Refresh();
