@@ -29,56 +29,64 @@ namespace ProyectoFinalAp1.UI.Consultas
            listado = new List<Productos>();
             RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
 
-            if (!Validar())
-                return;
+            if (CriteriotextBox.Text.Trim().Length > 0)
+            {
+                if (!Validar())
+                    return;
+                else
+                {
+                    switch (FiltrocomboBox.SelectedIndex)
+                    {
+                        case 0:
+                            listado = repositorio.GetList(p => true);
+                            break;
+                        case 1: //ID
+                            int ID = GetEntero();
+                            listado = repositorio.GetList(p => p.ProductoId == ID);
+                            break;
+                        case 2: //Categoria ID
+                            int IDc = GetEntero();
+                            listado = repositorio.GetList(p => p.CategoriaId == IDc);
+                            break;
+                        case 3: //descripcion producto
+                            string descripcion = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Descripcion.Contains(descripcion));
+                            break;
+                        case 4://costo
+                            decimal costo = GetDecimal();
+                            listado = repositorio.GetList(p => p.Costo == costo);
+                            break;
+                        case 5://precio
+                            decimal precio = GetDecimal();
+                            listado = repositorio.GetList(p => p.Precio == precio);
+                            break;
+                        case 6://ganancia
+                            decimal ganancia = GetDecimal();
+                            listado = repositorio.GetList(p => p.Ganancia == ganancia);
+                            break;
+                        case 7://costo
+                            int cantidad = GetEntero();
+                            listado = repositorio.GetList(p => p.Cantidad == cantidad);
+                            break;
+                        case 8:
+                            string descripcionCategoria = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Categorias.Descripcion.Contains(descripcionCategoria));
+                            break;
+                        default:
+                            MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }   
+                }
+            }
             else
             {
-                switch (FiltrocomboBox.SelectedIndex)
-                {
-                    case 0:
-                        listado = repositorio.GetList(p => true);
-                        break;
-                    case 1: //ID
-                        int ID = GetEntero();
-                        listado = repositorio.GetList(p => p.ProductoId == ID);
-                        break;
-                    case 2: //Categoria ID
-                        int IDc = GetEntero();
-                        listado = repositorio.GetList(p => p.CategoriaId == IDc);
-                        break;
-                    case 3: //descripcion producto
-                        string descripcion = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Descripcion.Contains(descripcion));
-                        break;
-                    case 4://costo
-                        decimal costo = GetDecimal();
-                        listado = repositorio.GetList(p => p.Costo == costo);
-                        break;
-                    case 5://precio
-                        decimal precio = GetDecimal();
-                        listado = repositorio.GetList(p => p.Precio == precio);
-                        break;
-                    case 6://ganancia
-                        decimal ganancia = GetDecimal();
-                        listado = repositorio.GetList(p => p.Ganancia == ganancia);
-                        break;
-                    case 7://costo
-                        int cantidad = GetEntero();
-                        listado = repositorio.GetList(p => p.Cantidad == cantidad);
-                        break;
-                    case 8:
-                        string descripcionCategoria = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Categorias.Descripcion.Contains(descripcionCategoria));
-                        break;
-                    default:
-                        MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                }
-                if(FechacheckBox.Checked == true)
-                {
-                    listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
-                          p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
-                }     
+                listado = repositorio.GetList(p => true);
+            }
+
+            if (FechacheckBox.Checked == true)
+            {
+                listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
+                      p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
             }
             CargarGrid(listado);
 

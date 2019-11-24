@@ -42,13 +42,13 @@
             this.Hastalabel = new System.Windows.Forms.Label();
             this.Desdelabel = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
-            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Frontalpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
@@ -89,7 +89,7 @@
             this.Consultarbutton.BackColor = System.Drawing.SystemColors.Window;
             this.Consultarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Consultarbutton.Image")));
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(719, 5);
+            this.Consultarbutton.Location = new System.Drawing.Point(719, 12);
             this.Consultarbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Consultarbutton.Name = "Consultarbutton";
             this.Consultarbutton.Size = new System.Drawing.Size(105, 44);
@@ -201,24 +201,6 @@
             this.ConsultadataGridView.Size = new System.Drawing.Size(847, 312);
             this.ConsultadataGridView.TabIndex = 1;
             // 
-            // MyerrorProvider
-            // 
-            this.MyerrorProvider.ContainerControl = this;
-            // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
-            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
-            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(385, 424);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(114, 53);
-            this.Imprimirbutton.TabIndex = 2;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = false;
-            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "UsuarioId";
@@ -248,6 +230,24 @@
             this.Column5.HeaderText = "FechaIngreso";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.BackColor = System.Drawing.SystemColors.Window;
+            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imprimirbutton.Location = new System.Drawing.Point(385, 424);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(114, 53);
+            this.Imprimirbutton.TabIndex = 2;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Imprimirbutton.UseVisualStyleBackColor = false;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // cUsuario
             // 

@@ -26,28 +26,36 @@ namespace ProyectoFinalAp1.UI.Consultas
             listado = new List<Categorias>();
             RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
 
-            if (!Validar())
-                return;
-            else
+            if (CriteriotextBox.Text.Trim().Length > 0)
             {
-                switch (FiltrocomboBox.SelectedIndex)
+                if (!Validar())
+                    return;
+                else
                 {
-                    case 0: //Todo
-                        listado = repositorio.GetList(p => true);
-                        break;
-                    case 1: //ID
-                        int ID = GetCriterio();
-                        listado = repositorio.GetList(p => p.CategoriaId == ID);
-                        break;
-                    case 2: //Descripcion
-                        string Nombres = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Descripcion == Nombres);
-                        break;
-                    default:
-                        MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
+                    switch (FiltrocomboBox.SelectedIndex)
+                    {
+                        case 0: //Todo
+                            listado = repositorio.GetList(p => true);
+                            break;
+                        case 1: //ID
+                            int ID = GetCriterio();
+                            listado = repositorio.GetList(p => p.CategoriaId == ID);
+                            break;
+                        case 2: //Descripcion
+                            string Nombres = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Descripcion == Nombres);
+                            break;
+                        default:
+                            MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
                 }
             }
+            else
+            {
+                listado = repositorio.GetList(p => true);
+            }
+           
 
             ConsultadataGridView.DataSource = null;
             this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

@@ -43,46 +43,55 @@ namespace ProyectoFinalAp1.UI.Consultas
             listado = new List<Facturas>();
             RepositorioBase<Facturas> repositorio = new RepositorioBase<Facturas>();
 
-            if (!Validar())
-                return;
-            else
+            if (CriteriotextBox.Text.Trim().Length > 0)
             {
-                switch (FiltrocomboBox.SelectedIndex)
+                if (!Validar())
+                    return;
+                else
                 {
-                    case 0: //Todo
-                        listado = repositorio.GetList(p => true);
-                        break;
-                    case 1: //ID
-                        int ID = GetCriterio();
-                        listado = repositorio.GetList(p => p.FacturaId == ID);
-                        break;
-                    case 2: //ID Cliente
-                        int ClienteID = GetCriterio();
-                        listado = repositorio.GetList(p => p.ClienteId == ClienteID);
-                        break;
-                    case 3: //ID Usuario
-                        int UsuarioID = GetCriterio();
-                        listado = repositorio.GetList(p => p.UsuarioId == UsuarioID);
-                        break;
-                    case 4: //Total
-                        decimal total = GetDecimal();
-                        listado = repositorio.GetList(p => p.Total == total);
-                        break;
-                    case 5:
-                        string NombreCliente = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Clientes.Nombres.Contains(NombreCliente));
-                        break;
+                    switch (FiltrocomboBox.SelectedIndex)
+                    {
+                        case 0: //Todo
+                            listado = repositorio.GetList(p => true);
+                            break;
+                        case 1: //ID
+                            int ID = GetCriterio();
+                            listado = repositorio.GetList(p => p.FacturaId == ID);
+                            break;
+                        case 2: //ID Cliente
+                            int ClienteID = GetCriterio();
+                            listado = repositorio.GetList(p => p.ClienteId == ClienteID);
+                            break;
+                        case 3: //ID Usuario
+                            int UsuarioID = GetCriterio();
+                            listado = repositorio.GetList(p => p.UsuarioId == UsuarioID);
+                            break;
+                        case 4: //Total
+                            decimal total = GetDecimal();
+                            listado = repositorio.GetList(p => p.Total == total);
+                            break;
+                        case 5:
+                            string NombreCliente = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Clientes.Nombres.Contains(NombreCliente));
+                            break;
 
-                    default:
-                        MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                }
-                if (FechacheckBox.Checked == true)
-                {
-                    listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
-                          p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+                        default:
+                            MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }        
                 }
             }
+            else
+            {
+                listado = repositorio.GetList(p => true);
+            }
+
+            if (FechacheckBox.Checked == true)
+            {
+                listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
+                      p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+
 
             CargarGridFor(listado);
         }

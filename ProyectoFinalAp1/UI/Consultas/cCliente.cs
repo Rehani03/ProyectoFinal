@@ -63,57 +63,65 @@ namespace ProyectoFinalAp1.UI.Consultas
             listado = new List<Clientes>();
             RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
 
-            if (!Validar())
-                return;
+            if (CriteriotextBox.Text.Trim().Length > 0)
+            {
+                if (!Validar())
+                    return;
+                else
+                {
+                    switch (FiltrocomboBox.SelectedIndex)
+                    {
+                        case 0: //Todo
+                            listado = repositorio.GetList(p => true);
+                            break;
+                        case 1: //ID
+                            int ID = GetCriterio();
+                            listado = repositorio.GetList(p => p.ClienteId == ID);
+                            break;
+                        case 2: //Nombres
+                            string Nombres = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Nombres.Contains(Nombres));
+                            break;
+                        case 3: //rnc
+                            string rnc = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.RNC.Contains(rnc));
+                            break;
+                        case 4: //direccion
+                            string direccion = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Direccion.Contains(direccion));
+                            break;
+                        case 5://telefono
+                            string telefono = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Telefono.Contains(telefono));
+                            break;
+                        case 6://email
+                            string email = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Email.Contains(email));
+                            break;
+                        case 7: //consumo
+                            decimal consumo = GetCriterioConsumo();
+                            listado = repositorio.GetList(p => p.Consumo == consumo);
+                            break;
+                        case 8: //visitas
+                            int visitas = GetCriterioVisitas();
+                            listado = repositorio.GetList(p => p.Visitas == visitas);
+                            break;
+                        default:
+                            MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
+                }    
+                
+            }
             else
             {
-                switch (FiltrocomboBox.SelectedIndex)
-                {
-                    case 0: //Todo
-                        listado = repositorio.GetList(p => true);
-                        break;
-                    case 1: //ID
-                        int ID = GetCriterio();
-                        listado = repositorio.GetList(p => p.ClienteId == ID);
-                        break;
-                    case 2: //Nombres
-                        string Nombres = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Nombres.Contains(Nombres));
-                        break;
-                    case 3: //rnc
-                        string rnc = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.RNC.Contains(rnc));
-                        break;
-                    case 4: //direccion
-                        string direccion = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Direccion.Contains(direccion));
-                        break;
-                    case 5://telefono
-                        string telefono = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Telefono.Contains(telefono));
-                        break;
-                    case 6://email
-                        string email = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Email.Contains(email));
-                        break;
-                    case 7: //consumo
-                        decimal consumo = GetCriterioConsumo();
-                        listado = repositorio.GetList(p => p.Consumo == consumo);
-                        break;
-                    case 8: //visitas
-                        int visitas = GetCriterioVisitas();
-                        listado = repositorio.GetList(p => p.Visitas == visitas);
-                        break;
-                    default:
-                        MessageBox.Show("No se encontro coincidencia.", "ButterSoft", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                }
-                if (FechacheckBox.Checked == true)
-                {
-                    listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
-                           p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
-                }
-                
+                listado = repositorio.GetList(p => true);
+            }
+
+            if (FechacheckBox.Checked == true)
+            {
+                listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
+                       p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
             }
 
             CargarGridFor(listado);

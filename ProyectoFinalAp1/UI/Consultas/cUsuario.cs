@@ -75,37 +75,47 @@ namespace ProyectoFinalAp1.UI.Consultas
             listado = new List<Usuarios>();
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            if (!Validar())
-                return;
-            else
+            if (CriteriotextBox.Text.Trim().Length > 0)
             {
-                switch (FiltrocomboBox.SelectedIndex)
+                if (!Validar())
+                    return;
+                else
                 {
-                    case 0: //Todo
-                        listado = repositorio.GetList(p => true);
-                        break;
-                    case 1: //ID
-                        int ID = GetCriterio();
-                        listado = repositorio.GetList(p => p.UsuarioId == ID);
-                        break;
-                    case 2:
-                        string Nombres = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.Nombres.Contains(Nombres));
-                        break;
-                    case 3:
-                        string NombreUsuario = CriteriotextBox.Text;
-                        listado = repositorio.GetList(p => p.NombreUsuario.Contains(NombreUsuario));
-                        break;
-                    default:
-                        MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                }
-                if(FechacheckBox.Checked == true)
-                {
-                    listado = listado.Where(p => p.FechaIngreso.Date >= DesdedateTimePicker.Value.Date &&
-                         p.FechaIngreso.Date <= HastadateTimePicker.Value.Date).ToList();
+                    switch (FiltrocomboBox.SelectedIndex)
+                    {
+                        case 0: //Todo
+                            listado = repositorio.GetList(p => true);
+                            break;
+                        case 1: //ID
+                            int ID = GetCriterio();
+                            listado = repositorio.GetList(p => p.UsuarioId == ID);
+                            break;
+                        case 2:
+                            string Nombres = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.Nombres.Contains(Nombres));
+                            break;
+                        case 3:
+                            string NombreUsuario = CriteriotextBox.Text;
+                            listado = repositorio.GetList(p => p.NombreUsuario.Contains(NombreUsuario));
+                            break;
+                        default:
+                            MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
+                   
                 }
             }
+            else
+            {
+                listado = repositorio.GetList(p => true);
+            }
+
+            if (FechacheckBox.Checked == true)
+            {
+                listado = listado.Where(p => p.FechaIngreso.Date >= DesdedateTimePicker.Value.Date &&
+                     p.FechaIngreso.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+
 
             CargarGridFor(listado);
 

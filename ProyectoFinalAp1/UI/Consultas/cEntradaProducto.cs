@@ -41,38 +41,48 @@ namespace ProyectoFinalAp1.UI.Consultas
             listado = new List<EntradaProducto>();
             RepositorioBase<EntradaProducto> repositorio = new RepositorioBase<EntradaProducto>();
 
-            if (!Validar())
-                return;
-            else
+            if (CriteriotextBox.Text.Trim().Length > 0)
             {
-                switch (FiltrocomboBox.SelectedIndex)
+                if (!Validar())
+                    return;
+                else
                 {
-                    case 0: //Todo
-                        listado = repositorio.GetList(p => true);
-                        break;
-                    case 1: //ID
-                        int ID = GetCriterio();
-                        listado = repositorio.GetList(p => p.EntradaProductoId == ID);
-                        break;
-                    case 2: //ID Usuario
-                        int UsuarioID = GetCriterio();
-                        listado = repositorio.GetList(p => p.UsuarioId == UsuarioID);
-                        break;
-                    case 3: //Total
-                        int cantidadTotal = GetCriterio();
-                        listado = repositorio.GetList(p => p.CantidadTotal == cantidadTotal);
-                        break;
+                    switch (FiltrocomboBox.SelectedIndex)
+                    {
+                        case 0: //Todo
+                            listado = repositorio.GetList(p => true);
+                            break;
+                        case 1: //ID
+                            int ID = GetCriterio();
+                            listado = repositorio.GetList(p => p.EntradaProductoId == ID);
+                            break;
+                        case 2: //ID Usuario
+                            int UsuarioID = GetCriterio();
+                            listado = repositorio.GetList(p => p.UsuarioId == UsuarioID);
+                            break;
+                        case 3: //Total
+                            int cantidadTotal = GetCriterio();
+                            listado = repositorio.GetList(p => p.CantidadTotal == cantidadTotal);
+                            break;
+
+                        default:
+                            MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
                   
-                    default:
-                        MessageBox.Show("No se encontro coincidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                }
-                if(FechacheckBox.Checked == true)
-                {
-                    listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
-                          p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
                 }
             }
+            else
+            {
+                listado = repositorio.GetList(p => true);
+            }
+
+            if (FechacheckBox.Checked == true)
+            {
+                listado = listado.Where(p => p.Fecha.Date >= DesdedateTimePicker.Value.Date &&
+                      p.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+
 
             CargarGridFor(listado);
             
