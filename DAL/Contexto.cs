@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProyectoFinalAp1.Entidades;
+using Entidades;
 
-namespace ProyectoFinalAp1.DAL
+namespace DAL
 {
     public class Contexto : DbContext
     {

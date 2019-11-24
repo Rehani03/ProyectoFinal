@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoFinalAp1.BLL;
-using ProyectoFinalAp1.Entidades;
+using BLL;
+using Entidades;
 using ProyectoFinalAp1.UI.Reportes;
 
 namespace ProyectoFinalAp1.UI.Consultas

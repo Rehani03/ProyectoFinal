@@ -1,4 +1,4 @@
-﻿using ProyectoFinalAp1.Entidades;
+﻿using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoFinalAp1.BLL;
+using BLL;
 
 
 namespace ProyectoFinalAp1.UI.Reportes

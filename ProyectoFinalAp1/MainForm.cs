@@ -10,8 +10,8 @@ using System.Windows.Forms;
 using ProyectoFinalAp1.UI.Consultas;
 using ProyectoFinalAp1.UI.Registros;
 using ProyectoFinalAp1.UI.Login;
-using ProyectoFinalAp1.BLL;
-using ProyectoFinalAp1.Entidades;
+using BLL;
+using Entidades;
 using ProyectoFinalAp1.UI.Reportes;
 using System.Threading;
 

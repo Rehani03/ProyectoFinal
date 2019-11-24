@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProyectoFinalAp1.Entidades;
-using ProyectoFinalAp1.DAL;
 using System.Data.Entity;
+using Entidades;
+using BLL;
+using DAL;
 
-namespace ProyectoFinalAp1.BLL
+namespace BLL
 {
     public class RepositorioUsuario : RepositorioBase<Usuarios>
     {

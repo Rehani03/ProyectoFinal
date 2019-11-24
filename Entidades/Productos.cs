@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoFinalAp1.Entidades
+namespace Entidades
 {
     public class Productos
     {

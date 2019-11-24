@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoFinalAp1.BLL;
-using ProyectoFinalAp1.Entidades;
+using Entidades;
+using BLL;
 
 namespace ProyectoFinalAp1.UI.Registros
 {
