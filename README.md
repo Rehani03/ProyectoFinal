@@ -1,13 +1,12 @@
 # ProyectoFinal-ButterSoft
 ## Comenzando
 Estas instrucciones permitirán el buen funcionamiento del programa. Esta ventana es la primera que veras el iniciar el programa. En ella 
-deberás elegir el usuario a loguear y colocar la contraseña. En caso de que sea la primera vez que ingreses al sistema tu usuario será Admin
-y contraseña 1234.
+deberás elegir el usuario a loguear y colocar la contraseña. En caso de que sea la primera vez que ingreses al programa tu usuario será Admin y contraseña 1234. Cabe mencionar que si es la primera vez en el programa el usuario que el sistema le presente tendra Nivel Administrador.
 
 
 ![Login](https://user-images.githubusercontent.com/54560358/69479993-023ff900-0dda-11ea-908f-a481dfb08c8f.JPG)
 
-La siguiente ventana que se le mostrará será la de Menú Principal, en ella encontraras diferentes registros para que puedas comenzar a utilizar el programa. Cabe destacar que los usuarios que ingresen en modo Administrador son los que tendrán el acceso completo al programa, en caso de que ingreses con un usuario con nivel de Usuario Normal, solo podrás utilizar las consultas y el Registro de Facturación.
+La siguiente ventana que se le mostrará será la de Menú Principal, en ella encontraras diferentes registros para que puedas comenzar a utilizar el programa. Cabe destacar que los usuarios que esten registrado con nivel Administrador son los que tendrán el acceso completo al programa, en caso de que ingreses con un usuario que este registrado con nivel de Usuario Normal, solo podrás utilizar las consultas, excepto la de Usuario y los Registro de Facturación y Clientes cabe mencionar que estos registros los podras utilizar pero no podras eliminar en ellos, solo podras hacerlo si eres usuario con nivel Administrador como ya mencionado.
 
 ![MenuPrincipal_opt](https://user-images.githubusercontent.com/54560358/69480267-6bc10700-0ddc-11ea-9e6f-3915d9795a8e.jpg)
 
@@ -35,21 +34,21 @@ Este registro permite crear las categorías para los productos. Los campos deben
 ## Producto
 ![Producto](https://user-images.githubusercontent.com/54560358/69480677-1129aa00-0de0-11ea-8b86-650c1a4a9e3b.JPG)
 
-Este registro permite crear los productos en el programa. Este también posee la opción de marcar el producto como un donativo lo cual es importante para pasar un producto como si fuera un recibo de contribución, cuando esta opción está marcada se igualan a cero el precio, costo y ganancia. El campo cantidad se ira actualizando de acuerdo con la entrada o venta que se le dé a el producto.
-
+Este registro permite crear los productos en el programa. Este también posee la opción de marcar el producto como un donativo lo cual es importante para pasar un producto como si fuera un recibo de contribución, cuando esta opción está marcada se igualan a cero el precio, costo y ganancia. El campo cantidad se ira actualizando de acuerdo con la entrada o venta que se le dé a el producto. Cabe destacar, que para registrar un producto debe haber una categoria ya registrada, y los campos que les requiera deben estar llenados. 
 ## Entrada de Producto
 
 ![EntradaProducto](https://user-images.githubusercontent.com/54560358/69480827-539fb680-0de1-11ea-9d82-71ba686cfc27.JPG)
 
 Este registro permite darles entrada a los productos que se irán a vender. Solo debes elegir el nombre del producto y colocar la cantidad, cuando pulses en el botón agregar ya estarán en detalle y para hacer efectiva la acción solo necesitas pulsar el botón Guardar. Si deseas, también podrás agregar nuevos productos con el botón que está al lado de Producto.
-Recuerde, que solo puedes darle entrada a un producto a la vez en el detalle.
+Recuerde, que solo puedes darle entrada a un producto a la vez en el detalle. Y debes tomar en cuenta que para darle entrada a un producto este debe estar ya registrado.
 
 ## Facturación
 
 ![Factura](https://user-images.githubusercontent.com/54560358/69480979-38ce4180-0de3-11ea-9bd3-11262db9f114.JPG)
 
-Este registro te permite crear las facturas a nombre de los clientes. Para hacerlo solo debes elegir un cliente, y en Producto eliges el nombre del producto se te mostrara el precio en el apartado precio y colocas la cantidad y luego presionas Agregar para hacer efectiva la factura la debes Guardar.
-Cabe mencionar, que solo los administradores podrán eliminar facturas los usuarios con nivel normal no podrán.
+Este registro te permite crear las facturas a nombre de los clientes. Para hacerlo solo debes elegir un Cliente, y en Producto eliges el nombre del producto se te mostrara el precio en el apartado precio y colocas la cantidad y luego presionas Agregar para hacer efectiva la factura la debes Guardar.
+Cabe mencionar, que solo los usuarios que esten registrados con nivel Administrador son los que podrán eliminar facturas, los usuarios con nivel Normal no podrán. Y debes tomar en cuenta que para registrar una factura debe de habe un Cliente registrado y un Producto con por lo menos 1 en cantidad.
+Un detalle importante es, que cuando presionas Guardar te da la opción de imprimir la factura siempre y cuando se haya guardado correctamente.
 
 ## Consultas
 Existen tres tipos de consultas que varían en su funcionamiento, las cuales son:
@@ -57,12 +56,12 @@ Existen tres tipos de consultas que varían en su funcionamiento, las cuales son
 - Facturación:
 ![ConsultaFacturacion](https://user-images.githubusercontent.com/54560358/69482644-74bdd280-0df4-11ea-9cd1-87a14cbf02b4.JPG)
 
-Esta consulta de factura te permite ver el detalle de cada factura solamente, dándole doble clic a una de las celdas de la fila. También te permite imprimir la factura. Además, puedes filtrar por fecha y por los otros campos de la factura.
+Esta consulta de factura te permite ver el detalle de cada factura solamente, dándole doble clic a una de las celdas de la fila. También te permite imprimir un reporte de factura. Además, puedes filtrar por fecha y por los otros campos de la factura.
 
 - Entrada de Productos:
 ![ConsultaEntrada](https://user-images.githubusercontent.com/54560358/69482695-f57cce80-0df4-11ea-8d1f-555866e5535e.JPG)
 
-Esta consulta de Entrada de Productos te permite ver el detalle de cada Entrada de Productos solamente, dándole doble clic a una de las celdas de la fila. También te permite imprimir la Entrada de Productos. Además, puedes filtrar por fecha y por los otros campos de la Entrada de Productos.
+Esta consulta de Entrada de Productos te permite ver el detalle de cada Entrada de Productos solamente, dándole doble clic a una de las celdas de la fila. También te permite imprimir un reporte de la Entrada de Productos. Además, puedes filtrar por fecha y por los otros campos de la Entrada de Productos.
 
 
 - Categoria:
@@ -94,7 +93,9 @@ Necesitan una computadora con al menos los siguientes requisitos:
 -Espacio en disco duro: 100GigaByte (GB).
  
 ## Construido con:
--Visual Studio 2019 C#
+-Visual Studio 2019 
+
+-C#
 
 -SQL Server 2014
 
