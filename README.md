@@ -1,5 +1,8 @@
 # ProyectoFinal-ButterSoft
-## Comenzando
+# Introducción
+Este programa lo llame ButterSoft, fue creado como proyecto final para la asignatura de Programación Aplicada I del semestre 3-2019, este programa lo hice basándome en el sistema de facturación manual que tiene el museo en el cual laboro.
+
+## Comencemos
 Estas instrucciones permitirán el buen funcionamiento del programa. Esta ventana es la primera que veras el iniciar el programa. En ella 
 deberás elegir el usuario a loguear y colocar la contraseña. En caso de que sea la primera vez que ingreses al programa tu usuario será Admin y contraseña 1234. Cabe mencionar que si es la primera vez en el programa el usuario que el sistema le presente tendra Nivel Administrador y tendra acceso a todos los modulos del programa.
 
