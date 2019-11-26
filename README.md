@@ -6,7 +6,7 @@ deberás elegir el usuario a loguear y colocar la contraseña. En caso de que se
 
 ![Login](https://user-images.githubusercontent.com/54560358/69479993-023ff900-0dda-11ea-908f-a481dfb08c8f.JPG)
 
-La siguiente ventana que se le mostrará será la de Menú Principal, en ella encontraras diferentes registros para que puedas comenzar a utilizar el programa. Cabe destacar que los usuarios que esten registrado con nivel Administrador son los que tendrán el acceso completo al programa, en caso de que ingreses con un usuario que este registrado con nivel de Usuario Normal, solo podrás utilizar las consultas, excepto la de Usuario y los Registro de Facturación y Clientes cabe mencionar que estos registros los podras utilizar pero no podras eliminar en ellos, solo podras hacerlo si eres usuario con nivel Administrador como ya mencionado.
+La siguiente ventana que se le mostrará será la de Menú Principal, en ella encontraras diferentes registros y consultas para que puedas comenzar a utilizar el programa. Cabe destacar que los usuarios que esten registrado con nivel Administrador son los que tendrán el acceso completo al programa, en caso de que ingreses con un usuario que este registrado con nivel de Usuario Normal, solo podrás utilizar las consultas, excepto la de Usuario. Los Registro de Facturación y Clientes los podra usar un usuario registrado con nivel de Usuario Normal, pero no podran eliminar en ellos, solo podran hacerlo aquellos usuarios que esten registrado con nivel de Administrador.
 
 ![MenuPrincipal_opt](https://user-images.githubusercontent.com/54560358/69480267-6bc10700-0ddc-11ea-9e6f-3915d9795a8e.jpg)
 
@@ -16,13 +16,13 @@ En esta ventana como ya mencionado acceder a los siguientes registros:
 
 ![Usuario](https://user-images.githubusercontent.com/54560358/69480389-61ebd380-0ddd-11ea-80f9-445a439be847.JPG)
 
-Este registro permite crear usuarios los cuales podrás darle diferentes niveles, los de nivel Administrador tendrán accedo a todo el programa mientras que los de nivel Usuario Normal solo podrán acceder a Facturación. De igual manera, todos los campos deben ser llenados para que pueda ser registrado el usuario.
+Este registro permite crear usuarios los cuales podrás darle diferentes niveles. Los de nivel Administrador tendrán acceso a todo el programa mientras que los de nivel Usuario Normal solo podrán acceder a Facturación y Clientes pero no podran eliminar en ellos. De igual manera, todos los campos deben ser llenados para que pueda ser registrado el usuario.
 
 ## Cliente
 
 ![Cliente](https://user-images.githubusercontent.com/54560358/69480595-25b97280-0ddf-11ea-84eb-e0959753d893.JPG)
 
-Este registro permite crear los clientes en el programa, y posee dos campos muy importantes que son consumo y visitas esos campos se irán actualizando de acuerdo al consumo del cliente y las veces que estuvo en la institución.
+Este registro permite crear los clientes en el programa, y posee dos campos muy importantes que son consumo y visitas esos campos se irán actualizando de acuerdo al consumo del cliente y las veces que estuvo en la institución. Los otros campos deben ser llenados por el usuario.
 
 ## Categoria
 
@@ -34,7 +34,7 @@ Este registro permite crear las categorías para los productos. Los campos deben
 ## Producto
 ![Producto](https://user-images.githubusercontent.com/54560358/69480677-1129aa00-0de0-11ea-8b86-650c1a4a9e3b.JPG)
 
-Este registro permite crear los productos en el programa. Este también posee la opción de marcar el producto como un donativo lo cual es importante para pasar un producto como si fuera un recibo de contribución, cuando esta opción está marcada se igualan a cero el precio, costo y ganancia. El campo cantidad se ira actualizando de acuerdo con la entrada o venta que se le dé a el producto. Cabe destacar, que para registrar un producto debe haber una categoria ya registrada, y los campos que les requiera deben estar llenados. 
+Este registro permite crear los productos en el programa. Este también posee la opción de marcar el producto como un donativo lo cual es importante para pasar un producto como si fuera un recibo de contribución, cuando esta opción está marcada se igualan a cero el precio, costo y ganancia. El campo cantidad se ira actualizando de acuerdo con la entrada o venta que se le dé a el producto. Cabe destacar, que para registrar un producto debe haber una categoria ya registrada, y los campos que les requiera deben ser llenados.
 ## Entrada de Producto
 
 ![EntradaProducto](https://user-images.githubusercontent.com/54560358/69480827-539fb680-0de1-11ea-9d82-71ba686cfc27.JPG)
